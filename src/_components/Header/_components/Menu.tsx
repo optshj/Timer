@@ -4,7 +4,7 @@ import { VscMenu } from "react-icons/vsc";
 const Wrapper = styled.div`
     width:30px;
     height:30px;
-    padding:12px; 
+    padding:16px; 
     border-radius: 50%;
     margin-left:12px;
     cursor:pointer;

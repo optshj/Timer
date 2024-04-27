@@ -3,6 +3,7 @@ import Link from "next/link";
 import styled from "styled-components";
 
 import useRipple from "@/src/_hooks/useRipple";
+
 const ButtonText = styled.div`
     color:#808080;
     font-size:24px;

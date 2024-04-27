@@ -5,6 +5,7 @@ import { MdDarkMode,MdLightMode } from "react-icons/md";
 const Wrapper = styled.div`
     font-size:30px;
     cursor:pointer;
+    padding:16px;
 `
 const DarkIcon = styled(MdDarkMode)`
     color:#fff;
