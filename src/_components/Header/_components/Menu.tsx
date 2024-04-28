@@ -9,11 +9,11 @@ const Wrapper = styled.div`
     margin-left:12px;
     cursor:pointer;
     &:hover{
-        background-color: #606060;
+        background-color:${({theme}) => theme.color.hover_color};
     }
 `
 const MenuIcon = styled(VscMenu)`
-    color:#fff;
+    color:${({theme}) => theme.color.icon_color};
     font-size:30px;
 `
 
