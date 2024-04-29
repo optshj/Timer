@@ -9,6 +9,7 @@ const Wrapper = styled.div`
     margin-left:12px;
     cursor:pointer;
     &:hover{
+        transition: background-color 0.3s linear;
         background-color:${({theme}) => theme.color.hover_color};
     }
 `

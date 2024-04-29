@@ -1,4 +1,4 @@
-export default function Home() {
+export default function Month() {
     return (
       <>
         Month

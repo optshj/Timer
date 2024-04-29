@@ -51,7 +51,7 @@ const RippleStyled = styled.span`
         }
         
     }
-    background-color: #fff;
+    background-color: ${({theme}) => theme.color.font_animation};
     position: absolute;
     transform: translate(-50%,-50%);
     animation: rippleEffect 0.4s linear;

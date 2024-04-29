@@ -5,7 +5,7 @@ import styled from "styled-components";
 import useRipple from "@/src/_hooks/useRipple";
 
 const ButtonText = styled.div`
-    color: ${({theme}) => theme.color.font};
+    color: ${({theme}) => theme.color.header_font};
     font-size:24px;
 `
 const Wrapper = styled.div`
@@ -20,7 +20,6 @@ const Wrapper = styled.div`
             color:${({theme}) => theme.color.font_animation};
             transition: color 0.5s linear;
         }
-
     }
 `
 

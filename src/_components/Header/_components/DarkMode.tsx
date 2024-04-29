@@ -2,17 +2,20 @@ import styled from "styled-components";
 
 
 import { MdDarkMode,MdLightMode } from "react-icons/md";
-import { useTheme } from "@/src/app/DarkmodeProvider";
+import { useTheme } from "@/src/_context/DarkmodeContext";
 
 const Wrapper = styled.div`
-    font-size:30px;
     cursor:pointer;
     margin:16px;
     color:${({theme}) => theme.color.icon_color};
 `
 const DarkIcon = styled(MdDarkMode)`
+    width:30px;
+    height:30px;
 `
 const LightIcon = styled(MdLightMode)`
+    width:30px;
+    height:30px;
 `
 
 function DarkMode(){
