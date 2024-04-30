@@ -12,6 +12,9 @@ const Wrapper = styled.div`
         transition: background-color 0.3s linear;
         background-color:${({theme}) => theme.color.hover_color};
     }
+    &:active{
+        background-color:${({theme}) => theme.color.active_color};
+    }
 `
 const MenuIcon = styled(VscMenu)`
     color:${({theme}) => theme.color.icon_color};

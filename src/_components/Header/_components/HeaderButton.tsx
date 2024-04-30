@@ -25,17 +25,17 @@ const Wrapper = styled.div`
 
 interface HeaderButtonProps {
     text: string;
+    url: string;
 }
-function HeaderButton({ text }: HeaderButtonProps) {
-    const capitalizedText = text.charAt(0).toUpperCase() + text.slice(1); //첫글자를 대문자로 변경
+function HeaderButton({ text,url }: HeaderButtonProps) {
     const buttonRef = useRef<HTMLDivElement>(null);
     const ripples = useRipple(buttonRef);
 
     return (
-        <Link href={`/${text}`} >
+        <Link href={`/${url}`} >
             <Wrapper ref={buttonRef}>
                 <ButtonText>
-                    {capitalizedText}
+                    {text}
                     {ripples}
                 </ButtonText>
             </Wrapper>

@@ -7,7 +7,7 @@ const Wrapper = styled.div`
 function Layout({children}: Readonly<{children: React.ReactNode;}>) {
   return (
     <Wrapper>
-        {children}
+      {children}
     </Wrapper>
   );
 }

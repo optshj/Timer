@@ -26,11 +26,11 @@ function Header() {
         <Wrapper>
             <Menu/>
             <ButtonWrapper>
-                <HeaderButton text="home"/>
-                <HeaderButton text="life"/>
-                <HeaderButton text="year"/>
-                <HeaderButton text="month"/>
-                <HeaderButton text="today"/>
+                <HeaderButton text="Home" url=""/>
+                <HeaderButton text="Life" url="life"/>
+                <HeaderButton text="Year" url="year"/>
+                <HeaderButton text="Month" url="month"/>
+                <HeaderButton text="Today" url="today"/>
             </ButtonWrapper>
             <DarkMode/>
         </Wrapper>
