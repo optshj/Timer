@@ -1,22 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useLeftLife } from '@/src/_context/LeftLifeContext';
 
 const Wrapper = styled.div`
-    display: flex;
+    display:flex;
+    flex-direction: column;
     justify-content: center;
-    width:100%;
-`;
+`
 const BoxWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
-    width:300px;
+    width:264px;
 `
 const Box = styled.div`
     width: 40px;
     height: 40px;
     margin: 2px;
-    border-radius:3px;
+    border-radius:5px;
 `;
 const EmptyBox = styled(Box)`
     background-color: #c1c1c1;
@@ -28,15 +27,25 @@ const Text = styled.div`
     font-size: 12px;
     color: ${({ theme }) => theme.color.text_color};
 `
+interface LastTextProps {
+    $cnt:number;
+}
+const LastText = styled.div<LastTextProps>`
+    font-size: 12px;
+    color: ${({ theme }) => theme.color.text_color};
+    margin-left: ${({ $cnt }) => $cnt*44}px;
+`
 
 interface LifeCalenderProps {
     start:number;
     middle:number;
     end:number;
 }
+function remainder(amount:number,divide:number) {
+    return amount%divide === 0 ? divide: amount%divide;
+}
 
 function TimeCalender({start, middle, end }:LifeCalenderProps) {
-
     const renderBoxes = () => {
         const boxes = [];
         for (let i = start; i < middle; i++) {
@@ -54,7 +63,7 @@ function TimeCalender({start, middle, end }:LifeCalenderProps) {
             <BoxWrapper>
             {renderBoxes()}
             </BoxWrapper>
-            <Text>{end}</Text>
+            <LastText $cnt={remainder(end-start,6)}>{end}</LastText>
         </Wrapper>
     );
 }

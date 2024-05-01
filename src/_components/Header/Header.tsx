@@ -7,17 +7,13 @@ import DarkMode from './_components/DarkMode';
 
 const Wrapper = styled.header`
     width: 100%;
-    top:0;
-    left:0;
-    position: fixed;
     display: flex;
     flex-direction: row;
     border-bottom:1px solid #909090;
 `
 const ButtonWrapper = styled.nav`
     display: flex;
-    position: relative;
-    align-items: center;
+    align-items: center ;
     justify-content: center;
     margin:0 auto;
 `

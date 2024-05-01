@@ -1,5 +1,6 @@
 'use client';
 import LifeCalender from "../_components/TimeCalender";
+import Text from "../_components/Text";
 
 function getWeekNumber(date:Date) {
   date.setHours(0, 0, 0, 0);
@@ -15,6 +16,7 @@ export default function Life() {
   const currentWeek = getWeekNumber(currentDate);
   return (
     <>
+      <Text text={`올해가 ${52-currentWeek}주 남았어요`}/>
       <LifeCalender start={0} middle={currentWeek} end={52}/>
     </> 
   );
