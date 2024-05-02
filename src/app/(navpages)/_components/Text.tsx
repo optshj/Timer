@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-    font-size:24px;
+    font-size:28px;
+    font-weight:600;
     color:${({theme})=>theme.color.text_color};
     white-space: nowrap;
 `

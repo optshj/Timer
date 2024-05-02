@@ -1,11 +1,13 @@
 'use client'
-import React,{createContext,useContext} from "react";
+import React,{createContext,useContext, useEffect, useState} from "react";
 
 interface DateDiff {
     years: number;
     months: number;
     days: number;
 }
+export type DateType = DateDiff;
+
 function getDateDiff(date1: Date, date2: Date): DateDiff {
     let yearDiff: number = date2.getFullYear() - date1.getFullYear();
     let monthDiff: number = date2.getMonth() - date1.getMonth();
@@ -29,30 +31,34 @@ function getDate(date:Date):DateDiff{
     
     return { years, months, days };
 }
- 
-function LeftLife(){
+
+const LeftLifeContext = createContext<any>(null);
+
+export default function LeftLifeProivder({children}: Readonly<{children: React.ReactNode;}>) {
     const birth = new Date('2002-08-02');
-    const death = new Date('2083-12-9');
-    const today = new Date();
+    const death = new Date('2084-12-9');
+    const [today,setToday] = useState<Date>(new Date());
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setToday(new Date());
+        }, 1000);
+
+        return () => clearInterval(intervalId);
+    },[])
 
     const birthDate:DateDiff = getDate(birth);
     const deathDate:DateDiff = getDate(death);
     const todayDate:DateDiff = getDate(today);
     const leftLife:DateDiff = getDateDiff(today,death);
     const fullLife:DateDiff = getDateDiff(birth,death);
-
-    return{ birthDate, deathDate, todayDate, leftLife, fullLife };
-};
-
-const LeftLifeContext = createContext(LeftLife());
-export default function LeftLifeProivder({children}: Readonly<{children: React.ReactNode;}>) {
     return (
-        <LeftLifeContext.Provider value={LeftLife()}>
+        <LeftLifeContext.Provider value={{ birthDate, deathDate, todayDate, leftLife, fullLife, today }}>
             {children}
         </LeftLifeContext.Provider>
     );
 }
 export function useLeftLife(){
-    const {birthDate, deathDate, todayDate, leftLife,fullLife} = useContext(LeftLifeContext);
-    return {birthDate,deathDate,todayDate,leftLife,fullLife}
+    const {birthDate, deathDate, todayDate, leftLife,fullLife,today} = useContext(LeftLifeContext);
+    return {birthDate,deathDate,todayDate,leftLife,fullLife,today}
 }
