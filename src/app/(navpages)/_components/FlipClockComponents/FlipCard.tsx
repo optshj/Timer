@@ -81,15 +81,15 @@ const Upper = styled(Div)`
 	border-radius: 20px 20px 0 0;
 	transform-origin:50% 100%;
 	&::after {
-          position: absolute;
-          width: 100%;
-          height: 1px;
-          bottom: 0;
-          left: 0;
-          z-index: 5;
-          background-color: rgba(0,0,0,.4);
-          content: "";
-        }
+		position: absolute;
+		width: 100%;
+		height: 1px;
+		bottom: 0;
+		left: 0;
+		z-index: 5;
+        background-color: rgba(0,0,0,.4);
+        content: "";
+	}
 `
 const Lower = styled(Div)`
 	bottom:0;
@@ -113,7 +113,7 @@ const FlipCard = styled.li`
 			&::before{
 				animation: ${show} .5s linear both;
 				background: linear-gradient(to top, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 1) 100%);
-          		background: linear-gradient(to bottom, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 1) 100%);
+				background: linear-gradient(to bottom, rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 1) 100%);
 			}
 		}
 		${Lower}{
@@ -135,7 +135,7 @@ const FlipCard = styled.li`
 			&::before{
 				animation: ${hide} .5s .5s linear both;
 				background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .1) 100%);
-          		background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .1) 100%);
+				background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .1) 100%);
 			}
 		}
 	}
