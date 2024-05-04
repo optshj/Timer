@@ -2,17 +2,19 @@
 import { useState } from "react";
 import styled from "styled-components";
 
+import { useLeftLife } from "@/src/_context/LeftLifeContext";
+
 import TimeCalender from "../_components/TimeCalender";
 import Text from "../_components/Text";
 import FlipClockYear from "../_components/FlipClocks/FlipClockYear";
-
-import { useLeftLife } from "@/src/_context/LeftLifeContext";
 import FlipClockMonth from "../_components/FlipClocks/FlipClockMonth";
 import FlipClockDay from "../_components/FlipClocks/FlipClockDay";
 import FlipClockTime from "../_components/FlipClocks/FlipClockTime";
 
 const Wrapper = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
 `
 
@@ -30,6 +32,9 @@ export default function Life() {
     <Wrapper onClick={changeComponent}>
       {currentComponent === 1 && 
       <>
+        <Wrapper>
+          <Text text={"죽기까지 남은 시간"}/>
+        </Wrapper>
         <FlipClockYear date={leftLife.years}/>
         <FlipClockMonth date={leftLife.months}/>
         <FlipClockDay date={leftLife.days}/>
@@ -37,7 +42,7 @@ export default function Life() {
       </>} 
       {currentComponent === 2 && 
       <>
-        <Text text={`남은 인생이 ${leftLife.years}년 남았어요`} />
+          <Text text={`인생이 ${leftLife.years}년 남았습니다`} />
         <TimeCalender start={birthDate.years} middle={todayDate.years} end={deathDate.years}/>
       </>}
     </Wrapper>
