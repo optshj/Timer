@@ -15,6 +15,10 @@ const Wrapper = styled.div`
     &:active{
         background-color:${({theme}) => theme.color.active_color};
     }
+    ${({theme}) => theme.media.medium`
+        width:20px;
+        height:20px;
+    `}
 `
 const MenuIcon = styled(VscMenu)`
     color:${({theme}) => theme.color.icon_color};

@@ -10,8 +10,7 @@ const Wrapper = styled.div`
 function CalcLife(){
     return(
         <Wrapper>
-            <CalcLifeButton>
-            </CalcLifeButton>
+            <CalcLifeButton/>
         </Wrapper>
     )
 }

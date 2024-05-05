@@ -2,12 +2,8 @@
 import {useState} from "react";
 import styled from "styled-components";
 
-import { useLeftLife } from "@/src/_context/LeftLifeContext";
-
-import TimeCalender from "../_components/TimeCalender";
-import Text from "../_components/Text";
-import FlipClockDay from "../_components/FlipClocks/FlipClockDay";
-import FlipClockTime from "../_components/FlipClocks/FlipClockTime";
+import MonthsCalender from "./_components/MonthCalender";
+import MonthsFlipClock from "./_components/MonthFlipClock";
 
 const Wrapper = styled.div`
   display: flex;
@@ -16,10 +12,7 @@ const Wrapper = styled.div`
   flex-direction: column;
 `
 
-export default function Life() {
-  const { todayDate } = useLeftLife();
-  const lastDayOfMonth = new Date(todayDate.years, todayDate.months + 1, 0).getDate();
-
+export default function Month() {
   const componentCount = 2;
   const [currentComponent,setCurrentComponent] = useState<number>(1);
 
@@ -29,20 +22,8 @@ export default function Life() {
 
   return (
     <Wrapper onClick={changeComponent}>
-      {currentComponent === 1 &&
-      <>
-        <Wrapper>
-          <Text text={"이번 달이 끝나기까지 남은 시간"}/>
-        </Wrapper>
-        <FlipClockDay date={lastDayOfMonth - todayDate.days}/>
-        <FlipClockTime/>
-      </>
-      }
-      {currentComponent === 2 &&
-      <>
-        <Text text={`이번 달이 ${lastDayOfMonth - todayDate.days}일 남았습니다`} />
-        <TimeCalender start={1} middle={todayDate.days} end={lastDayOfMonth}/>
-      </>}
+      {currentComponent === 1 &&<MonthsFlipClock/>}
+      {currentComponent === 2 && <MonthsCalender/>}
     </Wrapper> 
   );
 }

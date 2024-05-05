@@ -51,6 +51,17 @@ const Ul = styled.ul`
 	margin:10px;
 	width:100px;
 	height:150px;
+	${({theme}) => theme.media.medium`
+		width:75px;
+		height:100px;
+		margin:5px;
+	`}
+	${({theme}) => theme.media.small`
+		width:50px;
+		height:75px;
+		margin:5px;
+	`}
+	transition:all .5s ease-in-out;
 `
 const Div = styled.div`
 	position:absolute;
@@ -73,8 +84,15 @@ const Number = styled(Div)`
 	align-items:center;
 	justify-content:center;
 	color:white;
-	font-size:100px;
 	font-weight:bold;
+	font-size:100px;
+	${({theme}) => theme.media.medium`
+		font-size:75px;
+	`}
+	${({theme}) => theme.media.small`
+		font-size:50px;
+	`}
+	transition:all .5s ease-in-out;
 `
 const Upper = styled(Div)`
 	top:0;
@@ -105,6 +123,15 @@ const FlipCard = styled.li`
 	height:150px;
 	border-radius:20px;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+	${({theme}) => theme.media.medium`
+		width:75px;
+		height:100px;
+	`}
+	${({theme}) => theme.media.small`
+		width:50px;
+		height:75px;
+	`}
+	transition:all .5s ease-in-out;
 	&.back{
 		z-index:3;
 		${Upper}{

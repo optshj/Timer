@@ -27,7 +27,7 @@ function FlipClockTime(){
         <Wrapper>
             <FlipCard front={quotient(hoursLeft)} back={quotient(hoursLeft)+1}/>
             <FlipCard front={hoursLeft%10} back={(hoursLeft+1)%10}/>
-            <Text text="시간"/>
+            <Text text="시"/>
             <FlipCard front={quotient(minutesLeft)} back={quotient(minutesLeft)+1}/>
             <FlipCard front={minutesLeft%10} back={(minutesLeft+1)%10}/>
             <Text text="분"/>

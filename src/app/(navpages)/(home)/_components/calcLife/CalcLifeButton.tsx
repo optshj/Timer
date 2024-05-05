@@ -6,6 +6,9 @@ const Wrapper = styled.button`
     cursor:pointer;
     color:${({theme}) => theme.color.text_color};
     background-color:${({theme}) => theme.color.background};
+    &:hover{
+        background-color: ${({theme}) => theme.color.hover_color};
+    }
 `
 function CalcLifeButton(){
     return(

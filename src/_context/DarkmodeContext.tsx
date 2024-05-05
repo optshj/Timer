@@ -3,12 +3,13 @@ import {createContext,useContext} from "react";
 import { ThemeProvider } from "styled-components"
 import useDarkMode from "../_hooks/useDarkmode"
 import themes from "../_styles/theme";
+import media from "../_styles/media";
 
 const defaultValue = {
     theme: 'dark',
     toggleTheme: () => {},
 };
-  
+
 export const ThemeContext = createContext(defaultValue);
 
 export default function DarkmodeProvider({children}: {children: React.ReactNode}){
@@ -16,7 +17,7 @@ export default function DarkmodeProvider({children}: {children: React.ReactNode}
 
     return(
         <ThemeContext.Provider value={darkmode}>
-            <ThemeProvider theme={darkmode.theme === 'light' ? themes.lightTheme : themes.darkTheme}>
+            <ThemeProvider theme={{...darkmode.theme === 'light' ? themes.lightTheme : themes.darkTheme,media}}>
                 {children}
             </ThemeProvider>
         </ThemeContext.Provider>
