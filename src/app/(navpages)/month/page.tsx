@@ -2,8 +2,9 @@
 import {useState} from "react";
 import styled from "styled-components";
 
-import MonthsCalender from "./_components/MonthCalender";
-import MonthsFlipClock from "./_components/MonthFlipClock";
+import MonthCalender   from "./_components/MonthCalender";
+import MonthPercentage from "./_components/MonthPercentage";
+import MonthFlipClock  from "./_components/MonthFlipClock";
 
 const Wrapper = styled.div`
   display: flex;
@@ -13,7 +14,7 @@ const Wrapper = styled.div`
 `
 
 export default function Month() {
-  const componentCount = 2;
+  const componentCount = 3;
   const [currentComponent,setCurrentComponent] = useState<number>(1);
 
   const changeComponent = () => {
@@ -22,8 +23,9 @@ export default function Month() {
 
   return (
     <Wrapper onClick={changeComponent}>
-      {currentComponent === 1 &&<MonthsFlipClock/>}
-      {currentComponent === 2 && <MonthsCalender/>}
+      {currentComponent === 1 && <MonthFlipClock/>}
+      {currentComponent === 2 && <MonthCalender/>}
+      {currentComponent === 3 && <MonthPercentage/>}
     </Wrapper> 
   );
 }

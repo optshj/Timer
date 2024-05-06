@@ -11,7 +11,6 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
 `
 
 function YearFlipClock(){
@@ -21,7 +20,7 @@ function YearFlipClock(){
     return(
         <>
             <Wrapper>
-            <Text text={"올해가 끝나기까지 남은 시간"}/>
+                <Text text={"올해가 끝나기까지 남은 시간"}/>
             </Wrapper>
             <FlipClockMonth date={11-currentDate.getMonth()}/>
             <FlipClockDay date={lastDayOfMonth-currentDate.getDay()}/>

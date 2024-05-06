@@ -1,7 +1,7 @@
 'use client'
 import styled from "styled-components";
 
-import CalcLifeButton from "./calcLife/CalcLifeButton";
+import CalcLifeButton from "./CalcLifeButton";
 
 const Wrapper = styled.div`
     display:flex;
