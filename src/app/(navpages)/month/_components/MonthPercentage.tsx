@@ -1,33 +1,28 @@
 import {useState} from "react"
 
-import Text from "../../_components/Text"
 import useAnimationFrame from "@/src/_hooks/useAnimationFrame";
-import { useLeftLife } from "@/src/_context/LeftLifeContext";
+import { useTime } from "@/src/_context/TimeContext";
+
+import Text from "../../_components/Text"
 
 const calcSeconds = (days: number) => {
-    const today = new Date();
-    const midnight = new Date();
-    midnight.setHours(24, 0, 0, 0);
-
-    const timeDiff = Math.abs(midnight.getTime() - today.getTime());
-    const seconds = days * 24 * 60 * 60 + timeDiff/1000;
+    const seconds = days * 24 * 60 * 60
     return seconds;
 }
 
 function MonthPercentage(){
-    const {todayDate} = useLeftLife();
-    const lastDayOfMonth = new Date(todayDate.years, todayDate.months + 1, 0).getDate();
-    
-    const [lifeRatio,setLifeRatio] = useState<number>(0);
+    const {today,lastDayOfMonth,timeDiff} = useTime();
+    const [monthRatio,setMonthRatio] = useState<number>(0);
 
+    const monthSeconds = calcSeconds(today.getDate());
+    const leftMonthSeconds = calcSeconds(lastDayOfMonth);
+    
     useAnimationFrame(() => {
-        const monthSeconds = calcSeconds(todayDate.days);
-        const leftMonthSeconds = calcSeconds(lastDayOfMonth);
-        const ratio = (1 - (leftMonthSeconds) / monthSeconds)*100;
-        setLifeRatio(ratio);
+        const ratio = ((leftMonthSeconds) / monthSeconds)*100;
+        setMonthRatio(ratio);
     })
     return(
-        <Text text={`이번 달이 ${lifeRatio.toFixed(10)}% 지났습니다`}/>
+        <Text text={`이번 달이 ${monthRatio.toFixed(5)}% 지났습니다`}/>
     )
 }
 export default MonthPercentage;

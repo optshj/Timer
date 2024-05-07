@@ -10,7 +10,7 @@ const defaultValue = {
     toggleTheme: () => {},
 };
 
-export const ThemeContext = createContext(defaultValue);
+const ThemeContext = createContext(defaultValue);
 
 export default function DarkmodeProvider({children}: {children: React.ReactNode}){
     const darkmode = useDarkMode();

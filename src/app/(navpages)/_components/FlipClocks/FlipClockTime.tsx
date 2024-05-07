@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import FlipCard from '../FlipClockComponents/FlipCard';
 import Text from '../Text';
-import { useLeftLife } from '@/src/_context/LeftLifeContext';
+import { useTime } from '@/src/_context/TimeContext';
 
 const Wrapper = styled.div`
     display:flex;
@@ -10,15 +10,10 @@ const Wrapper = styled.div`
     align-items: center;
 `
 function FlipClockTime(){
-    const {today} = useLeftLife();
+    const {timeDiff} = useTime();
     const quotient = (a:number) => {
         return Math.floor(a/10);
     }
-
-    const midnight = new Date();
-    midnight.setHours(24, 0, 0, 0);
-
-    const timeDiff = Math.abs(midnight.getTime() - today.getTime());
 
     const hoursLeft = Math.floor(timeDiff / (1000 * 60 * 60));
     const minutesLeft = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
