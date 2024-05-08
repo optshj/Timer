@@ -1,4 +1,5 @@
 'use client'
+import React, { useEffect,useState } from "react";
 import styled from "styled-components"
 
 import quotes from "./Quotes.json";
@@ -18,9 +19,7 @@ const Author = styled.div`
 `
 
 function getRandomNumber(){
-    const seed = new Date().getTime();
-    const random = (seed * 9301 + 49297) % 233280;
-    return random / 233280;
+    return window.crypto.getRandomValues(new Uint32Array(1))[0] / 2**32;
 }
 function getRandomQuote(){
     const quotesArray = quotes.quotes;
@@ -28,9 +27,8 @@ function getRandomQuote(){
     return quotesArray[randomIndex];
 }
 
-export default function Quote(){
+function Quote(){
     const randomQuote = getRandomQuote();
-
     return(
         <Wrapper>
             <Quotes>{randomQuote.quote}</Quotes>
@@ -38,3 +36,4 @@ export default function Quote(){
         </Wrapper>
     )
 }
+export default React.memo(Quote);
