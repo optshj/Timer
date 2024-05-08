@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
+import { useLeftLife } from "@/src/_context/LeftLifeContext";
+
 import Text from "../../_components/Text";
 import FlipClockMonth from "../../_components/FlipClocks/FlipClockMonth";
 import FlipClockDay from "../../_components/FlipClocks/FlipClockDay";
 import FlipClockTime from "../../_components/FlipClocks/FlipClockTime";
 
-import { useLeftLife } from "@/src/_context/LeftLifeContext";
 
 const Wrapper = styled.div`
     display: flex;
@@ -13,7 +14,7 @@ const Wrapper = styled.div`
     align-items: center;
 `
 
-function YearFlipClock(){
+export default function YearFlipClock(){
     const currentDate = new Date();
     const {todayDate} = useLeftLife();
     const lastDayOfMonth = new Date(todayDate.years, todayDate.months + 1, 0).getDate();
@@ -28,4 +29,3 @@ function YearFlipClock(){
         </>
     )
 }
-export default YearFlipClock;

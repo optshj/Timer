@@ -36,16 +36,16 @@ const LastText = styled.div<LastTextProps>`
     margin-left: ${({ $cnt }) => $cnt*44}px;
 `
 
+function remainder(amount:number,divide:number) {
+    return amount%divide === 0 ? divide: amount%divide;
+}
+
 interface LifeCalenderProps {
     start:number;
     middle:number;
     end:number;
 }
-function remainder(amount:number,divide:number) {
-    return amount%divide === 0 ? divide: amount%divide;
-}
-
-function TimeCalender({start, middle, end }:LifeCalenderProps) {
+export default function TimeCalender({start, middle, end }:LifeCalenderProps) {
     const renderBoxes = () => {
         const boxes = [];
         for (let i = start; i < middle; i++) {
@@ -67,5 +67,3 @@ function TimeCalender({start, middle, end }:LifeCalenderProps) {
         </Wrapper>
     );
 }
-
-export default TimeCalender;

@@ -8,11 +8,11 @@ const Wrapper = styled.div`
     justify-content:center;
     align-items: center;
 `
+
 interface FlipClockYearProps{
     date:number;
 }
-function FlipClockYear({date}:FlipClockYearProps){
-
+export default function FlipClockYear({date}:FlipClockYearProps){
     const flipCards = [];
     for (let i = 1; i >= 0; i--) {
         const digit = Math.floor(date / Math.pow(10, i)) % 10;
@@ -25,4 +25,3 @@ function FlipClockYear({date}:FlipClockYearProps){
         </Wrapper>
     )
 }
-export default FlipClockYear;

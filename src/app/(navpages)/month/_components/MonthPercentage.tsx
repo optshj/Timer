@@ -1,28 +1,27 @@
 import {useState} from "react"
 
-import useAnimationFrame from "@/src/_hooks/useAnimationFrame";
 import { useTime } from "@/src/_context/TimeContext";
+import useAnimationFrame from "@/src/_hooks/useAnimationFrame";
 
 import Text from "../../_components/Text"
+import PercentageBar from "../../_components/PercentageBar";
 
-const calcSeconds = (days: number) => {
-    const seconds = days * 24 * 60 * 60
-    return seconds;
-}
-
-function MonthPercentage(){
-    const {today,lastDayOfMonth,timeDiff} = useTime();
+export default function MonthPercentage(){
+    const {lastDayOfMonth} = useTime();
     const [monthRatio,setMonthRatio] = useState<number>(0);
 
-    const monthSeconds = calcSeconds(today.getDate());
-    const leftMonthSeconds = calcSeconds(lastDayOfMonth);
-    
     useAnimationFrame(() => {
-        const ratio = ((leftMonthSeconds) / monthSeconds)*100;
-        setMonthRatio(ratio);
+        const today = new Date();
+        const startOfMonth = new Date(today.getFullYear(),today.getMonth(),0);
+        const elapsedMonthSeconds = today.getTime() - startOfMonth.getTime();
+        const fullMonthSeconds = lastDayOfMonth * 24 * 60 * 60 * 1000;
+        const ratio = elapsedMonthSeconds/fullMonthSeconds*100;
+        setMonthRatio(ratio > 100 ? 100 : ratio);
     })
     return(
-        <Text text={`이번 달이 ${monthRatio.toFixed(5)}% 지났습니다`}/>
+        <>
+            <Text text={`이번 달이 ${monthRatio.toFixed(5)}% 지났습니다`}/>
+            <PercentageBar ratio={monthRatio}/>
+        </>
     )
 }
-export default MonthPercentage;

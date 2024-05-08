@@ -1,8 +1,7 @@
 
-function HealthTips() {
+export default function HealthTips() {
     return (
         <>
         </>
     );
 }
-export default HealthTips;

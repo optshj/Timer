@@ -1,5 +1,5 @@
 'use client'
-import React,{createContext,useContext, useEffect, useState} from "react";
+import React,{createContext,useContext,useState} from "react";
 
 interface DateDiff {
     years: number;
@@ -28,24 +28,16 @@ function getDate(date:Date):DateDiff{
     const years:number = date.getFullYear();
     const months:number = date.getMonth();
     const days:number = date.getDate();
-    
     return { years, months, days };
 }
 
 
 const LeftLifeContext = createContext<any>(null);
+
 export default function LeftLifeProivder({children}: Readonly<{children: React.ReactNode;}>) {
     const birth = new Date('2002-08-02');
     const death = new Date('2084-12-9');
     const [today,setToday] = useState<Date>(new Date());
-
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            setToday(new Date());
-        }, 1000);
-
-        return () => clearInterval(intervalId);
-    },[])
 
     const birthDate:DateDiff = getDate(birth);
     const deathDate:DateDiff = getDate(death);
@@ -60,5 +52,5 @@ export default function LeftLifeProivder({children}: Readonly<{children: React.R
 }
 export function useLeftLife(){
     const {birthDate, deathDate, todayDate, leftLife,fullLife} = useContext(LeftLifeContext);
-    return {birthDate,deathDate,todayDate,leftLife,fullLife}
+    return {birthDate,deathDate,todayDate,leftLife,fullLife};
 }

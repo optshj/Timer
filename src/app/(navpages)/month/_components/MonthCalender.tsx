@@ -3,7 +3,7 @@ import { useLeftLife } from "@/src/_context/LeftLifeContext";
 import Text from "../../_components/Text";
 import TimeCalender from "../../_components/TimeCalender";
 
-function MonthCalender() {
+export default function MonthCalender() {
     const { todayDate } = useLeftLife();
     const lastDayOfMonth = new Date(todayDate.years, todayDate.months + 1, 0).getDate();
 
@@ -14,4 +14,3 @@ function MonthCalender() {
         </>
     );
 }
-export default MonthCalender;

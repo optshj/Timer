@@ -1,5 +1,6 @@
 'use client'
 import styled from "styled-components"
+
 import quotes from "./Quotes.json";
 
 const Wrapper = styled.div`
@@ -27,7 +28,7 @@ function getRandomQuote(){
     return quotesArray[randomIndex];
 }
 
-function Quote(){
+export default function Quote(){
     const randomQuote = getRandomQuote();
 
     return(
@@ -37,4 +38,3 @@ function Quote(){
         </Wrapper>
     )
 }
-export default Quote;

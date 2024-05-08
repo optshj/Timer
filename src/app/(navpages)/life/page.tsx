@@ -14,7 +14,6 @@ const Wrapper = styled.div`
 `
 
 export default function Life() {
-
   const componentCount = 3;
   const [currentComponent,setCurrentComponent] = useState<number>(1);
 

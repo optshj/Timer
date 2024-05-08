@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import YearFlipClock from "./_components/YearFlipClock";
 import YearCalender from "./_components/YearCalender";
+import YearPercentage from "./_components/YearPercentage";
 
 const Wrapper = styled.div`
   display: flex;
@@ -13,7 +14,7 @@ const Wrapper = styled.div`
 `
 
 export default function Life() {
-  const componentCount = 2;
+  const componentCount = 3;
   const [currentComponent,setCurrentComponent] = useState<number>(1);
 
   const changeComponent = () => {
@@ -23,6 +24,7 @@ export default function Life() {
     <Wrapper onClick={changeComponent}>
       {currentComponent === 1 && <YearFlipClock/>}
       {currentComponent === 2 && <YearCalender/>}
+      {currentComponent === 3 && <YearPercentage/>}
     </Wrapper> 
   );
 }

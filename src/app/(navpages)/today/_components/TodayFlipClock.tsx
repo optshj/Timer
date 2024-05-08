@@ -9,7 +9,7 @@ const Wrapper = styled.div`
     align-items: center;
 `
 
-function TodayFlipClock(){
+export default function TodayFlipClock(){
     return(
         <>
             <Wrapper>
@@ -19,4 +19,3 @@ function TodayFlipClock(){
         </>
     )
 }
-export default TodayFlipClock;

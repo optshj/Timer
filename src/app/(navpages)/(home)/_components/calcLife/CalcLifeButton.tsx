@@ -10,11 +10,11 @@ const Wrapper = styled.button`
         background-color: ${({theme}) => theme.color.hover_color};
     }
 `
-function CalcLifeButton(){
+
+export default function CalcLifeButton(){
     return(
         <Wrapper>
             수명 계산하기
         </Wrapper>
     )
 }
-export default CalcLifeButton;

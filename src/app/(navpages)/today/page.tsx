@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import TodayCalender from "./_components/TodayCalender";
 import TodayFlipClock from "./_components/TodayFlipClock";
+import TodayPercentage from "./_components/TodayPercentage";
 
 const Wrapper = styled.div`
   display: flex;
@@ -13,7 +14,7 @@ const Wrapper = styled.div`
 `
 
 export default function Life() {
-  const componentCount = 2;
+  const componentCount = 3;
   const [currentComponent,setCurrentComponent] = useState<number>(1);
 
   const changeComponent = () => {
@@ -23,6 +24,7 @@ export default function Life() {
     <Wrapper onClick={changeComponent}>
       {currentComponent === 1 && <TodayFlipClock/>}
       {currentComponent === 2 && <TodayCalender/>}
+      {currentComponent === 3 && <TodayPercentage/>}
     </Wrapper> 
   );
 }

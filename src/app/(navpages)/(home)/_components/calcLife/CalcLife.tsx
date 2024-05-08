@@ -7,11 +7,11 @@ const Wrapper = styled.div`
     display:flex;
     justify-content: center;
 `
-function CalcLife(){
+
+export default function CalcLife(){
     return(
         <Wrapper>
             <CalcLifeButton/>
         </Wrapper>
     )
 }
-export default CalcLife;

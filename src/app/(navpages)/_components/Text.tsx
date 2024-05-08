@@ -13,11 +13,10 @@ const Wrapper = styled.div`
 interface TextProps {
     text: string;
 }
-function Text({text}:TextProps){
+export default function Text({text}:TextProps){
     return(
         <Wrapper>
             {text}
         </Wrapper>
     )
 }
-export default Text;
