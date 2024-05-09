@@ -10,12 +10,19 @@ const BoxWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     width:264px;
+    ${({theme}) => theme.media.medium`
+        width: 144px;
+    `}
 `
 const Box = styled.div`
     width: 40px;
     height: 40px;
     margin: 2px;
     border-radius:5px;
+    ${({theme}) => theme.media.medium`
+        width: 20px;
+        height: 20px;   
+    `}
 `;
 const EmptyBox = styled(Box)`
     background-color: #c1c1c1;
@@ -26,6 +33,7 @@ const FillBox = styled(Box)`
 const Text = styled.div`
     font-size: 12px;
     color: ${({ theme }) => theme.color.text_color};
+    margin-top:6px;
 `
 interface LastTextProps {
     $cnt:number;
@@ -34,6 +42,9 @@ const LastText = styled.div<LastTextProps>`
     font-size: 12px;
     color: ${({ theme }) => theme.color.text_color};
     margin-left: ${({ $cnt }) => $cnt*44}px;
+    ${({theme}) => theme.media.medium`
+        margin-left: ${({ $cnt }:LastTextProps) => $cnt*24}px;
+    `}
 `
 
 function remainder(amount:number,divide:number) {

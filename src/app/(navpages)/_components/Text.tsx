@@ -6,8 +6,9 @@ const Wrapper = styled.div`
     color:${({theme})=>theme.color.text_color};
     white-space: nowrap;
     ${({theme}) => theme.media.medium`
-        font-size:24px;
+        font-size:20px;
     `}
+
 `
 
 interface TextProps {

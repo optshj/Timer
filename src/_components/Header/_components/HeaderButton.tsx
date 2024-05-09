@@ -25,12 +25,12 @@ const Wrapper = styled.div`
     ${({theme}) => theme.media.medium`
         width:60px;
         font-size:20px;
-        padding:12px 16px;
+        padding:21px 16px;
     `}
     ${({theme}) => theme.media.small`
         width:50px;
-        font-size:16px;
-        padding:0;
+        font-size:14px;
+        padding:24px 0;
     `}
 `
 

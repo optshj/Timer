@@ -1,17 +1,10 @@
 'use client';
 import {useState} from "react";
-import styled from "styled-components";
 
+import Wrapper from "../_components/Wrapper";
 import MonthCalender   from "./_components/MonthCalender";
 import MonthPercentage from "./_components/MonthPercentage";
 import MonthFlipClock  from "./_components/MonthFlipClock";
-
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`
 
 export default function Month() {
   const componentCount = 3;

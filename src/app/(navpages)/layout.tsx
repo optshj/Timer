@@ -3,15 +3,13 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  margin-top:70px;
+  position: absolute;
+  height:calc(100vh - 67px);
+  width:100%;
   display:flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  height:100%;
 `
-function Layout({children}: Readonly<{children: React.ReactNode;}>) {
-  
+function Layout({children}: Readonly<{children: React.ReactNode}>) {
   return (  
     <Wrapper>
       {children}

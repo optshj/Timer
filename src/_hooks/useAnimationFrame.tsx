@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
 function useAnimationFrame(callback: () => void) {
     const frameRate = 1000 / 30; // 30프레임

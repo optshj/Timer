@@ -1,4 +1,4 @@
-import {useState} from "react"
+import { useState } from "react"
 
 import { useLeftLife } from "@/src/_context/LeftLifeContext";
 import { useTime } from "@/src/_context/TimeContext";

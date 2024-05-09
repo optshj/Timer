@@ -1,4 +1,4 @@
-import {useState} from "react"
+import { useState } from "react"
 
 import useAnimationFrame from "@/src/_hooks/useAnimationFrame"
 

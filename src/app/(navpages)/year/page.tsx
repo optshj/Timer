@@ -1,17 +1,10 @@
 'use client';
 import { useState } from "react";
-import styled from "styled-components";
 
+import Wrapper from "../_components/Wrapper";
 import YearFlipClock from "./_components/YearFlipClock";
 import YearCalender from "./_components/YearCalender";
 import YearPercentage from "./_components/YearPercentage";
-
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`
 
 export default function Life() {
   const componentCount = 3;

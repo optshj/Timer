@@ -1,17 +1,10 @@
 'use client';
 import { useState } from "react";
-import styled from "styled-components";
 
+import Wrapper from "../_components/Wrapper";
 import LifeFlipClock from "./_components/LifeFlipClock";
 import LifeCalender from "./_components/LifeCalender";
 import LifePercentage from "./_components/LifePercentage";
-
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`
 
 export default function Life() {
   const componentCount = 3;
