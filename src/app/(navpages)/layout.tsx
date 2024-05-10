@@ -9,10 +9,11 @@ const Wrapper = styled.div`
   display:flex;
   flex-direction: column;
 `
-function Layout({children}: Readonly<{children: React.ReactNode}>) {
+function Layout({children,modal}: Readonly<{children: React.ReactNode;modal:React.ReactNode}>) {
   return (  
     <Wrapper>
       {children}
+      {modal}
     </Wrapper>
   );
 }

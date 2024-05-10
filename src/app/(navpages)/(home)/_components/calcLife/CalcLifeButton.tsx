@@ -1,7 +1,6 @@
 'use client'
-import { useState } from 'react';
+import Link from "next/link";
 import styled from "styled-components";
-import CalcLifeModal from './CalcLifeModal';
 
 const Wrapper = styled.button`
     border: none;
@@ -16,12 +15,11 @@ const Wrapper = styled.button`
 `
 
 export default function CalcLifeButton(){
-    const [openModal,setOpenModal] = useState(false);
-
     return(
-        <Wrapper onClick={() => setOpenModal(true)}>
-            수명 계산하기
-            <CalcLifeModal isOpen={openModal} onRequestClose={() => setOpenModal(false)}/>
-        </Wrapper>
+        <Link href={"/calclife"}>
+            <Wrapper>
+                수명 계산하기
+            </Wrapper>
+        </Link>
     )
 }
