@@ -4,12 +4,13 @@ import styled from 'styled-components';
 import Menu from './_components/Menu';
 import HeaderButton from './_components/HeaderButton';
 import DarkMode from './_components/DarkMode';
+import Logo from './_components/Logo';
 
 const Wrapper = styled.header`
     width: 100%;
     display: flex;
     flex-direction: row;
-    border-bottom:1px solid #909090;
+    box-shadow: 0px 2px 4px ${({theme}) => theme.color.shadow};
 `
 const ButtonWrapper = styled.nav`
     display: flex;
@@ -20,7 +21,7 @@ const ButtonWrapper = styled.nav`
 function Header() {
     return(
         <Wrapper>
-            <Menu/>
+            <Logo/>
             <ButtonWrapper>
                 <HeaderButton text="Home" url=""/>
                 <HeaderButton text="Life" url="life"/>

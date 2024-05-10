@@ -10,6 +10,10 @@ const lightTheme: DefaultTheme = {
         active_color:"#979797",
         font_animation:"#000",
         background: "#fdfdfd",
+        shadow: "rgba(0,0,0,0.05)",
+
+        button_background: "#262626",
+        button_text: "#fff",
     },
 };
 
@@ -23,6 +27,10 @@ const darkTheme: DefaultTheme = {
         active_color:"#c4c4c4",
         font_animation:"#fff",
         background: "#2b2b2b",
+        shadow: "rgba(255,255,255,0.05)",
+
+        button_background: "#f6f6f6",
+        button_text:"#000",
     },
 };
 

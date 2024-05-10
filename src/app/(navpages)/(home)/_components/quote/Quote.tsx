@@ -1,15 +1,22 @@
 'use client'
-import React, { useEffect,useState } from "react";
+import React from "react";
 import styled from "styled-components"
 
 import quotes from "./Quotes.json";
 
 const Wrapper = styled.div`
     display:flex;
+    width:600px;
+    padding:12px;
     flex-direction:column;
     align-items: center;
-    white-space: nowrap;
+    justify-content: center;
     color:${({theme}) => theme.color.text_color};
+    box-shadow:
+        5px 5px 10px ${({theme}) => theme.color.shadow},
+        -5px -5px 10px ${({theme}) => theme.color.shadow},
+        -5px 5px 10px ${({theme}) => theme.color.shadow},
+        5px -5px 10px ${({theme}) => theme.color.shadow};
 `
 const Quotes = styled.div`
     font-size:24px;

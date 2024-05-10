@@ -8,9 +8,12 @@ const ButtonText = styled.div`
 
 `
 const Wrapper = styled.div`
-    width:80px;
+    width:100px;
+    height:65px;
     text-align: center;
-    padding:18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor:pointer;
     overflow:hidden;
     position: relative;
@@ -23,14 +26,12 @@ const Wrapper = styled.div`
         }
     }
     ${({theme}) => theme.media.medium`
-        width:60px;
+        width:80px;
         font-size:20px;
-        padding:21px 16px;
     `}
     ${({theme}) => theme.media.small`
-        width:50px;
+        width:60px;
         font-size:14px;
-        padding:24px 0;
     `}
 `
 
@@ -45,7 +46,7 @@ function HeaderButton({ text,url }: HeaderButtonProps) {
     return (
         <Link href={`/${url}`} >
             <Wrapper ref={buttonRef}>
-                {text}
+                <ButtonText>{text}</ButtonText>
                 {ripples}
             </Wrapper>
         </Link> 
