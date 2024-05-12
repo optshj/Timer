@@ -3,6 +3,7 @@ import { DefaultTheme } from "styled-components";
 const lightTheme: DefaultTheme = {
     color: {
         header_font: "#a0a0a0",
+        input_focus_color: "#ff6d6d",
         
         text_color:"#000",
         icon_color:"#000",
@@ -21,6 +22,7 @@ const darkTheme: DefaultTheme = {
     ...lightTheme,
     color: {
         ...lightTheme.color,
+        
         text_color:"#eee",
         icon_color:"#fff",
         hover_color:"#606060",

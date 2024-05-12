@@ -5,10 +5,11 @@ import styled from "styled-components";
 const Wrapper = styled.button`
     border: none;
     font-size:24px;
-    padding:6px;
+    padding:10px;
     cursor:pointer;
     color:${({theme}) => theme.color.button_text};
     background-color:${({theme}) => theme.color.button_background};
+    border-radius: 5px;
     &:hover{
         background-color: ${({theme}) => theme.color.hover_color};
     }
@@ -16,7 +17,7 @@ const Wrapper = styled.button`
 
 export default function CalcLifeButton(){
     return(
-        <Link href={"/calclife"}>
+        <Link href={"/birthdate"} scroll={false}>
             <Wrapper>
                 수명 계산하기
             </Wrapper>
