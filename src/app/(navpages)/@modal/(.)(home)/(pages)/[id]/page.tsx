@@ -21,9 +21,9 @@ const Question = styled.div`
 `;
 
 const SelectionWrapper = styled.label`
-    width: 350px;
     display: flex;
-    flex-direction: row;
+    top:150px;
+    width: 350px;
     justify-content: space-between;
     align-items: center;
     margin-top: 15px;

@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import { useLeftLife } from '@/src/_context/LeftLifeContext';
@@ -52,6 +52,12 @@ const InputArea = styled.input`
         outline:none;
     }
 `
+const ErrorMessage = styled.div`
+    margin-top:30px;
+    text-align: center;
+    white-space: pre-line;
+    color:${({theme}) => theme.color.error_color};
+`
 const ButtonWrapper = styled.div`
     position:absolute;
     bottom:${({theme}) => theme.position.modal_button}; 
@@ -68,11 +74,23 @@ const NextButton = styled.button`
     background-color: ${({theme}) => theme.color.input_focus_color};
 `
 
+
+const validateBirthdate = (year: string, month: string, date: string): boolean => {
+    if (year.length !== 4 || month.length !== 2 || date.length !== 2) {
+        return false;
+    }
+    const birthDate = new Date(`${year}-${month}-${date}`);
+    if (birthDate > new Date()) {
+        return false;
+    }
+    return !isNaN(birthDate.getTime());
+}
 export default function Page(){
     const {setBirth} = useLeftLife();
     const [year,setYear] = useState<string>('');
     const [month,setMonth] = useState<string>('');
     const [date,setDate] = useState<string>('');
+    const [errorMessage,setErrorMessage] = useState<string>('');
     
     const handleYear = (e:React.ChangeEvent<HTMLInputElement>) => {
         setYear(e.target.value)
@@ -83,8 +101,16 @@ export default function Page(){
     const handleDate = (e:React.ChangeEvent<HTMLInputElement>) => {
         setDate(e.target.value)
     }
-    const submitBirth = () => {
-        setBirth(new Date(`${year}-${month}-${date}`))
+    const submitBirth = (e:React.MouseEvent<HTMLAnchorElement>) => {
+        const isValidBirthDate = validateBirthdate(year,month,date);
+        if (isValidBirthDate) {
+            setBirth(new Date(`${year}-${month}-${date}`));
+            setErrorMessage('');
+        }
+        else {
+            setErrorMessage('올바르지 않은 생년월일이에요\n올바른 생년월일을 입력해주세요')
+            e.preventDefault();
+        }
     }
 
     return(
@@ -96,9 +122,10 @@ export default function Page(){
                 <InputArea type="text" placeholder="MM" maxLength={2} style={{'width':'80px'}} value={month} onChange={handleMonth}/>
                 <InputArea type="text" placeholder="DD" maxLength={2} style={{'width':'80px'}} value={date} onChange={handleDate}/>
             </InputWrapper>
-                <ButtonWrapper>
-                <Link href={"/0"} scroll={false}>
-                    <NextButton onClick={submitBirth}>다음으로</NextButton>
+            <ErrorMessage>{errorMessage}</ErrorMessage>
+            <ButtonWrapper>
+                <Link href={"/0"} scroll={false} onClick={submitBirth}>
+                    <NextButton >다음으로</NextButton>
                 </Link>
             </ButtonWrapper>
         </Wrapper>

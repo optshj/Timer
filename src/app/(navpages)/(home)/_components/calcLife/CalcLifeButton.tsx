@@ -17,7 +17,7 @@ const Wrapper = styled.button`
 
 export default function CalcLifeButton(){
     return(
-        <Link href={"/birthdate"} scroll={false}>
+        <Link href={"/survey"} scroll={false}>
             <Wrapper>
                 수명 계산하기
             </Wrapper>
