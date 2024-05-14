@@ -16,6 +16,9 @@ const lightTheme: DefaultTheme = {
         button_background: "#262626",
         button_text: "#fff",
     },
+    position:{
+        modal_button:"60px"
+    }
 };
 
 const darkTheme: DefaultTheme = {
@@ -34,6 +37,9 @@ const darkTheme: DefaultTheme = {
         button_background: "#f6f6f6",
         button_text:"#000",
     },
+    position:{
+        ...lightTheme.position,
+    }
 };
 
 const themes: DefaultTheme = {

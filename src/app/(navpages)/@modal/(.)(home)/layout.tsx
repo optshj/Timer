@@ -10,6 +10,7 @@ const Wrapper = styled.div`
     height:600px;
     border-radius: 5px;
     background-color:${({theme}) => theme.color.background};
+    transition: all 0.3s linear;
 `
 
 export default function Layout({children}: Readonly<{children:ReactNode}>){

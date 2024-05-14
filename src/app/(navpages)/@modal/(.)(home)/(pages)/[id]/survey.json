@@ -1,0 +1,285 @@
+{
+    "surveys" : [
+        {
+            "question" :"어떻게 살고 싶으신가요?",
+            "selections":{
+                "selection1":"짧고 굵게",
+                "selection2":"남들 사는 만큼",
+                "selection3":"얇고 길게"
+            },
+            "scores":{
+                "selection1":60,
+                "selection2":76,
+                "selection3":99
+            }
+        },
+        {
+            "question" :"성별이 무엇인가요?",
+            "selections":{
+                "selection1":"남자",
+                "selection2":"여자"
+            },
+            "scores":{
+                "selection1":-3,
+                "selection2":4
+            }
+        },
+        {
+            "question" :"2백만 명 이상의 인구를 가진 지역에 \n살고계신가요?",
+            "selections":{
+                "selection1":"네",
+                "selection2":"아니요"
+            },
+            "scores":{
+                "selection1":-2,
+                "selection2":0
+            }
+        },
+        {
+            "question" :"1만 명 이하의 읍이나 농지에 \n살고계신가요?",
+            "selections":{
+                "selection1":"네",
+                "selection2":"아니요"
+            },
+            "scores":{
+                "selection1":2,
+                "selection2":0
+            }
+        },
+        {
+            "question" :"한 명의 조부모님이 \n85세까지 사셨나요?",
+            "selections":{
+                "selection1":"네",
+                "selection2":"아니요"
+            },
+            "scores":{
+                "selection1":2,
+                "selection2":0
+            }
+        },
+        {
+            "question" :"외가,친가 합쳐서 조부모님 4명 모두 \n80세까지 사셨나요?",
+            "selections":{
+                "selection1":"네",
+                "selection2":"아니요"
+            },
+            "scores":{
+                "selection1":6,
+                "selection2":0
+            }
+        },
+        {
+            "question" :"부모님이 50세 이전에 \n뇌졸중이나 심장마비로 \n사망하신적이 있나요?",
+            "selections":{
+                "selection1":"네",
+                "selection2":"아니요"
+            },
+            "scores":{
+                "selection1":-4,
+                "selection2":0
+            }
+        },
+        {
+            "question" : "부모님이나 형제(누이)가 \n50세 이하에 암이나 심장병이 있거나, \n아동기 이후 당뇨병이 있나요?",
+            "selections":{
+                "selection1":"네",
+                "selection2":"아니요"
+            },
+            "scores":{
+                "selection1":-3,
+                "selection2":0
+            }
+        },
+        {
+            "question" :"연봉이 6천만원이 넘으시나요?",
+            "selections":{
+                "selection1":"네",
+                "selection2":"아니요"
+            },
+            "scores":{
+                "selection1":-2,
+                "selection2":0
+            }
+        },
+        {
+            "question" :"대학을 졸업하셨나요?",
+            "selections":{
+                "selection1":"네",
+                "selection2":"아니요"
+            },
+            "scores":{
+                "selection1":1,
+                "selection2":0
+            }
+        },
+        {
+            "question" :"대학원 학위나 전문직 자격증이 \n있으신가요?",
+            "selections":{
+                "selection1":"네",
+                "selection2":"아니요"
+            },
+            "scores":{
+                "selection1":2,
+                "selection2":0
+            }
+        },
+        {
+            "question" :"65세 또는 그 이상이고 \n아직 일을 하고 계신가요?",
+            "selections":{
+                "selection1":"네",
+                "selection2":"아니요"
+            },
+            "scores":{
+                "selection1":3,
+                "selection2":0
+            }
+        },
+        {
+            "question" :"배우자나 친구와 함께 살고 계신가요?",
+            "selections":{
+                "selection1":"네",
+                "selection2":"아니요"
+            },
+            "scores":{
+                "selection1":5,
+                "selection2":0
+            }
+        },
+        {
+            "question" :"책상에 앉아서 일을 하시나요?",
+            "selections":{
+                "selection1":"네",
+                "selection2":"아니요"
+            },
+            "scores":{
+                "selection1":-3,
+                "selection2":3
+            }
+        },
+        {
+            "question" :"일이 정규적이고,\n무거운 육체노동이 필요한가요?",
+            "selections":{
+                "selection1":"네",
+                "selection2":"아니요"
+            },
+            "scores":{
+                "selection1":3,
+                "selection2":0
+            }
+        },
+        {
+            "question" :"일주일에 5회, 30분이상 운동하시나요?\n(축구,달리기,수영 등)",
+            "selections":{
+                "selection1":"네",
+                "selection2":"아니요"
+            },
+            "scores":{
+                "selection1":4,
+                "selection2":0
+            }
+        },
+        {
+            "question" :"일주일에 2~3회 운동하시나요?",
+            "selections":{
+                "selection1":"네",
+                "selection2":"아니요"
+            },
+            "scores":{
+                "selection1":2,
+                "selection2":0
+            }
+        },
+        {
+            "question" :"매일 10시간 이상씩 주무시나요?",
+            "selections":{
+                "selection1":"네",
+                "selection2":"아니요"
+            },
+            "scores":{
+                "selection1":-4,
+                "selection2":0
+            }
+        },
+        {
+            "question" :"성격이 감정적이고,\n공격적이고 쉽게 화를 내시나요?",
+            "selections":{
+                "selection1":"네",
+                "selection2":"아니요"
+            },
+            "scores":{
+                "selection1":-3,
+                "selection2":0
+            }
+        },
+        {
+            "question" :"편안히 생각하고,휴식을 취하십니까?",
+            "selections":{
+                "selection1":"네",
+                "selection2":"아니요"
+            },
+            "scores":{
+                "selection1":-3,
+                "selection2":0
+            }
+        },
+        {
+            "question" :"행복하신가요?",
+            "selections":{
+                "selection1":"네",
+                "selection2":"아니요"
+            },
+            "scores":{
+                "selection1":1,
+                "selection2":0
+            }
+        },
+        {
+            "question" :"최근 1년 사이에 \n속도 위반 딱지를 떼였나요?",
+            "selections":{
+                "selection1":"네",
+                "selection2":"아니요"
+            },
+            "scores":{
+                "selection1":-2,
+                "selection2":0
+            }
+        },
+        {
+            "question" :"여성이시고, 일 년에 한 번씩 \n산부인과에서 검사를 받으시나요?",
+            "selections":{
+                "selection1":"네",
+                "selection2":"아니요"
+            },
+            "scores":{
+                "selection1":2,
+                "selection2":0
+            }
+        },
+        {
+            "question" :"담배를 얼마나 피우시나요?",
+            "selections":{
+                "selection1":"안 펴요",
+                "selection2":"반 갑 ~ 한 갑",
+                "selection3":"한 갑 ~ 두 갑",
+                "selection4":"두 갑 이상"
+            },
+            "scores":{
+                "selection1":-8,
+                "selection2":-6,
+                "selection3":-3,
+                "selection4":0
+            }
+        },
+        {
+            "question" :"40세 이상이고\n매년 건강 검진을 받으시나요?",
+            "selections":{
+                "selection1":"네",
+                "selection2":"아니요"
+            },
+            "scores":{
+                "selection1":2,
+                "selection2":0
+            }
+        }
+    ]
+}

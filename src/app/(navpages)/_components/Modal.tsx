@@ -1,8 +1,16 @@
 'use client'
 import React, { ReactNode, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
-import styled from 'styled-components';
+import styled,{keyframes} from 'styled-components';
 
+const fadeIn = keyframes`
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+`
 const Outer = styled.div`
     position: fixed;
     top:0;
@@ -10,6 +18,7 @@ const Outer = styled.div`
     width:100%;
     height:100%;
     background-color:rgba(0, 0, 0, 0.8);
+    animation: ${fadeIn} 0.3s ease-in-out;  
 `
 const Inner = styled.div`
     z-index:101;
