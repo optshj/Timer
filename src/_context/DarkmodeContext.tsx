@@ -1,30 +1,26 @@
-'use client';
 import {createContext,useContext} from "react";
 import { ThemeProvider } from "styled-components"
 import useDarkMode from "../_hooks/useDarkmode"
 import themes from "../_styles/theme";
-import media from "../_styles/media";
 
 const defaultValue = {
-    theme: 'dark',
+    theme: true,
     toggleTheme: () => {},
 };
 
-const ThemeContext = createContext(defaultValue);
+const DarkmodeContext = createContext(defaultValue);
 
 export default function DarkmodeProvider({children}: {children: React.ReactNode}){
     const darkmode = useDarkMode();
-
     return(
-        <ThemeContext.Provider value={darkmode}>
-            <ThemeProvider theme={{...darkmode.theme === 'light' ? themes.lightTheme : themes.darkTheme,media}}>
+        <DarkmodeContext.Provider value={darkmode}>
+            <ThemeProvider theme={{...darkmode.theme ? themes.darkTheme : themes.lightTheme }}>
                 {children}
             </ThemeProvider>
-        </ThemeContext.Provider>
+        </DarkmodeContext.Provider>
     )
 }
 export function useTheme(){
-    const {toggleTheme} = useContext(ThemeContext);
-    const {theme} = useContext(ThemeContext);
+    const {theme,toggleTheme} = useContext(DarkmodeContext);
     return {theme,toggleTheme};
 }

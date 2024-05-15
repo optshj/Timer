@@ -1,28 +1,24 @@
-'use client';
 import { useEffect, useState } from 'react';
 
-function useDarkMode(){
-    const [theme, setTheme] = useState<'light'|'dark'>('dark');
+export default function useDarkMode(){
+    const [theme,setTheme] = useState<boolean>(true);
 
     useEffect(() => {
         const localTheme = window.localStorage.getItem('theme');
-
         if (localTheme) {
-            setTheme(localTheme as 'light' | 'dark');
+            setTheme(JSON.parse(localTheme));
             document.body.dataset.theme = localTheme;
         } else {
-            setTheme('light');
-            document.body.dataset.theme = 'light';
+            setTheme(false);
+            document.body.dataset.theme = 'false';
         }
     },[]);
 
     const toggleTheme = () => {
-        const newTheme = theme === 'light' ? 'dark' : 'light';
+        const newTheme = theme ? false : true;
         setTheme(newTheme);
-        window.localStorage.setItem('theme', newTheme);
-        document.body.dataset.theme = newTheme;
+        window.localStorage.setItem('theme', JSON.stringify(newTheme));
+        document.body.dataset.theme = JSON.stringify(newTheme);
     };
     return {theme, toggleTheme};
 };
-
-export default useDarkMode;
