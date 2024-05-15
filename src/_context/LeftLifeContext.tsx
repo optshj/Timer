@@ -35,9 +35,9 @@ function getDate(date:Date):DateDiff{
 const LeftLifeContext = createContext<any>(null);
 
 export default function LeftLifeProivder({children}: Readonly<{children: React.ReactNode;}>) {
-    const [birth,setBirth] = useState<Date>(new Date);
-    const [death,setDeath] = useState<Date>(new Date);
-    const [today,setToday] = useState<Date>(new Date());
+    const [birth,setBirth] = useState<Date>(new Date());
+    const [death,setDeath] = useState<Date>(new Date());
+    const today = new Date();
 
     const birthDate:DateDiff = getDate(birth);
     const deathDate:DateDiff = getDate(death);

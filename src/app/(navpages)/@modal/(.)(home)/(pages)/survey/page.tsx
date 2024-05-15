@@ -76,17 +76,15 @@ const NextButton = styled.button`
 
 
 const validateBirthdate = (year: string, month: string, date: string): boolean => {
-    if (year.length !== 4 || month.length !== 2 || date.length !== 2) {
-        return false;
-    }
     const birthDate = new Date(`${year}-${month}-${date}`);
-    if (birthDate > new Date()) {
+    if ((birthDate > new Date()) || (year.length !== 4 || month.length !== 2 || date.length !== 2)) {
         return false;
     }
     return !isNaN(birthDate.getTime());
 }
+
 export default function Page(){
-    const {setBirth} = useLeftLife();
+    const {setBirth,setDeath} = useLeftLife();
     const [year,setYear] = useState<string>('');
     const [month,setMonth] = useState<string>('');
     const [date,setDate] = useState<string>('');
@@ -105,6 +103,7 @@ export default function Page(){
         const isValidBirthDate = validateBirthdate(year,month,date);
         if (isValidBirthDate) {
             setBirth(new Date(`${year}-${month}-${date}`));
+            setDeath(new Date(`${year}-${month}-${date}`));
             setErrorMessage('');
         }
         else {
@@ -124,7 +123,7 @@ export default function Page(){
             </InputWrapper>
             <ErrorMessage>{errorMessage}</ErrorMessage>
             <ButtonWrapper>
-                <Link href={"/0"} scroll={false} onClick={submitBirth}>
+                <Link href={"/0"} scroll={false} onClick={submitBirth} replace={true}>
                     <NextButton >다음으로</NextButton>
                 </Link>
             </ButtonWrapper>

@@ -31,7 +31,7 @@ export default function Modal({children}: Readonly<{children:ReactNode}>){
     const router = useRouter();
     const onClose = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
         if (e.target === e.currentTarget) {
-            router.push('/');
+            router.back();
         }
     },[router])
     return(

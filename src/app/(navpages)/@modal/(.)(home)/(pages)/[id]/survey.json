@@ -212,7 +212,7 @@
             }
         },
         {
-            "question" :"편안히 생각하고,휴식을 취하십니까?",
+            "question" :"편안히 생각하고,휴식을 취하시나요?",
             "selections":{
                 "selection1":"네",
                 "selection2":"아니요"

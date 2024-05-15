@@ -3,7 +3,7 @@ import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 
 import Modal from '../../_components/Modal';
-import BackButton from './_components/BackButton';
+import CloseButton from './_components/CloseButton';
 
 const Wrapper = styled.div`
     width:450px;
@@ -18,7 +18,7 @@ export default function Layout({children}: Readonly<{children:ReactNode}>){
         <Modal>
             <Wrapper>
                 {children}
-                <BackButton/>
+                <CloseButton/>
             </Wrapper>
         </Modal>
     )

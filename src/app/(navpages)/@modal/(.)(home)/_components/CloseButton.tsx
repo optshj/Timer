@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 import { useRouter } from "next/navigation";
-import { MdOutlineArrowBackIos } from "react-icons/md";
+import { MdClose } from "react-icons/md";
 
 
 const Wrapper = styled.div`
@@ -11,19 +11,19 @@ const Wrapper = styled.div`
     padding:12px 8px;
     cursor:pointer;
 `
-const BackIcon = styled(MdOutlineArrowBackIos)`
+const CloseIcon = styled(MdClose)`
     width:28px;
     height:28px;
     color:${({theme}) => theme.color.text_color};
 `
-export default function BackButton(){
+export default function CloseButton(){
     const router = useRouter();
     const onBack = () => {
         router.back();
     }
     return(
         <Wrapper onClick={onBack}>
-            <BackIcon/>
+            <CloseIcon/>
         </Wrapper>
 
     )

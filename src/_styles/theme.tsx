@@ -4,6 +4,10 @@ const lightTheme: DefaultTheme = {
     color: {
         header_font: "#a0a0a0",
         input_focus_color: "#ff6d6d",
+        input_unfocus_color:"#ff8c8c",
+        button_enable_color: "#ff6d6d",
+        button_disable_color: "#bfbfbf",
+        
         error_color: "#ff5a5a",
 
         text_color:"#000",

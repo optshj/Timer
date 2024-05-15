@@ -14,3 +14,4 @@
 * React
 * Next.js
 * TypeScript
+* Styled-components
