@@ -51,6 +51,7 @@ const Ul = styled.ul`
 	margin:10px;
 	width:100px;
 	height:150px;
+	transition:all .5s ease-in-out;
 	${({theme}) => theme.media.medium`
 		width:75px;
 		height:100px;
@@ -61,7 +62,6 @@ const Ul = styled.ul`
 		height:75px;
 		margin:5px;
 	`}
-	transition:all .5s ease-in-out;
 `
 const Div = styled.div`
 	position:absolute;
@@ -172,7 +172,7 @@ interface FlipClockProps{
 	back:number;
 	front:number;
 }
-function FlipClock({back,front}:FlipClockProps) {
+export default function FlipClock({back,front}:FlipClockProps) {
 	return(
 		<Ul>
 			{[...Array(10)].map((_,num) => (
@@ -192,5 +192,3 @@ function FlipClock({back,front}:FlipClockProps) {
 		</Ul>
 	)
 }
-
-export default FlipClock;

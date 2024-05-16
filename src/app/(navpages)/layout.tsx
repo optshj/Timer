@@ -3,13 +3,9 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  position: absolute;
-  height:calc(100vh - 67px);
-  width:100%;
-  display:flex;
-  flex-direction: column;
+  height:calc(100vh - ${({theme}) => theme.size.header_height});
 `
-function Layout({children,modal}: Readonly<{children: React.ReactNode;modal:React.ReactNode}>) {
+export default function Layout({children,modal}:{children: React.ReactNode;modal:React.ReactNode}) {
   return (  
     <Wrapper>
       {children}
@@ -17,5 +13,3 @@ function Layout({children,modal}: Readonly<{children: React.ReactNode;modal:Reac
     </Wrapper>
   );
 }
-
-export default Layout;

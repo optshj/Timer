@@ -1,7 +1,7 @@
 'use client';
 import { useState } from "react";
 
-import Wrapper from "../_components/Wrapper";
+import Wrapper from "../../_components/Wrapper";
 import LifeFlipClock from "./_components/LifeFlipClock";
 import LifeCalender from "./_components/LifeCalender";
 import LifePercentage from "./_components/LifePercentage";

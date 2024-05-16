@@ -1,7 +1,7 @@
 'use client';
 import {useState} from "react";
 
-import Wrapper from "../_components/Wrapper";
+import Wrapper from "../../_components/Wrapper";
 import MonthCalender   from "./_components/MonthCalender";
 import MonthPercentage from "./_components/MonthPercentage";
 import MonthFlipClock  from "./_components/MonthFlipClock";

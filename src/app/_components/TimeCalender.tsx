@@ -35,6 +35,7 @@ const Text = styled.div`
     color: ${({ theme }) => theme.color.text_color};
     margin-top:6px;
 `
+
 interface LastTextProps {
     $cnt:number;
 }
@@ -72,7 +73,7 @@ export default function TimeCalender({start, middle, end }:LifeCalenderProps) {
         <Wrapper>
             <Text>{start}</Text>
             <BoxWrapper>
-            {renderBoxes()}
+                {renderBoxes()}
             </BoxWrapper>
             <LastText $cnt={remainder(end-start,6)}>{end}</LastText>
         </Wrapper>

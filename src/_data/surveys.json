@@ -14,7 +14,7 @@
             }
         },
         {
-            "question" :"성별이 무엇인가요?",
+            "question" :"성별이 어떻게 되시나요?",
             "selections":{
                 "selection1":"남자",
                 "selection2":"여자"

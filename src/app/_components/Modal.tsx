@@ -1,7 +1,6 @@
-'use client'
-import React, { ReactNode, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import { useRouter } from 'next/navigation';
-import styled,{keyframes} from 'styled-components';
+import styled,{ keyframes } from 'styled-components';
 
 const fadeIn = keyframes`
     from{
@@ -17,23 +16,25 @@ const Outer = styled.div`
     z-index:100;
     width:100%;
     height:100%;
-    background-color:rgba(0, 0, 0, 0.8);
+    background-color:rgba(0, 0, 0, 0.6);
     animation: ${fadeIn} 0.3s ease-in-out;  
 `
 const Inner = styled.div`
-    z-index:101;
     position:fixed;
+    z-index:101;
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
 `
-export default function Modal({children}: Readonly<{children:ReactNode}>){
+export default function Modal({children}:{children:React.ReactNode}){
     const router = useRouter();
+    
     const onClose = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
         if (e.target === e.currentTarget) {
             router.back();
         }
     },[router])
+
     return(
         <Outer onClick={onClose}>
             <Inner>

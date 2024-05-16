@@ -1,8 +1,7 @@
-'use client'
 import React from "react";
 import styled from "styled-components"
 
-import healthTips from "./HealthTips.json";
+import quotesData from "@/src/_data/quotes.json";
 
 const Wrapper = styled.div`
     display:flex;
@@ -12,34 +11,32 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     color:${({theme}) => theme.color.text_color};
-    box-shadow: 
+    border-radius: 10px;
+    box-shadow:
         5px 5px 10px ${({theme}) => theme.color.shadow},
         -5px -5px 10px ${({theme}) => theme.color.shadow},
         -5px 5px 10px ${({theme}) => theme.color.shadow},
         5px -5px 10px ${({theme}) => theme.color.shadow};
 `
-const Tip = styled.div`
-    font-size:24px;
+const Font = styled.div<{fontSize:string}>`
+    font-size:${(props) => props.fontSize};
 `
-const Summary = styled.div`
-    font-size:18px;
-`
+
 function getRandomNumber(){
     return window.crypto.getRandomValues(new Uint32Array(1))[0] / 2**32;
 }
-function getRandomHealthTip(){
-    const healtyTipArrays = healthTips.tips;
-    const randomIndex = Math.floor(getRandomNumber() * healtyTipArrays.length);
-    return healtyTipArrays[randomIndex];
+function getRandomQuote(){
+    const quotesArray = quotesData.quotes;
+    const randomIndex = Math.floor(getRandomNumber() * quotesArray.length);
+    return quotesArray[randomIndex];
 }
 
-function HealthTip(){
-    const randomTip = getRandomHealthTip();
+export default React.memo(function Quote(){
+    const randomQuote = getRandomQuote();
     return(
         <Wrapper>
-            <Tip>{randomTip.tip}</Tip>
-            <Summary>{randomTip.summary}</Summary>
+            <Font fontSize={"24px"}>{randomQuote.quote}</Font>
+            <Font fontSize={"18px"}>{randomQuote.author}</Font>
         </Wrapper>
     )
-}
-export default React.memo(HealthTip);
+})

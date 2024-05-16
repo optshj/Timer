@@ -23,6 +23,9 @@ const lightTheme: DefaultTheme = {
     },
     position:{
         modal_button:"60px"
+    },
+    size:{
+        header_height:"65px",
     }
 };
 
@@ -30,6 +33,8 @@ const darkTheme: DefaultTheme = {
     ...lightTheme,
     color: {
         ...lightTheme.color,
+
+        button_disable_color: "#575757",
         
         text_color:"#eee",
         icon_color:"#fff",
@@ -44,6 +49,9 @@ const darkTheme: DefaultTheme = {
     },
     position:{
         ...lightTheme.position,
+    },
+    size:{
+        ...lightTheme.size,
     }
 };
 

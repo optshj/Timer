@@ -1,7 +1,7 @@
 'use client';
 import { useState } from "react";
 
-import Wrapper from "../_components/Wrapper";
+import Wrapper from "../../_components/Wrapper";
 import TodayCalender from "./_components/TodayCalender";
 import TodayFlipClock from "./_components/TodayFlipClock";
 import TodayPercentage from "./_components/TodayPercentage";

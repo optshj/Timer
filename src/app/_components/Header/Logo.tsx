@@ -9,7 +9,7 @@ const Wrapper = styled.div`
     color: ${({theme}) => theme.color.text_color};
 `
 
-const OverlappingText = styled.span`
+const Text = styled.span`
     width:100px;
     position: absolute;
     display: flex;
@@ -28,7 +28,7 @@ export default function Logo() {
     return(
         <Wrapper>
             <HeaderButton text={''} url={'/'}/>
-            <OverlappingText>LifeTimer</OverlappingText>
+            <Text>LifeTimer</Text>
         </Wrapper>
     )
 }

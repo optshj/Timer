@@ -2,8 +2,8 @@ import { useState } from "react"
 
 import useAnimationFrame from "@/src/_hooks/useAnimationFrame"
 
-import Text from "../../_components/Text"
-import PercentageBar from "../../_components/PercentageBar"
+import Text from "../../../_components/Text"
+import PercentageBar from "../../../_components/PercentageBar"
 
 export default function TodayPercentage(){
     const [todayRatio,setTodayRatio] = useState<number>(0);
@@ -19,7 +19,7 @@ export default function TodayPercentage(){
     return(
         <>
             <Text text={`오늘이 ${todayRatio.toFixed(3)}% 지났습니다`}/>
-            <PercentageBar ratio={todayRatio}/>
+            <PercentageBar ratio={Math.floor(todayRatio)}/>
         </>
     )
 }

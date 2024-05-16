@@ -4,8 +4,8 @@ import { useLeftLife } from "@/src/_context/LeftLifeContext";
 import { useTime } from "@/src/_context/TimeContext";
 import useAnimationFrame from "@/src/_hooks/useAnimationFrame";
 
-import Text from "../../_components/Text"
-import PercentageBar from "../../_components/PercentageBar";
+import Text from "../../../_components/Text"
+import PercentageBar from "../../../_components/PercentageBar";
 
 interface calcSecondsProps{
     years: number;
@@ -34,8 +34,8 @@ export default function LifePercentage(){
     
     return(
         <>
-            <Text text={` 인생이 ${lifeRatio.toFixed(8)}% 지났습니다`}/>
-            <PercentageBar ratio={lifeRatio}/>
+            <Text text={`인생이 ${lifeRatio.toFixed(8)}% 지났습니다`}/>
+            <PercentageBar ratio={Math.floor(lifeRatio)}/>
         </>
     )
 }

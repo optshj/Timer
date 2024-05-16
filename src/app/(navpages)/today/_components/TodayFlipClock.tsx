@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import Text from "../../_components/Text";
-import FlipClockTime from "../../_components/FlipClocks/FlipClockTime";
+import Text from "../../../_components/Text";
+import FlipClockTime from "../../../_components/FlipClocks/FlipClockTime";
 
 const Wrapper = styled.div`
     display: flex;

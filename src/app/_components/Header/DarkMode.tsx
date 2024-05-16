@@ -17,7 +17,7 @@ const LightIcon = styled(MdLightMode)`
     height:30px;
 `
 
-function DarkMode(){
+export default function DarkMode(){
     const {theme,toggleTheme} = useTheme();
     return(
         <Wrapper onClick={toggleTheme}>
@@ -25,4 +25,3 @@ function DarkMode(){
         </Wrapper>
     )
 }
-export default DarkMode;

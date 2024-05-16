@@ -2,8 +2,8 @@ import { useState } from "react"
 
 import useAnimationFrame from "@/src/_hooks/useAnimationFrame"
 
-import Text from "../../_components/Text"
-import PercentageBar from "../../_components/PercentageBar";
+import Text from "../../../_components/Text"
+import PercentageBar from "../../../_components/PercentageBar";
 
 export default function YearPercentage(){
     const [yearRatio,setYearRatio] = useState<number>(0);
@@ -20,7 +20,7 @@ export default function YearPercentage(){
     return(
         <>
             <Text text={`올해가 ${yearRatio.toFixed(6)}% 지났습니다`}/>
-            <PercentageBar ratio={yearRatio}/>
+            <PercentageBar ratio={Math.floor(yearRatio)}/>
         </>
     )
 }

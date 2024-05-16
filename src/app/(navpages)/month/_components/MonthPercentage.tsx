@@ -3,8 +3,8 @@ import { useState } from "react"
 import { useTime } from "@/src/_context/TimeContext";
 import useAnimationFrame from "@/src/_hooks/useAnimationFrame";
 
-import Text from "../../_components/Text"
-import PercentageBar from "../../_components/PercentageBar";
+import Text from "../../../_components/Text"
+import PercentageBar from "../../../_components/PercentageBar";
 
 export default function MonthPercentage(){
     const {lastDayOfMonth} = useTime();
@@ -21,7 +21,7 @@ export default function MonthPercentage(){
     return(
         <>
             <Text text={`이번 달이 ${monthRatio.toFixed(5)}% 지났습니다`}/>
-            <PercentageBar ratio={monthRatio}/>
+            <PercentageBar ratio={Math.floor(monthRatio)}/>
         </>
     )
 }

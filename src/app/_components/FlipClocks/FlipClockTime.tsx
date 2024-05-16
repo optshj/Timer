@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import FlipCard from '../FlipClockComponents/FlipCard';
+import FlipCard from './FlipCard';
 import Text from '../Text';
 
 import { useTime } from '@/src/_context/TimeContext';
@@ -10,14 +10,12 @@ const Wrapper = styled.div`
     justify-content:center;
     align-items: center;
 `
+
 export default function FlipClockTime(){
-    const {today} = useTime();
+    const {today,midnight} = useTime();
     const quotient = (a:number) => {
         return Math.floor(a/10);
     }
-
-    const midnight = new Date();
-    midnight.setHours(24, 0, 0, 0);
 
     const timeDiff = Math.abs(midnight.getTime() - today.getTime());
 

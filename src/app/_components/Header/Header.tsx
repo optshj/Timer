@@ -1,10 +1,9 @@
 'use client'
 import styled from 'styled-components';
 
-import Menu from './_components/Menu';
-import HeaderButton from './_components/HeaderButton';
-import DarkMode from './_components/DarkMode';
-import Logo from './_components/Logo';
+import HeaderButton from './HeaderButton';
+import DarkMode from './DarkMode';
+import Logo from './Logo';
 
 const Wrapper = styled.header`
     width: 100%;

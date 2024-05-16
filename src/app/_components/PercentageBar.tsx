@@ -11,6 +11,7 @@ const Wrapper = styled.div`
         width:300px;
     `}
 `
+
 interface ProgressProps{
     $ratio:number;
 }
@@ -24,12 +25,11 @@ const Percentage = styled.div<ProgressProps>`
 interface PercentageBarProps {
     ratio: number;
 }
-export default function PercentageBar({ratio}:PercentageBarProps){
-    const percentage = Math.floor(ratio);
-    
+export default React.memo(function PercentageBar(props:PercentageBarProps){
+    const percentage = Math.floor(props.ratio);
     return(
         <Wrapper>
             <Percentage $ratio={percentage}/>
         </Wrapper>
     )
-}
+})

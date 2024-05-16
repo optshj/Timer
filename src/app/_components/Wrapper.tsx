@@ -1,11 +1,10 @@
-'use client';
 import styled from "styled-components";
 
 const Wrap = styled.div`
+    display: flex;
     position: absolute;
     width:100%;
     height:100%;
-    display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;

@@ -8,16 +8,15 @@ const Wrapper = styled.div`
     ${({theme}) => theme.media.medium`
         font-size:20px;
     `}
-
 `
 
 interface TextProps {
     text: string;
 }
-export default function Text({text}:TextProps){
+export default function Text(props:TextProps){
     return(
         <Wrapper>
-            {text}
+            {props.text}
         </Wrapper>
     )
 }

@@ -1,8 +1,7 @@
 import { useLeftLife } from "@/src/_context/LeftLifeContext";
 
-import Text from "../../_components/Text";
-import TimeCalender from "../../_components/TimeCalender";
-
+import Text from "../../../_components/Text";
+import TimeCalender from "../../../_components/TimeCalender";
 
 export default function LifeCalender(){
     const {birthDate, deathDate, todayDate, leftLife} = useLeftLife();

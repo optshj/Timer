@@ -5,20 +5,19 @@ import styled from "styled-components";
 import useRipple from "@/src/_hooks/useRipple";
 
 const ButtonText = styled.div`
-
+    text-align: center;
 `
 const Wrapper = styled.div`
     width:100px;
-    height:65px;
-    text-align: center;
+    position: relative;
+    height:${({theme}) => theme.size.header_height};
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor:pointer;
-    overflow:hidden;
-    position: relative;
-    color: ${({theme}) => theme.color.header_font};
     font-size:24px;
+    color: ${({theme}) => theme.color.header_font};
+    overflow:hidden;
+    cursor:pointer;
     &:hover{
         ${ButtonText}{
             color:${({theme}) => theme.color.font_animation};
@@ -39,17 +38,16 @@ interface HeaderButtonProps {
     text: string;
     url: string;
 }
-function HeaderButton({ text,url }: HeaderButtonProps) {
+export default function HeaderButton(props:HeaderButtonProps) {
     const buttonRef = useRef<HTMLDivElement>(null);
     const ripples = useRipple(buttonRef);
 
     return (
-        <Link href={`/${url}`} >
+        <Link href={`/${props.url}`} >
             <Wrapper ref={buttonRef}>
-                <ButtonText>{text}</ButtonText>
+                <ButtonText>{props.text}</ButtonText>
                 {ripples}
             </Wrapper>
         </Link> 
     );
 }
-export default HeaderButton;
