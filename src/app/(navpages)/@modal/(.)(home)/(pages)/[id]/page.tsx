@@ -1,9 +1,10 @@
 'use client'
 import React, { useState } from 'react';
 import styled from 'styled-components';
+
 import surveyData from '@/src/_data/surveys.json';
 
-import Button from '../_components/Button';
+import BottomButton from '../_components/BottomButton';
 
 const Wrapper = styled.div`
     display: flex;
@@ -60,14 +61,14 @@ export default function Page(props: { params: { id: string } }) {
         setSelectScore(parseInt(e.target.value));
         setIsSelect(true);
     }
-    const SelectionArray = Object.entries(survey.selections).map(([key, value]) => (
+    const SelectionArray = survey && survey.selections ? Object.entries(survey.selections).map(([key, value]) => (
         <>
             <Selection value={survey.scores[key as keyof typeof survey.scores]} onChange={handleSelect} name="selection" id={`${key}`}/>
             <SelectionLabel key={key} htmlFor={`${key}`}>
                 <SelectionSpan>{value}</SelectionSpan>
             </SelectionLabel>
         </>
-    ));
+    )) : null;
 
     return (
         <Wrapper>
@@ -75,7 +76,7 @@ export default function Page(props: { params: { id: string } }) {
             <SelectionWrapper>
                 {SelectionArray}
             </SelectionWrapper>
-            <Button selectScore={selectScore} isSelect={isSelect}/>
+            <BottomButton selectScore={selectScore} isSelect={isSelect}/>
         </Wrapper>
     );
 }

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import Quote from "./_components/Quote";
 import HealthTips from "./_components/HealthTips";
-import CalcLife from "./_components/CalcLife";
+import CalcLifeButton from "./_components/CalcLife";
 
 const Wrapper = styled.div`
   display:flex;
@@ -21,7 +21,7 @@ const TextWrapper = styled.div`
 export default function Home() {
     return (
       <Wrapper>
-        <CalcLife/>
+        <CalcLifeButton/>
 
         <TextWrapper>
           <Quote/>

@@ -14,7 +14,7 @@ const Button = styled.button`
     }
 `
 
-export default function CalcLife(){
+export default function CalcLifeButton(){
     return(
         <Link href={"/survey"} scroll={false}>
             <Button>수명 계산하기</Button>

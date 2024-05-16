@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import Link from "next/link";
 
+import surveyData from '@/src/_data/surveys.json';
+
 import { useParams } from "next/navigation";
 import { useLeftLife } from "@/src/_context/LeftLifeContext";
 
@@ -44,11 +46,13 @@ function getRandomNumber(a:number, b:number) {
     return Math.floor(Math.random() * (b - a + 1)) + a;
 }
 
-interface ButtonProps {
+interface BottomButtonProps {
     selectScore: number;    
     isSelect: boolean
 }
-export default function Button(props:ButtonProps){
+export default function BottomButton(props:BottomButtonProps){
+    const surveyArrayLength = (JSON.parse(JSON.stringify(surveyData.surveys)) as string[]).length;
+    
     const {birthDate,deathDate,setDeath} = useLeftLife();
     console.log(deathDate);
     const id = parseInt(useParams().id as string);
@@ -57,8 +61,8 @@ export default function Button(props:ButtonProps){
         if (!props.isSelect) e.preventDefault();
         else setDeath(new Date(`${deathDate.years + props.selectScore}-${getRandomNumber(1,12)}-${getRandomNumber(1,28)}`))
     }
-    const handlePrev = (e:React.MouseEvent<HTMLAnchorElement>) => {
-        setDeath(new Date(`${deathDate.years - (deathDate.years - birthDate.years)}-${getRandomNumber(1,12)}-${getRandomNumber(1,28)}`));
+    const handlePrev = () => {
+        setDeath(new Date(`${deathDate.years}-${getRandomNumber(1,12)}-${getRandomNumber(1,28)}`));
     }
     
     return(
@@ -66,7 +70,7 @@ export default function Button(props:ButtonProps){
                 <Link href={id-1 === -1 ? `survey`:`${id-1}`} onClick={handlePrev} scroll={false} replace={true} >
                     <PrevButton>이전</PrevButton>
                 </Link>
-            {id === 24?
+            {id === surveyArrayLength - 1?
                 <Link href="/result" onClick={handleNext} scroll={false} replace={true} >
                     <SubmitButton $isSelect={props.isSelect}>제출</SubmitButton>
                 </Link>
