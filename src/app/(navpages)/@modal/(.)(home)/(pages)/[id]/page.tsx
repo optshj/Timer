@@ -72,7 +72,7 @@ export default function Page(props: { params: { id: string } }) {
 
     return (
         <Wrapper>
-            <Question>{survey.question}</Question>
+            {survey && survey.question && <Question>{survey.question}</Question>}
             <SelectionWrapper>
                 {SelectionArray}
             </SelectionWrapper>
