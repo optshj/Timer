@@ -11,7 +11,7 @@
 * `Chore` : 빌드 업무 수정, 패키지 매니저 수정
 
 ## 2. 적용 기술 스택
-* React
 * Next.js
+* React
 * TypeScript
 * Styled-components

@@ -9,6 +9,7 @@ const Button = styled.button`
     border-radius: 5px;
     color:${({theme}) => theme.color.button_text};
     background-color:${({theme}) => theme.color.button_background};
+    white-space: nowrap;
     &:hover{
         background-color: ${({theme}) => theme.color.hover_color};
     }

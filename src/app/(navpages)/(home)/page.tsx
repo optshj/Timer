@@ -1,9 +1,11 @@
 'use client'
 import styled from "styled-components";
 
-import Quote from "./_components/Quote";
-import HealthTips from "./_components/HealthTips";
-import CalcLifeButton from "./_components/CalcLife";
+import CalcLifeButton from "./_components/CalcLifeButton";
+import TextField from "./_components/TextField";
+
+import quotesData from "@/src/_data/quotes.json";
+import healthTipsData from "@/src/_data/healthTips.json";
 
 const Wrapper = styled.div`
   display:flex;
@@ -24,8 +26,8 @@ export default function Home() {
         <CalcLifeButton/>
 
         <TextWrapper>
-          <Quote/>
-          <HealthTips/>
+          <TextField json={quotesData}/>
+          <TextField json={healthTipsData}/>
         </TextWrapper>
       </Wrapper>
     );
