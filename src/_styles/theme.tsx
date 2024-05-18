@@ -3,17 +3,17 @@ import { DefaultTheme } from "styled-components";
 const lightTheme: DefaultTheme = {
     color: {
         header_font: "#a0a0a0",
-        input_focus_color: "#ff6d6d",
-        input_unfocus_color:"#ff8c8c",
-        button_enable_color: "#ff6d6d",
-        button_disable_color: "#bfbfbf",
+        input_focus: "#ff6d6d",
+        input_unfocus:"#ff8c8c",
+        button_enable: "#ff6d6d",
+        button_disable: "#bfbfbf",
         
-        error_color: "#ff5a5a",
+        error: "#ff5a5a",
 
-        text_color:"#000",
-        icon_color:"#000",
-        hover_color:"#c7c7c7",
-        active_color:"#979797",
+        text:"#000",
+        icon:"#000",
+        hover:"#c7c7c7",
+        active:"#979797",
         font_animation:"#000",
         background: "#fdfdfd",
         shadow: "rgba(0,0,0,0.05)",
@@ -22,7 +22,7 @@ const lightTheme: DefaultTheme = {
         button_text: "#fff",
     },
     position:{
-        modal_button:"60px"
+        modal_button:"40px"
     },
     size:{
         header_height:"65px",
@@ -34,12 +34,12 @@ const darkTheme: DefaultTheme = {
     color: {
         ...lightTheme.color,
 
-        button_disable_color: "#575757",
+        button_disable: "#575757",
         
-        text_color:"#eee",
-        icon_color:"#fff",
-        hover_color:"#606060",
-        active_color:"#c4c4c4",
+        text:"#eee",
+        icon:"#fff",
+        hover:"#606060",
+        active:"#c4c4c4",
         font_animation:"#fff",
         background: "#2b2b2b",
         shadow: "rgba(255,255,255,0.05)",

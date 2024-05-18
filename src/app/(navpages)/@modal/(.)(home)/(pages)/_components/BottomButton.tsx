@@ -4,6 +4,7 @@ import Link from "next/link";
 import surveyData from '@/src/_data/surveys.json';
 
 import { useParams } from "next/navigation";
+import { useScoreArray } from "@/src/_context/ScoreContext";
 import { useLeftLife } from "@/src/_context/LeftLifeContext";
 
 const Wrapper = styled.div`
@@ -28,16 +29,16 @@ interface ButtonFormProps{
     $isSelect: boolean
 }
 const NextButton = styled(ButtonForm)<ButtonFormProps>`
-    background-color: ${(props) => props.$isSelect ? props.theme.color.button_enable_color : props.theme.color.button_disable_color};
+    background-color: ${(props) => props.$isSelect ? props.theme.color.button_enable : props.theme.color.button_disable};
     color:${({theme}) => theme.color.background};
     cursor:${(props) => props.$isSelect ?  'pointer' : 'default'};
 `
 const PrevButton = styled(ButtonForm)`
-    border:2px solid ${({theme}) => theme.color.button_enable_color};
-    color:${({theme}) => theme.color.button_enable_color};
+    border:2px solid ${({theme}) => theme.color.button_enable};
+    color:${({theme}) => theme.color.button_enable};
 `
 const SubmitButton = styled(ButtonForm)<ButtonFormProps>`
-    background-color: ${(props) => props.$isSelect ? props.theme.color.button_enable_color : props.theme.color.button_disable_color};
+    background-color: ${(props) => props.$isSelect ? props.theme.color.button_enable : props.theme.color.button_disable};
     color:${({theme}) => theme.color.background};
     cursor:${(props) => props.$isSelect ?  'pointer' : 'default'};
 `
@@ -52,26 +53,31 @@ interface BottomButtonProps {
 }
 export default function BottomButton(props:BottomButtonProps){
     const surveyArrayLength = (JSON.parse(JSON.stringify(surveyData.surveys)) as string[]).length;
-    
-    const {birthDate,deathDate,setDeath} = useLeftLife();
-    console.log(deathDate);
+
+    const {scoreArray,setScoreArray} = useScoreArray();
+
+    const {birthDate,setDeath} = useLeftLife();
     const id = parseInt(useParams().id as string);
 
     const handleNext = (e:React.MouseEvent<HTMLAnchorElement>) => {
         if (!props.isSelect) e.preventDefault();
-        else setDeath(new Date(`${deathDate.years + props.selectScore}-${getRandomNumber(1,12)}-${getRandomNumber(1,28)}`))
+        else setScoreArray([...scoreArray,props.selectScore]);
     }
     const handlePrev = () => {
-        setDeath(new Date(`${deathDate.years}-${getRandomNumber(1,12)}-${getRandomNumber(1,28)}`));
+        setScoreArray(scoreArray.slice(0,-1));
     }
-    
+    const handleSubmit = () => {
+        const totalScore = scoreArray.reduce((acc:number, cur:number) => acc + cur, 0);
+        console.log(totalScore);
+        setDeath(new Date(`${birthDate.years + totalScore}-${getRandomNumber(1,12)}-${getRandomNumber(1,28)}`));
+    }
     return(
         <Wrapper>
                 <Link href={id-1 === -1 ? `survey`:`${id-1}`} onClick={handlePrev} scroll={false} replace={true} >
                     <PrevButton>이전</PrevButton>
                 </Link>
             {id === surveyArrayLength - 1?
-                <Link href="/result" onClick={handleNext} scroll={false} replace={true} >
+                <Link href="/result" onClick={handleSubmit} scroll={false} replace={true} >
                     <SubmitButton $isSelect={props.isSelect}>제출</SubmitButton>
                 </Link>
                 :

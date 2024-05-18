@@ -12,16 +12,19 @@ const Wrapper = styled.div`
 const CloseIcon = styled(MdClose)`
     width:28px;
     height:28px;
-    color:${({theme}) => theme.color.text_color};
+    color:${({theme}) => theme.color.text};
+    border-radius: 50%;
+    &:hover{
+        background-color:${({theme}) => theme.color.hover};
+    }
 `
 
 export default function CloseButton(){
     const router = useRouter();
-    const onBack = () => {
-        router.back();
-    }
+    const onExit = () => router.back();
+    
     return(
-        <Wrapper onClick={onBack}>
+        <Wrapper onClick={onExit}>
             <CloseIcon/>
         </Wrapper>
     )

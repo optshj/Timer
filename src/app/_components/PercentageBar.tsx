@@ -18,7 +18,7 @@ interface ProgressProps{
 const Percentage = styled.div<ProgressProps>`
     width: ${props => props.$ratio}%;
     height:30px;
-    background-color: ${({theme}) => theme.color.text_color};
+    background-color: ${({theme}) => theme.color.text};
     border-radius: 6px;
 `
 

@@ -6,11 +6,14 @@ import Modal from '../../../_components/Modal';
 import CloseButton from './_components/CloseButton';
 
 const Wrapper = styled.div`
-    width:450px;
+    width:400px;
     height:600px;
-    border-radius: 5px;
+    border-radius: 10px;
     background-color:${({theme}) => theme.color.background};
-    transition: all 0.3s linear;
+    position: relative;
+    ${({theme}) => theme.media.small`
+        width:calc(100vw - 48px);
+    `}
 `
 
 export default function Layout({children}: Readonly<{children:ReactNode}>){

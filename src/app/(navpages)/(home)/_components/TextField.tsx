@@ -8,7 +8,7 @@ const Wrapper = styled.div`
     flex-direction:column;
     align-items: center;
     justify-content: center;
-    color:${({theme}) => theme.color.text_color};
+    color:${({theme}) => theme.color.text};
     border-radius: 10px;
     box-shadow:
         5px 5px 10px ${({theme}) => theme.color.shadow},
@@ -20,6 +20,7 @@ const Wrapper = styled.div`
     `};
 `
 const Font = styled.div<{$fontSize:string}>`
+    white-space: pre-line;
     font-size:${(props) => props.$fontSize};
 `
 

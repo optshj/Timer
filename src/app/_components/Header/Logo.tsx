@@ -6,7 +6,7 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     font-weight: 700;
-    color: ${({theme}) => theme.color.text_color};
+    color: ${({theme}) => theme.color.text};
 `
 
 const Text = styled.span`

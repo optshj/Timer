@@ -2,6 +2,7 @@ import DarkmodeProvider from "./DarkmodeContext";
 import LeftLifeProivder from "./LeftLifeContext";
 import MediaProvider from "./MediaContext";
 import TimeProvider from "./TimeContext";
+import ScoreArrayProvider from "./ScoreContext";
 
 function ContextProvider({children}: Readonly<{children: React.ReactNode;}>) {
     return (
@@ -9,7 +10,9 @@ function ContextProvider({children}: Readonly<{children: React.ReactNode;}>) {
             <MediaProvider>
                 <LeftLifeProivder>
                     <TimeProvider>
-                        {children}
+                        <ScoreArrayProvider>
+                            {children}
+                        </ScoreArrayProvider>
                     </TimeProvider>
                 </LeftLifeProivder>
             </MediaProvider>

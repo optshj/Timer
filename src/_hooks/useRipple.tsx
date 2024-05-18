@@ -33,8 +33,8 @@ export default function useRipple<T extends HTMLElement>(ref: React.RefObject<T>
 }
 
 const RippleStyled = styled.span`
-    background-color: ${({ theme }) => theme.color.font_animation};
     position: absolute;
+    background-color: ${({ theme }) => theme.color.font_animation};
     transform: translate(-50%, -50%);
     animation: rippleEffect 0.4s linear;
     border-radius: 50%;

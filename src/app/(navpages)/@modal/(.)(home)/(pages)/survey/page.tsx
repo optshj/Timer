@@ -1,9 +1,10 @@
 'use client'
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
 
 import { useLeftLife } from '@/src/_context/LeftLifeContext';
-import Link from 'next/link';
+import { useScoreArray } from '@/src/_context/ScoreContext';
 
 const Wrapper = styled.div`
     display:flex;
@@ -15,7 +16,7 @@ const TitleWrapper = styled.div`
     margin-top: 140px;
 `
 const Title = styled.div`
-    color: ${({theme}) => theme.color.text_color};
+    color: ${({theme}) => theme.color.text};
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 30px;
@@ -39,8 +40,8 @@ const InputArea = styled.input`
     border-radius: 5px;
     border:2px solid ${({theme}) => theme.color.header_font};
     background-color: ${({theme}) => theme.color.background};
-    color:${({theme}) => theme.color.icon_color};
-    caret-color: ${({theme}) => theme.color.input_focus_color}; 
+    color:${({theme}) => theme.color.icon};
+    caret-color: ${({theme}) => theme.color.input_focus}; 
     outline:none;
     &::placeholder{
         font-size: 24px;
@@ -48,20 +49,19 @@ const InputArea = styled.input`
     }
     &:focus{
         transition: border 0.3s ease-in-out;
-        border:2px solid ${({theme}) => theme.color.input_focus_color};
+        border:2px solid ${({theme}) => theme.color.input_focus};
     }
 `
 const ErrorMessage = styled.div`
     margin-top:30px;
     text-align: center;
     white-space: pre-line;
-    color:${({theme}) => theme.color.error_color};
-`
-const ButtonWrapper = styled.div`
-    position:absolute;
-    bottom:${({theme}) => theme.position.modal_button}; 
+    color:${({theme}) => theme.color.error};
 `
 const NextButton = styled.button`
+    position: absolute;
+    transform: translateX(-50%);
+    bottom:${({theme}) => theme.position.modal_button}; 
     width:360px;
     height:70px;
     font-size:22px;
@@ -69,8 +69,12 @@ const NextButton = styled.button`
     border:none;
     border-radius: 10px;
     text-align: center;
-    background-color: ${({theme}) => theme.color.input_focus_color};
+    background-color: ${({theme}) => theme.color.input_focus};
+    
     cursor:pointer;
+    ${({theme}) => theme.media.small`
+        width:calc(100vw - 88px);
+    `}
 `
 
 const validateBirthdate = (birthDate:string[]): boolean => {
@@ -83,9 +87,15 @@ const validateBirthdate = (birthDate:string[]): boolean => {
 }
 
 export default function Page(){
+    const inputRef = useRef<HTMLInputElement>(null);
+    useEffect(() => {
+        if (inputRef.current) inputRef.current.focus();
+    },[])
+
     const {setBirth,setDeath} = useLeftLife();
     const [birthDate, setBirthDate] = useState<string[]>(['', '', '']);
     const [errorMessage, setErrorMessage] = useState<string>('');
+    const {setScoreArray} = useScoreArray();
 
     const handleChange = (index: number) => (e: React.ChangeEvent<HTMLInputElement>) => {
         const newBirthDate = [...birthDate];
@@ -102,6 +112,7 @@ export default function Page(){
             setBirth(birthDateObj);
             setDeath(birthDateObj);
             setErrorMessage('');
+            setScoreArray([]);
         } else {
             setErrorMessage('올바르지 않은 생년월일이에요\n올바른 생년월일을 입력해주세요');
             e.preventDefault();
@@ -116,18 +127,16 @@ export default function Page(){
             </TitleWrapper>
 
             <InputWrapper>
-                <InputArea maxLength={4} value={birthDate[0]} onChange={handleChange(0)} placeholder='YYYY'/>
+                <InputArea maxLength={4} value={birthDate[0]} onChange={handleChange(0)} placeholder='YYYY' ref={inputRef}/>
                 <InputArea maxLength={2} value={birthDate[1]} onChange={handleChange(1)} placeholder='MM' style={{'width':'80px'}}/>
                 <InputArea maxLength={2} value={birthDate[2]} onChange={handleChange(2)} placeholder='DD' style={{'width':'80px'}}/>
             </InputWrapper>
 
             <ErrorMessage>{errorMessage}</ErrorMessage>
-            
-            <ButtonWrapper>
-                <Link href={"/0"} scroll={false} onClick={submitBirth} replace={true}>
-                    <NextButton >다음으로</NextButton>
-                </Link>
-            </ButtonWrapper>
+        
+            <Link href={"/0"} scroll={false} onClick={submitBirth} replace={true}>
+                <NextButton >다음으로</NextButton>
+            </Link>
         </Wrapper>
     )
 }

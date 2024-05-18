@@ -264,10 +264,10 @@
                 "selection4":"두 갑 이상"
             },
             "scores":{
-                "selection1":-8,
-                "selection2":-6,
-                "selection3":-3,
-                "selection4":0
+                "selection1":0,
+                "selection2":-3,
+                "selection3":-6,
+                "selection4":-8
             }
         },
         {
