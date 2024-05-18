@@ -13,9 +13,9 @@ const Wrapper = styled.div`
 `
 const Question = styled.div`
     position:absolute;
-    top:80px;
+    top:100px;
     margin:0 12px;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 600;
     color: ${({ theme }) => theme.color.text};
     text-align: center;
