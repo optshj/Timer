@@ -17,7 +17,7 @@ export default function YearCalender() {
     return (
         <>
             <Text text={`올해가 ${52-currentWeek}주 남았습니다`} />
-            <TimeCalender start={0} middle={currentWeek} end={52} />
+            <TimeCalender start={1} middle={currentWeek} end={52} />
         </>
     )
 }

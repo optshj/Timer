@@ -19,9 +19,25 @@ const Wrapper = styled.div`
         width:calc(100% - 48px);
     `};
 `
-const Font = styled.div<{$fontSize:string}>`
+const Title = styled.div`
     white-space: pre-line;
-    font-size:${(props) => props.$fontSize};
+    font-size:24px;
+    ${({theme}) => theme.media.large`
+        font-size:20px;
+    `}
+    ${({theme}) => theme.media.small`
+        font-size:16px;
+    `}
+`
+const SubTitle = styled.div`
+    white-space: pre-line;
+    font-size:20px;
+    ${({theme}) => theme.media.large`
+        font-size:16px;
+    `}
+    ${({theme}) => theme.media.small`
+        font-size:12px;
+    `}
 `
 
 function getRandomNumber(){
@@ -42,8 +58,8 @@ export default React.memo(function TextField(props:TextFieldProps){
     const randomText = textArray[randomIndex];
     return(
         <Wrapper>
-            <Font $fontSize={"24px"}>{randomText.title}</Font>
-            <Font $fontSize={"18px"}>{randomText.subTitle}</Font>
+            <Title>{randomText.title}</Title>
+            <SubTitle>{randomText.subTitle}</SubTitle>
         </Wrapper>
     )
 })

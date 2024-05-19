@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { useLeftLife } from "@/src/_context/LeftLifeContext";
+import { useTime } from "@/src/_context/TimeContext";
 
 import Text from "../../../_components/Text";
 import FlipClockDate from "../../../_components/FlipClocks/FlipClockDate";
@@ -14,15 +14,15 @@ const Wrapper = styled.div`
 
 export default function YearFlipClock(){
     const currentDate = new Date();
-    const {todayDate} = useLeftLife();
-    const lastDayOfMonth = new Date(todayDate.years, todayDate.months + 1, 0).getDate();
+    const {lastDayOfMonth} = useTime();
+
     return(
         <>
             <Wrapper>
                 <Text text={"올해가 끝나기까지 남은 시간"}/>
             </Wrapper>
             <FlipClockDate text={"월"} date={11-currentDate.getMonth()}/>
-            <FlipClockDate text={"일"} date={lastDayOfMonth-currentDate.getDay()}/>
+            <FlipClockDate text={"일"} date={lastDayOfMonth-currentDate.getDate()}/>
             <FlipClockTime/>
         </>
     )

@@ -7,7 +7,7 @@ import PercentageBar from "../../../_components/PercentageBar";
 
 export default function YearPercentage(){
     const [yearRatio,setYearRatio] = useState<number>(0);
-    const today = new Date();
+    
     useAnimationFrame(() => {
         const today = new Date();
         const startOfYear = new Date(today.getFullYear(),0,0);

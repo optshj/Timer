@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { useRouter } from "next/navigation";
 import {useLeftLife} from "@/src/_context/LeftLifeContext"
 
-import LifePercentage from "@/src/app/(navpages)/life/_components/LifePercentage";
+import PercentageBar from "../../_components/PercentageBar";
 
 const Wrapper = styled.div`
     display:flex;
@@ -43,11 +43,7 @@ const Button = styled.button`
         width:calc(100vw - 88px);
     `}
 `
-const PercentageWrapper = styled.div`
-    position: absolute;
-    bottom:200px;
 
-`
 export default function Page(){
     const {deathDate} = useLeftLife();
 
@@ -60,9 +56,7 @@ export default function Page(){
 
             <Button onClick={onExit}>나가기</Button>
 
-            <PercentageWrapper>
-                <LifePercentage/>
-            </PercentageWrapper>
+            <PercentageBar/>
         </Wrapper>
     )
 }

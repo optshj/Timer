@@ -55,8 +55,8 @@ export default function BottomButton(props:BottomButtonProps){
     const surveyArrayLength = (JSON.parse(JSON.stringify(surveyData.surveys)) as string[]).length;
 
     const {scoreArray,setScoreArray} = useScoreArray();
-
-    const {birthDate,setDeath} = useLeftLife();
+    const {birthDate,setDeathDate} = useLeftLife();
+    
     const id = parseInt(useParams().id as string);
 
     const handleNext = (e:React.MouseEvent<HTMLAnchorElement>) => {
@@ -69,7 +69,7 @@ export default function BottomButton(props:BottomButtonProps){
     const handleSubmit = () => {
         const totalScore = scoreArray.reduce((acc:number, cur:number) => acc + cur, 0);
         console.log(totalScore);
-        setDeath(new Date(`${birthDate.years + totalScore}-${getRandomNumber(1,12)}-${getRandomNumber(1,28)}`));
+        setDeathDate(new Date(`${birthDate.years + totalScore}-${getRandomNumber(1,12)}-${getRandomNumber(1,28)}`));
     }
     return(
         <Wrapper>

@@ -65,12 +65,12 @@ export default function Page(props: { params: { id: string } }) {
         setIsSelect(true);
     }
     const SelectionArray = survey && survey.selections ? Object.entries(survey.selections).map(([key, value]) => (
-        <>
+        <React.Fragment key={key}>
             <Selection value={survey.scores[key as keyof typeof survey.scores]} onChange={handleSelect} name="selection" id={`selection_${key}`}/>
-            <SelectionLabel key={key} htmlFor={`selection_${key}`}>
+            <SelectionLabel htmlFor={`selection_${key}`}>
                 <SelectionSpan>{value}</SelectionSpan>
             </SelectionLabel>
-        </>
+        </React.Fragment>
     )) : null;
 
     return (

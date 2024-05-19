@@ -92,25 +92,23 @@ export default function Page(){
         if (inputRef.current) inputRef.current.focus();
     },[])
 
-    const {setBirth,setDeath} = useLeftLife();
-    const [birthDate, setBirthDate] = useState<string[]>(['', '', '']);
-    const [errorMessage, setErrorMessage] = useState<string>('');
+    const {setBirthDate} = useLeftLife();
     const {setScoreArray} = useScoreArray();
+    const [birthDateArray, setBirthDateArray] = useState<string[]>(['', '', '']);
+    const [errorMessage, setErrorMessage] = useState<string>('');
 
     const handleChange = (index: number) => (e: React.ChangeEvent<HTMLInputElement>) => {
-        const newBirthDate = [...birthDate];
+        const newBirthDate = [...birthDateArray];
         newBirthDate[index] = e.target.value;
-        setBirthDate(newBirthDate);
+        setBirthDateArray(newBirthDate);
     };
 
     const submitBirth = (e: React.MouseEvent<HTMLAnchorElement>) => {
-        const isValidBirthDate = validateBirthdate(birthDate);
+        const isValidBirthDate = validateBirthdate(birthDateArray);
         
         if (isValidBirthDate) {
-            const [year, month, date] = birthDate;
-            const birthDateObj = new Date(`${year}-${month}-${date}`);
-            setBirth(birthDateObj);
-            setDeath(birthDateObj);
+            const [year, month, date] = birthDateArray;
+            setBirthDate(new Date(`${year}-${month}-${date}`));
             setErrorMessage('');
             setScoreArray([]);
         } else {
@@ -127,9 +125,9 @@ export default function Page(){
             </TitleWrapper>
 
             <InputWrapper>
-                <InputArea maxLength={4} value={birthDate[0]} onChange={handleChange(0)} placeholder='YYYY' ref={inputRef}/>
-                <InputArea maxLength={2} value={birthDate[1]} onChange={handleChange(1)} placeholder='MM' style={{'width':'80px'}}/>
-                <InputArea maxLength={2} value={birthDate[2]} onChange={handleChange(2)} placeholder='DD' style={{'width':'80px'}}/>
+                <InputArea maxLength={4} value={birthDateArray[0]} onChange={handleChange(0)} placeholder='YYYY' ref={inputRef}/>
+                <InputArea maxLength={2} value={birthDateArray[1]} onChange={handleChange(1)} placeholder='MM' style={{'width':'80px'}}/>
+                <InputArea maxLength={2} value={birthDateArray[2]} onChange={handleChange(2)} placeholder='DD' style={{'width':'80px'}}/>
             </InputWrapper>
 
             <ErrorMessage>{errorMessage}</ErrorMessage>
