@@ -26,7 +26,7 @@ const lightTheme: DefaultTheme = {
     },
     size:{
         header_height:"65px",
-    }
+    },
 };
 
 const darkTheme: DefaultTheme = {
@@ -47,12 +47,6 @@ const darkTheme: DefaultTheme = {
         button_background: "#f6f6f6",
         button_text:"#000",
     },
-    position:{
-        ...lightTheme.position,
-    },
-    size:{
-        ...lightTheme.size,
-    }
 };
 
 const themes: DefaultTheme = {

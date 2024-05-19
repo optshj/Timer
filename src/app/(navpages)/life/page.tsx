@@ -1,12 +1,25 @@
 'use client';
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 import Wrapper from "../../_components/Wrapper";
+import NotCalc from "./_components/NotCalc";
 import LifeFlipClock from "./_components/LifeFlipClock";
 import LifeCalender from "./_components/LifeCalender";
 import LifePercentage from "./_components/LifePercentage";
 
+
 export default function Life() {
+
+  const [isCalc,setIsCalc] = useState<boolean>(false);
+  useEffect(() => {
+    const deathDate = window.localStorage.getItem('deathDate');
+    if (!deathDate) {
+      setIsCalc(false);
+    }
+    else {
+      setIsCalc(true);
+    }
+  },[])
   const componentCount = 3;
   const [currentComponent,setCurrentComponent] = useState<number>(1);
 
@@ -15,10 +28,16 @@ export default function Life() {
   }
 
   return (
-    <Wrapper onClick={changeComponent}>
-      {currentComponent === 1 && <LifeFlipClock/>}
-      {currentComponent === 2 && <LifeCalender/>}
-      {currentComponent === 3 && <LifePercentage/>}
-    </Wrapper>
+    <>{
+      !isCalc ? 
+      <NotCalc/> 
+      :
+      <Wrapper onClick={changeComponent}>
+        {currentComponent === 1 && <LifeFlipClock/>}
+        {currentComponent === 2 && <LifeCalender/>}
+        {currentComponent === 3 && <LifePercentage/>}
+      </Wrapper>
+    }
+      </>
   );
 }

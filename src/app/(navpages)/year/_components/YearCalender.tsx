@@ -1,7 +1,6 @@
 import Text from "../../../_components/Text";
 import TimeCalender from "../../../_components/TimeCalender";
 
-
 function getWeekNumber(date:Date) {
     date.setHours(0, 0, 0, 0);
     date.setDate(date.getDate() + 4 - (date.getDay() || 7));

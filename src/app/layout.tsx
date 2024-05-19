@@ -1,7 +1,7 @@
 'use client'
-import { Roboto } from "next/font/google";
-import "../_styles/globals.css";
 import styled from "styled-components";
+import "../_styles/globals.css";
+import { Roboto } from "next/font/google";
 import RootStyleRegistry from "../_lib/registy";
 import ContextProvider from "../_context/ContextProvider";
 
@@ -13,10 +13,10 @@ const Body = styled.body`
 
 const roboto = Roboto({
   subsets: ["latin"],
-  weight: ["100", "400", "700"],
+  weight: ["300", "400", "700"],
 });
 
-export default function RootLayout({children}: Readonly<{children: React.ReactNode;}>) {
+export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
   return (
     <html lang="en">
       <RootStyleRegistry>
