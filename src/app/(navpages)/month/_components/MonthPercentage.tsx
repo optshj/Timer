@@ -3,8 +3,8 @@ import { useState } from "react"
 import { useTime } from "@/src/_context/TimeContext";
 import useAnimationFrame from "@/src/_hooks/useAnimationFrame";
 
-import Text from "../../../_components/Text"
-import PercentageBar from "../../../_components/PercentageBar";
+import Text from "../../../_components/Shared/Text"
+import PercentageBar from "../../../_components/Shared/PercentageBar";
 
 export default function MonthPercentage(){
     const {lastDayOfMonth} = useTime();

@@ -2,8 +2,8 @@ import { useState } from "react"
 
 import useAnimationFrame from "@/src/_hooks/useAnimationFrame"
 
-import Text from "../../../_components/Text"
-import PercentageBar from "../../../_components/PercentageBar";
+import Text from "../../../_components/Shared/Text"
+import PercentageBar from "../../../_components/Shared/PercentageBar";
 
 export default function YearPercentage(){
     const [yearRatio,setYearRatio] = useState<number>(0);

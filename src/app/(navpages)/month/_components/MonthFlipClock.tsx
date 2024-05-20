@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { useTime } from "@/src/_context/TimeContext";
 
-import Text from "../../../_components/Text";
+import Text from "../../../_components/Shared/Text";
 import FlipClockDate from "../../../_components/FlipClocks/FlipClockDate";
 import FlipClockTime from "../../../_components/FlipClocks/FlipClockTime";
 

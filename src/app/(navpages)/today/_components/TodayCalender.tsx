@@ -1,7 +1,7 @@
 import { useTime } from "@/src/_context/TimeContext";
 
-import Text from "../../../_components/Text";
-import TimeCalender from "../../../_components/TimeCalender";
+import Text from "../../../_components/Shared/Text";
+import TimeCalender from "../../../_components/Shared/TimeCalender";
 
 export default function TodayCalender(){
     const {today} = useTime();

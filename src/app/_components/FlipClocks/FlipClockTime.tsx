@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import FlipCard from '../FlipClockComponents/FlipCard';
-import Text from '../Text';
+import FlipCard from './FlipCard';
+import Text from '../Shared/Text';
 
 import { useTime } from '@/src/_context/TimeContext';
 
