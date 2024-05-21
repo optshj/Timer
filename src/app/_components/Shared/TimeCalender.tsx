@@ -19,16 +19,33 @@ const Box = styled.div`
     height: 35px;
     margin: 2px;
     border-radius:5px;
+    color:transparent;
+    font-size:14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     ${({theme}) => theme.media.medium`
         width: 20px;
         height: 20px;   
     `}
+    &:hover{
+        z-index:10;
+        transform: scale(2);
+        transition: transform 0.5s;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
 `;
 const EmptyBox = styled(Box)`
     background-color: #c1c1c1;
+    &:hover{
+        color:#fff;
+    }
 `;
 const FillBox = styled(Box)`
     background-color: #000;
+    &:hover{
+        color:#fff;
+    }
 `;
 const Text = styled.div`
     font-size: 12px;
@@ -61,10 +78,10 @@ export default function TimeCalender({start, middle, end }:LifeCalenderProps) {
     const renderBoxes = () => {
         const boxes = [];
         for (let i = start; i < middle; i++) {
-            boxes.push(<FillBox key={`fill-${i}`} />);
+            boxes.push(<FillBox key={`fill-${i}`}>{i}</FillBox>);
         }
         for (let i = middle; i < end; i++) {
-            boxes.push(<EmptyBox key={`empty-${i}`} />);
+            boxes.push(<EmptyBox key={`empty-${i}`}>{i}</EmptyBox>);
         }
         return boxes;
     };

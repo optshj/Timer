@@ -19,7 +19,7 @@ const Hand = styled.div<{$angle: number}>`
 const SecondHand = styled(Hand)`
     width:2px;
     height:190px;
-    background-color: red;
+    background-color: ${({theme}) => theme.color.input_focus};
 `
 const MinuteHand = styled(Hand)`
     width:5px;
