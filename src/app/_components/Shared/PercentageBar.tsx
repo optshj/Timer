@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-    width:400px;
-    height:30px;
+    width:600px;
+    height:50px;
     background-color: #909090;
     margin-top:20px;
     border-radius:6px;
@@ -17,7 +17,7 @@ interface ProgressProps{
 }
 const Percentage = styled.div<ProgressProps>`
     width: ${props => props.$ratio}%;
-    height:30px;
+    height:50px;
     background-color: ${({theme}) => theme.color.text};
     border-radius: 6px;
 `

@@ -10,11 +10,7 @@ const Wrapper = styled.div`
     justify-content: center;
     color:${({theme}) => theme.color.text};
     border-radius: 10px;
-    box-shadow:
-        5px 5px 10px ${({theme}) => theme.color.shadow},
-        -5px -5px 10px ${({theme}) => theme.color.shadow},
-        -5px 5px 10px ${({theme}) => theme.color.shadow},
-        5px -5px 10px ${({theme}) => theme.color.shadow};
+    background-color: ${({theme}) => theme.color.bright_background};
     ${({theme}) => theme.media.large`
         width:calc(100% - 48px);
     `};

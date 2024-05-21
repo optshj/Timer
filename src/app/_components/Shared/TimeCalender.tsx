@@ -9,9 +9,9 @@ const Wrapper = styled.div`
 const BoxWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
-    width:234px;
-    ${({theme}) => theme.media.medium`
-        width: 144px;
+    width:312px;
+    ${({theme}) => theme.media.small`
+        width: 216px;
     `}
 `
 const Box = styled.div`
@@ -24,9 +24,11 @@ const Box = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    ${({theme}) => theme.media.medium`
-        width: 20px;
-        height: 20px;   
+    ${({theme}) => theme.media.small`
+        width: 25px;
+        height: 25px;
+        font-size:10px;
+        margin:1px;
     `}
     &:hover{
         z-index:10;
@@ -81,7 +83,7 @@ export default function TimeCalender({start, middle, end }:LifeCalenderProps) {
         for (let i = start; i < middle; i++) {
             boxes.push(<FillBox key={`fill-${i}`}>{i}</FillBox>);
         }
-        for (let i = middle; i < end; i++) {
+        for (let i = middle; i < end+1; i++) {
             boxes.push(<EmptyBox key={`empty-${i}`}>{i}</EmptyBox>);
         }
         return boxes;
@@ -93,7 +95,7 @@ export default function TimeCalender({start, middle, end }:LifeCalenderProps) {
             <BoxWrapper>
                 {renderBoxes()}
             </BoxWrapper>
-            <LastText $cnt={remainder(end-start,6)}>{end}</LastText>
+            <LastText $cnt={remainder(end-start+1,8)}>{end}</LastText>
         </Wrapper>
     );
 }
