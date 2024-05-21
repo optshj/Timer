@@ -37,7 +37,7 @@ const darkTheme: DefaultTheme = {
         button_disable: "#575757",
         
         text:"#eee",
-        icon:"#fff",
+        icon:"#eee",
         hover:"#606060",
         active:"#c4c4c4",
         font_animation:"#fff",

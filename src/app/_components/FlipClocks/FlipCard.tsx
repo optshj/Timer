@@ -122,7 +122,7 @@ const FlipCard = styled.li`
 	width:100px;
 	height:150px;
 	border-radius:20px;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 5px ${({theme}) => theme.color.shadow};
 	${({theme}) => theme.media.medium`
 		width:75px;
 		height:100px;

@@ -4,7 +4,7 @@ import styled from "styled-components"
 import { useRouter } from "next/navigation";
 import {useLeftLife} from "@/src/_context/LeftLifeContext"
 
-import PercentageBar from "../../_components/PercentageBar";
+import PercentageBar from "../_components/PercentageBar";
 
 const Wrapper = styled.div`
     display:flex;
@@ -54,7 +54,7 @@ export default function Page(){
             <Title>사망 예정일</Title>
             <DeathDate>{`${deathDate.years}년 ${deathDate.months}월 ${deathDate.days}일`}</DeathDate>
 
-            <Button onClick={onExit}>나가기</Button>
+            <Button onClick={onExit}>타이머 구경하러 가기   </Button>
 
             <PercentageBar/>
         </Wrapper>

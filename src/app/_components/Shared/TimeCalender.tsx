@@ -9,14 +9,14 @@ const Wrapper = styled.div`
 const BoxWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
-    width:264px;
+    width:234px;
     ${({theme}) => theme.media.medium`
         width: 144px;
     `}
 `
 const Box = styled.div`
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     margin: 2px;
     border-radius:5px;
     ${({theme}) => theme.media.medium`
@@ -42,7 +42,7 @@ interface LastTextProps {
 const LastText = styled.div<LastTextProps>`
     font-size: 12px;
     color: ${({ theme }) => theme.color.text};
-    margin-left: ${({ $cnt }) => $cnt*44}px;
+    margin-left: ${({ $cnt }) => $cnt*39}px;
     ${({theme}) => theme.media.medium`
         margin-left: ${({ $cnt }:LastTextProps) => $cnt*24}px;
     `}

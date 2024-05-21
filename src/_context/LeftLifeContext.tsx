@@ -27,7 +27,7 @@ function getDateDiff(date1: Date, date2: Date){
 }
 function getDate(date:Date){
     const years = date.getFullYear();
-    const months = date.getMonth();
+    const months = date.getMonth() + 1;
     const days = date.getDate();
     return { years, months, days };
 }
