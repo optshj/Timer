@@ -5,6 +5,7 @@ const Wrapper = styled.div`
     font-weight:500;
     color:${({theme})=>theme.color.text};
     white-space: nowrap;
+    cursor:default;
     ${({theme}) => theme.media.medium`
         font-size:20px;
     `}

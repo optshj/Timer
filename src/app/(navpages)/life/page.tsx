@@ -2,6 +2,7 @@
 import { useState,useEffect } from "react";
 
 import Wrapper from "../../_components/Shared/Wrapper";
+import DeathDate from "./_components/DeathDate";
 import NotCalc from "./_components/NotCalc";
 import LifeFlipClock from "./_components/LifeFlipClock";
 import LifeCalender from "./_components/LifeCalender";
@@ -19,7 +20,7 @@ export default function Life() {
       setIsCalc(true);
     }
   },[])
-  const componentCount = 4;
+  const componentCount = 5;
   const [currentComponent,setCurrentComponent] = useState<number>(1);
 
   const changeComponent = () => {
@@ -31,10 +32,11 @@ export default function Life() {
       !isCalc ? <NotCalc/> 
       :
       <Wrapper onClick={changeComponent}>
-        {currentComponent === 1 && <LifeFlipClock/>}
-        {currentComponent === 2 && <LifeCalender/>}
-        {currentComponent === 3 && <LifePercentage/>}
-        {currentComponent === 4 && <LifeAnalogClock/>}
+        {currentComponent === 1 && <DeathDate/>}
+        {currentComponent === 2 && <LifeFlipClock/>}
+        {currentComponent === 3 && <LifeCalender/>}
+        {currentComponent === 4 && <LifePercentage/>}
+        {currentComponent === 5 && <LifeAnalogClock/>}
       </Wrapper>
       }
       </>

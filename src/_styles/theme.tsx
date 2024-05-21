@@ -34,6 +34,9 @@ const darkTheme: DefaultTheme = {
     color: {
         ...lightTheme.color,
 
+        input_focus: "#ff7f7f",
+        input_unfocus:"#ff8c8c",
+        button_enable: "#ff7f7f",
         button_disable: "#575757",
         
         text:"#eee",

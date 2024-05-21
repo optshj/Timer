@@ -30,9 +30,10 @@ const Box = styled.div`
     `}
     &:hover{
         z-index:10;
-        transform: scale(2);
-        transition: transform 0.5s;
+        transform: scale(2.5);
+        transition: all 0.5s;
         box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        cursor: default;
     }
 `;
 const EmptyBox = styled(Box)`
