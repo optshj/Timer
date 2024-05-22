@@ -21,7 +21,7 @@ export default function DarkMode(){
     const {theme,toggleTheme} = useTheme();
     return(
         <Wrapper onClick={toggleTheme}>
-            {theme ? <LightIcon/> : <DarkIcon/>}
+            {theme === 'light' ? <LightIcon/> : <DarkIcon/>}
         </Wrapper>
     )
 }
