@@ -12,7 +12,7 @@ const Wrapper = styled.div`
     border-radius: 10px;
     background-color: ${({theme}) => theme.color.bright_background};
     ${({theme}) => theme.media.large`
-        width:calc(100% - 48px);
+        width:calc(50vw - 48px);
     `};
 `
 const Title = styled.div`

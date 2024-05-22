@@ -10,18 +10,18 @@ const lightTheme: DefaultTheme = {
         
         error: "#ff5a5a",
 
-        text:"#222",
-        icon:"#000",
+        text:"#222222",
+        icon:"#111111",
         hover:"#c7c7c7",
         active:"#979797",
 
-        font_animation:"#000",
+        font_animation:"#121212",
         background: "#fefefe",
         bright_background: "#ececec",
         shadow: "rgba(0,0,0,0.05)",
 
         button_background: "#262626",
-        button_text: "#fff",
+        button_text: "#fdfdfd",
     },
     position:{
         modal_button:"40px"
@@ -41,18 +41,18 @@ const darkTheme: DefaultTheme = {
         button_enable: "#ff7f7f",
         button_disable: "#575757",
         
-        text:"#ddd",
-        icon:"#eee",
+        text:"#dddddd",
+        icon:"#eeeeee",
         hover:"#606060",
         active:"#c4c4c4",
 
-        font_animation:"#fff",
+        font_animation:"#fdfdfd",
         background: "#2b2b2b",
         bright_background: "#444444",
         shadow: "rgba(255,255,255,0.05)",
 
         button_background: "#f6f6f6",
-        button_text:"#000",
+        button_text:"#121212",
     },
 };
 

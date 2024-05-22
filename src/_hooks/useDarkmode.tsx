@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 
-function useDarkMode(){
+export default function useDarkMode(){
     const [theme, setTheme] = useState<'light'|'dark'>('dark');
 
     useEffect(() => {
@@ -24,5 +24,3 @@ function useDarkMode(){
     };
     return {theme, toggleTheme};
 };
-
-export default useDarkMode;
