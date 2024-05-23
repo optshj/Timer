@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import FlipCard from './FlipCard';
-import Text from '../Shared/Text';
+import Text from '../Public/Text';
 
 const Wrapper = styled.div`
     display:flex;

@@ -122,6 +122,7 @@ export default function Page(){
             <TitleWrapper>
                 <Title>생년월일을 알려주세요</Title>
                 <SubTitle>{`입력정보를 기반으로 \n남은 수명을 알려드릴게요!`}</SubTitle>
+                <SubTitle>{`문항은 총 25개 있어요`}</SubTitle>
             </TitleWrapper>
 
             <InputWrapper>

@@ -1,7 +1,7 @@
-
-import Text from "@/src/app/_components/Shared/Text";
-import AnalogClock from "@/src/app/_components/Shared/AnalogClock";
 import { useTime } from "@/src/_context/TimeContext";
+
+import Text from "@/src/app/_components/Public/Text";
+import AnalogClock from "@/src/app/_components/Public/AnalogClock";
 
 export default function TodayAnalogClock(){
     const {today} = useTime();

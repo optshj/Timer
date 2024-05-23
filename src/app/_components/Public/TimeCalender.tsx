@@ -63,7 +63,7 @@ const LastText = styled.div<LastTextProps>`
     font-size: 12px;
     color: ${({ theme }) => theme.color.text};
     margin-left: ${({ $cnt }) => $cnt*39}px;
-    ${({theme}) => theme.media.medium`
+    ${({theme}) => theme.media.small`
         margin-left: ${({ $cnt }:LastTextProps) => $cnt*24}px;
     `}
 `

@@ -6,6 +6,7 @@ import RootStyleRegistry from "../_lib/registy";
 import ContextProvider from "../_context/ContextProvider";
 
 import Header from "./_components/Header/Header";
+import KakaoDevelopers from "../_script/KakaoDevelopers";
 
 const Body = styled.body`
   background-color: ${({theme}) => theme.color.background};
@@ -25,6 +26,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
             <Header/>
             {children}
           </Body>
+          <KakaoDevelopers/>
         </ContextProvider>
       </RootStyleRegistry>
     </html>

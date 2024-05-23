@@ -68,7 +68,6 @@ export default function BottomButton(props:BottomButtonProps){
     }
     const handleSubmit = () => {
         const totalScore = scoreArray.reduce((acc:number, cur:number) => acc + cur, 0);
-        console.log(totalScore);
         setDeathDate(new Date(`${birthDate.years + totalScore}-${getRandomNumber(1,12)}-${getRandomNumber(1,28)}`));
     }
     return(

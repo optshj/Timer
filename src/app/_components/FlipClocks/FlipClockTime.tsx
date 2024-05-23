@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import FlipCard from './FlipCard';
-import Text from '../Shared/Text';
+import Text from '../Public/Text';
 
 import { useTime } from '@/src/_context/TimeContext';
 

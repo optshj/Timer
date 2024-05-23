@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import Text from "../../../_components/Shared/Text";
+import Text from "../../../_components/Public/Text";
 import FlipClockTime from "../../../_components/FlipClocks/FlipClockTime";
 
 const Wrapper = styled.div`

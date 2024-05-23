@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import HeaderButton from './HeaderButton';
 import DarkMode from './DarkMode';
 import Logo from './Logo';
+import KaKaoShareButton from '../Public/KakaoShareButton';
 
 const Wrapper = styled.header`
     width: 100%;
@@ -28,6 +29,7 @@ function Header() {
                 <HeaderButton text="Month" url="month"/>
                 <HeaderButton text="Today" url="today"/>
             </ButtonWrapper>
+            <KaKaoShareButton/>
             <DarkMode/>
         </Wrapper>
     )

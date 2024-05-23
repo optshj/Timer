@@ -5,9 +5,11 @@ import { useLeftLife } from "@/src/_context/LeftLifeContext"
 const Title = styled.div`
     font-size:48px;
     color:${({theme}) => theme.color.text};
+    cursor:default;
 `
 const TextWrapper = styled.div`
     display: flex;
+    cursor:default;
 `
 const Text = styled.div<{$highlight?:boolean}>`
     font-size:60px;

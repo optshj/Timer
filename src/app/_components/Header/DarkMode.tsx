@@ -20,6 +20,8 @@ const Wrapper = styled.div<themeProps>`
     border-radius:30px;
     background-color: ${(props) => props.$theme === 'light'? '#f0c401':'#2c2836'};
     cursor:pointer;
+    ${({theme}) => theme.media.small`
+    `}
 `
 const IconWrapper = styled.div<themeProps>`
     position:absolute;

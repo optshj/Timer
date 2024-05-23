@@ -1,7 +1,7 @@
 'use client';
 import { useState,useEffect } from "react";
 
-import Wrapper from "../../_components/Shared/Wrapper";
+import Wrapper from "../../_components/Public/Wrapper";
 import DeathDate from "./_components/DeathDate";
 import NotCalc from "./_components/NotCalc";
 import LifeFlipClock from "./_components/LifeFlipClock";

@@ -2,7 +2,7 @@
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 
-import Modal from '../../../_components/Shared/Modal';
+import Modal from '../../../_components/Public/Modal';
 import CloseButton from './_components/CloseButton';
 
 const Wrapper = styled.div`

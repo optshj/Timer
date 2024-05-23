@@ -1,5 +1,5 @@
-import Text from "../../../_components/Shared/Text";
-import TimeCalender from "../../../_components/Shared/TimeCalender";
+import Text from "../../../_components/Public/Text";
+import TimeCalender from "../../../_components/Public/TimeCalender";
 
 function getWeekNumber(date:Date) {
     date.setHours(0, 0, 0, 0);
