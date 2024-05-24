@@ -35,7 +35,6 @@ const SubTitle = styled.div`
         font-size:12px;
     `}
 `
-
 function getRandomNumber(){
     return window.crypto.getRandomValues(new Uint32Array(1))[0] / 2**32;
 }

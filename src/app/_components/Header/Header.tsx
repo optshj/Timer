@@ -1,10 +1,10 @@
 'use client'
 import styled from 'styled-components';
 
-import HeaderButton from './HeaderButton';
-import DarkMode from './DarkMode';
 import Logo from './Logo';
-import KaKaoShareButton from '../Public/KakaoShareButton';
+import HeaderButton from './HeaderButton';
+import ShareButton from './ShareButton';
+import DarkMode from './DarkMode';
 
 const Wrapper = styled.header`
     width: 100%;
@@ -12,25 +12,33 @@ const Wrapper = styled.header`
     flex-direction: row;
     box-shadow: 0px 2px 4px ${({theme}) => theme.color.shadow};
 `
-const ButtonWrapper = styled.nav`
+const CenterWrapper = styled.nav`
     display: flex;
     align-items: center ;
     justify-content: center;
     margin:0 auto;
 `
+const RightWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
 function Header() {
     return(
         <Wrapper>
             <Logo/>
-            <ButtonWrapper>
+            <CenterWrapper>
                 <HeaderButton text="Home" url=""/>
                 <HeaderButton text="Life" url="life"/>
                 <HeaderButton text="Year" url="year"/>
                 <HeaderButton text="Month" url="month"/>
                 <HeaderButton text="Today" url="today"/>
-            </ButtonWrapper>
-            <KaKaoShareButton/>
-            <DarkMode/>
+            </CenterWrapper>
+            
+            <RightWrapper>
+                <ShareButton/>
+                <DarkMode/>
+            </RightWrapper>
         </Wrapper>
     )
 }

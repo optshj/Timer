@@ -11,7 +11,6 @@ import KakaoDevelopers from "../_script/KakaoDevelopers";
 const Body = styled.body`
   background-color: ${({theme}) => theme.color.background};
 `
-
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["300", "400", "700"],
