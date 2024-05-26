@@ -20,12 +20,6 @@ const Wrapper = styled.div<themeProps>`
     border-radius:30px;
     background-color: ${(props) => props.$theme === 'light'? '#f0c401':'#2c2836'};
     cursor:pointer;
-    ${({theme}) => theme.media.small`
-        width:40px;
-        height:40px;
-        border-radius:50%;
-        transition:all 0.3s ease-in-out;
-    `}
 `
 const IconWrapper = styled.div<themeProps>`
     position:absolute;
@@ -37,20 +31,12 @@ const IconWrapper = styled.div<themeProps>`
     background-color: #fff;
     border:1px solid #fff;
     border-radius: 50%;
-    ${({theme}) => theme.media.small`
-        position:relative;
-        left:0;
-    `}
 `
 const Font = styled.div<themeProps>`
     position: absolute;
     font-size:15px;
     color:${(props) => props.$theme === 'light'? '#fbf2ba':'#736e85'};
     left: ${(props) => props.$theme === 'light'? '45%':'10%'};
-    ${({theme}) => theme.media.small`
-        display:none;
-    
-    `}
 `
 const DarkIcon = styled(MdDarkMode)`
     width:20px;

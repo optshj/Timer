@@ -37,19 +37,19 @@ const Box = styled.div`
         box-shadow: 0 0 10px rgba(0,0,0,0.5);
         cursor: default;
     }
-`;
+`
 const EmptyBox = styled(Box)`
     background-color: #c1c1c1;
     &:hover{
         color:#fff;
     }
-`;
+`
 const FillBox = styled(Box)`
     background-color: #000;
     &:hover{
         color:#fff;
     }
-`;
+`
 const Text = styled.div`
     font-size: 12px;
     color: ${({ theme }) => theme.color.text};

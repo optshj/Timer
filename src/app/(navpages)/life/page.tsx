@@ -1,7 +1,7 @@
 'use client';
 import { useState,useEffect } from "react";
 
-import Wrapper from "../../_components/Public/Wrapper";
+import PageWrapper from "../../_components/Public/PageWrapper";
 import DeathDate from "./_components/DeathDate";
 import NotCalc from "./_components/NotCalc";
 import LifeFlipClock from "./_components/LifeFlipClock";
@@ -31,13 +31,13 @@ export default function Life() {
     <>{
       !isCalc ? <NotCalc/> 
       :
-      <Wrapper onClick={changeComponent}>
+      <PageWrapper onClick={changeComponent}>
         {currentComponent === 1 && <DeathDate/>}
         {currentComponent === 2 && <LifeFlipClock/>}
         {currentComponent === 3 && <LifeCalender/>}
         {currentComponent === 4 && <LifePercentage/>}
         {currentComponent === 5 && <LifeAnalogClock/>}
-      </Wrapper>
+      </PageWrapper>
       }
       </>
   );

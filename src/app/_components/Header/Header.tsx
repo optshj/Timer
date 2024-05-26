@@ -8,27 +8,31 @@ import DarkMode from './DarkMode';
 
 const Wrapper = styled.header`
     display: flex;
-    width: 100%;
     box-shadow: 0px 2px 4px ${({theme}) => theme.color.shadow};
+    ${({theme}) => theme.media.small`
+        box-shadow:none;
+    `}
 `
 const LeftContent = styled.div`
-    box-sizing:border-box;
-    display: flex;
-    align-items: center;
-    padding-left:16px;
     width:166px;
+    padding-left:16px;
+    box-sizing:border-box;
+    ${({theme}) => theme.media.small`
+        display:none;    
+    `}
 `
 const CenterContent = styled.nav`
     display: flex;
-    align-items: center ;
-    justify-content: center;
     margin:0 auto;
+    ${({theme}) => theme.media.small`
+        display:none;    
+    `}
 `
 const RightContent = styled.div`
     display: flex;
     align-items: center;
-    justify-content: center;
     width:166px;
+    margin-left:auto;
 `
 function Header() {
     return(

@@ -5,8 +5,11 @@ import Text from '../Public/Text';
 
 const Wrapper = styled.div`
     display:flex;
-    justify-content: center;
     align-items: center;
+    transform: translate(15px, 0px);
+    ${({theme}) => theme.media.medium`
+        transform: translate(12px, 0px);
+    `}
 `
 
 interface FlipClockYearProps{

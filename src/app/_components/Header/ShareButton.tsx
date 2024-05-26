@@ -9,9 +9,6 @@ const Button = styled(PiShareNetworkLight)`
     padding:10px;
     color:${({theme}) => theme.color.text};
     cursor:pointer;
-    ${({theme}) => theme.media.small`
-        padding:10px 0;
-    `}
 `
 
 export default function ShareButton() {

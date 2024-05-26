@@ -7,7 +7,7 @@ const Wrapper = styled.div`
     white-space: nowrap;
     cursor:default;
     ${({theme}) => theme.media.medium`
-        font-size:20px;
+        font-size:24px;
     `}
 `
 

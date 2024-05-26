@@ -1,7 +1,7 @@
 'use client';
 import { useState } from "react";
 
-import Wrapper from "../../_components/Public/Wrapper";
+import PageWrapper from "../../_components/Public/PageWrapper";
 import YearFlipClock from "./_components/YearFlipClock";
 import YearCalender from "./_components/YearCalender";
 import YearPercentage from "./_components/YearPercentage";
@@ -14,10 +14,10 @@ export default function Life() {
     setCurrentComponent((prev) => (prev%componentCount) + 1);
   }
   return (
-    <Wrapper onClick={changeComponent}>
+    <PageWrapper onClick={changeComponent}>
       {currentComponent === 1 && <YearFlipClock/>}
       {currentComponent === 2 && <YearCalender/>}
       {currentComponent === 3 && <YearPercentage/>}
-    </Wrapper> 
+    </PageWrapper> 
   );
 }

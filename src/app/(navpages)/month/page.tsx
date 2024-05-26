@@ -1,7 +1,7 @@
 'use client';
 import {useState} from "react";
 
-import Wrapper from "../../_components/Public/Wrapper";
+import PageWrapper from "../../_components/Public/PageWrapper";
 import MonthCalender   from "./_components/MonthCalender";
 import MonthPercentage from "./_components/MonthPercentage";
 import MonthFlipClock  from "./_components/MonthFlipClock";
@@ -15,10 +15,10 @@ export default function Month() {
   }
 
   return (
-    <Wrapper onClick={changeComponent}>
+    <PageWrapper onClick={changeComponent}>
       {currentComponent === 1 && <MonthFlipClock/>}
       {currentComponent === 2 && <MonthCalender/>}
       {currentComponent === 3 && <MonthPercentage/>}
-    </Wrapper> 
+    </PageWrapper> 
   );
 }

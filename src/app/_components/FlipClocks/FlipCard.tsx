@@ -58,7 +58,7 @@ const Ul = styled.ul`
 		margin:5px;
 	`}
 	${({theme}) => theme.media.small`
-		width:50px;
+		width:40px;
 		height:75px;
 		margin:5px;
 	`}
@@ -90,7 +90,7 @@ const Number = styled(Div)`
 		font-size:75px;
 	`}
 	${({theme}) => theme.media.small`
-		font-size:50px;
+		font-size:45px;
 	`}
 	transition:all .5s ease-in-out;
 `
@@ -128,7 +128,7 @@ const FlipCard = styled.li`
 		height:100px;
 	`}
 	${({theme}) => theme.media.small`
-		width:50px;
+		width:45px;
 		height:75px;
 	`}
 	transition:all .5s ease-in-out;

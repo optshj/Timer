@@ -5,6 +5,7 @@ import { useLeftLife } from "@/src/_context/LeftLifeContext"
 const Title = styled.div`
     font-size:48px;
     color:${({theme}) => theme.color.text};
+    margin-bottom:16px;
     cursor:default;
 `
 const TextWrapper = styled.div`
@@ -16,6 +17,9 @@ const Text = styled.div<{$highlight?:boolean}>`
     font-weight:600;
     color:${props => props.$highlight ? props.theme.color.input_focus : props.theme.color.text};
     white-space: pre;
+    ${({theme}) => theme.media.small`
+        font-size:40px;
+    `}
 `
 
 export default function DeathDate(){

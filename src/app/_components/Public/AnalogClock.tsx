@@ -7,6 +7,11 @@ const Wrapper = styled.div`
     border: 10px solid ${({theme}) => theme.color.background};
     border-radius: 50%;
     background-color: ${({theme}) => theme.color.text};
+    ${({theme}) => theme.media.small`
+        width: 200px;
+        height: 200px;
+    
+    `}
 `;
 const Hand = styled.div<{$angle: number}>`
     position: absolute;
@@ -20,14 +25,23 @@ const SecondHand = styled(Hand)`
     width:2px;
     height:190px;
     background-color: ${({theme}) => theme.color.input_focus};
+    ${({theme}) => theme.media.small`
+        height:95px;
+    `}
 `
 const MinuteHand = styled(Hand)`
     width:5px;
     height:180px;
+    ${({theme}) => theme.media.small`
+        height:90px;
+    `}
 `
 const HourHand = styled(Hand)`
     width:5px;
     height:100px;
+    ${({theme}) => theme.media.small`
+        height:50px;
+    `}
 `
 const Center = styled.div`
     position: absolute;
@@ -38,7 +52,7 @@ const Center = styled.div`
     background-color:${({theme}) => theme.color.background};
     border-radius: 50%;
     transform: translate(-50%, -50%);
-`;
+`
 
 interface AnalogClockProps{
     hour: number;

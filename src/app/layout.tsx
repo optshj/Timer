@@ -6,6 +6,7 @@ import RootStyleRegistry from "../_lib/registy";
 import ContextProvider from "../_context/ContextProvider";
 
 import Header from "./_components/Header/Header";
+import BottomTabBar from "./_components/BottomTabBar/BottomTabBar";
 import KakaoDevelopers from "../_script/KakaoDevelopers";
 
 const Body = styled.body`
@@ -24,7 +25,8 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
           <Body className={roboto.className}>
             <Header/>
             {children}
-          </Body>
+            <BottomTabBar/>
+          </Body> 
           <KakaoDevelopers/>
         </ContextProvider>
       </RootStyleRegistry>
