@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import Link from "next/link";
 
-import { HiOutlineShare } from "react-icons/hi";
+import { PiShareNetworkLight } from "react-icons/pi";
 
-const Button = styled(HiOutlineShare)`
+const Button = styled(PiShareNetworkLight)`
     width:20px;
     height:20px;
     padding:10px;

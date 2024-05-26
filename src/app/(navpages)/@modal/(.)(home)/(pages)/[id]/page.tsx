@@ -11,10 +11,26 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
 `
-const Question = styled.div`
+const ProgressbarWrapper = styled.div`
     position:absolute;
-    top:100px;
-    margin:0 12px;
+    top:180px;
+    width:350px;
+    height:10px;
+    border-radius: 20px;
+    background-color: ${({ theme }) => theme.color.button_disable};
+`
+const Progressbar = styled.div<{$percentage:number}>`
+    width:${(props) => props.$percentage}%;
+    height:100%;
+    transition: width 0.5s linear;
+    border-radius: ${(props) => props.$percentage === 100 ? '20px' : '20px 0 0 20px'};
+    background-color: ${({theme}) => theme.color.button_enable};
+`
+const Question = styled.div`
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin:60px 12px;
     font-size: 22px;
     font-weight: 600;
     color: ${({ theme }) => theme.color.text};
@@ -60,6 +76,8 @@ export default function Page(props: { params: { id: string } }) {
     const id = parseInt(props.params.id);
     const survey = surveyData.surveys[id];
 
+    const surveyArrayLength = (JSON.parse(JSON.stringify(surveyData.surveys)) as string[]).length;
+
     const handleSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSelectScore(parseInt(e.target.value));
         setIsSelect(true);
@@ -76,6 +94,10 @@ export default function Page(props: { params: { id: string } }) {
     return (
         <Wrapper>
             {survey && survey.question && <Question>{survey.question}</Question>}
+            <ProgressbarWrapper>
+                <Progressbar $percentage={(id+1)/surveyArrayLength*100}/>
+            </ProgressbarWrapper>
+            
             <SelectionWrapper>
                 {SelectionArray}
             </SelectionWrapper>
