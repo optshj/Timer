@@ -6,7 +6,7 @@ import { MdClose } from "react-icons/md";
 const Wrapper = styled.div`
     position: absolute;
     top:12px;
-    left:8px;
+    right:8px;
     cursor:pointer;
 `
 const CloseIcon = styled(MdClose)`

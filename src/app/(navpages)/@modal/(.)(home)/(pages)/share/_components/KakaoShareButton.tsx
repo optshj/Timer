@@ -1,14 +1,11 @@
-import styled from "styled-components";
 import Image from "next/image";
-import KakaoImg from "@/src/_asset/img/kakaotalk_sharing_btn_small.png";
+import KakaoImg from "@/src/_asset/img/kakaotalk.svg";
 
-const Button = styled.div`
-    color: ${({theme}) => theme.color.header_font};
-`
+import ShareButtonForm from "./ShareButtonForm";
+
 export default function KaKaoShareButton() {
     const handleKakaoShare = () => {
         const {Kakao} = window;
-        
         Kakao.Share.sendDefault({
             objectType: 'feed',
             content: {
@@ -22,6 +19,8 @@ export default function KaKaoShareButton() {
         });
     }
     return(
-        <Image src={KakaoImg} onClick={handleKakaoShare} alt="카카오톡 공유하기" width={60} height={60}/>
+        <ShareButtonForm text={"카카오톡"}>
+            <Image src={KakaoImg} onClick={handleKakaoShare} alt="카카오톡 공유하기" width={60} height={60}/>
+        </ShareButtonForm>
     )
 }

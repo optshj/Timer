@@ -53,10 +53,8 @@ export default function Page(){
         <Wrapper>
             <Title>사망 예정일</Title>
             <DeathDate>{`${deathDate.years}년 ${deathDate.months}월 ${deathDate.days}일`}</DeathDate>
-
-            <Button onClick={onExit}>타이머 구경하러 가기   </Button>
-
             <PercentageBar/>
+            <Button onClick={onExit}>타이머 구경하러 가기</Button>
         </Wrapper>
     )
 }
