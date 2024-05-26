@@ -1,34 +1,18 @@
 import styled from "styled-components"
-import HeaderButton from "./HeaderButton"
+import Link from "next/link"
 
-const Wrapper = styled.div`
-    position: relative;
+const Text = styled.span`
     display: flex;
     align-items: center;
+    justify-content: center;
     font-weight: 700;
     color: ${({theme}) => theme.color.text};
 `
 
-const Text = styled.span`
-    width:100px;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
-    ${({theme}) => theme.media.medium`
-        width:80px;
-    `}
-    ${({theme}) => theme.media.small`
-        width:60px;
-    `}
-`
-
 export default function Logo() {
     return(
-        <Wrapper>
-            <HeaderButton text={''} url={'/'}/>
+        <Link href={''} scroll={false}>
             <Text>LifeTimer</Text>
-        </Wrapper>
+        </Link>
     )
 }

@@ -8,8 +8,8 @@ const ButtonText = styled.div`
     text-align: center;
 `
 const Wrapper = styled.div`
-    width:100px;
     position: relative;
+    width:100px;
     height:${({theme}) => theme.size.header_height};
     display: flex;
     align-items: center;

@@ -27,7 +27,7 @@ const lightTheme: DefaultTheme = {
         modal_button:"40px"
     },
     size:{
-        header_height:"65px",
+        header_height:"75px",
     },
 };
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import useDebounce from './useDebounce';
 
 export default function useRipple<T extends HTMLElement>(ref: React.RefObject<T>) {
     const [ripples, setRipples] = useState<React.CSSProperties[]>([]);
@@ -26,6 +27,11 @@ export default function useRipple<T extends HTMLElement>(ref: React.RefObject<T>
             };
         }
     }, [ref, ripples]);
+    const _debounced = useDebounce(ripples, 1000)
+
+    useEffect(() => {
+        if (_debounced.length) setRipples([])
+    }, [_debounced.length])
 
     return ripples.map((style, index) => (
         <RippleStyled key={index} style={{ ...style }} />
