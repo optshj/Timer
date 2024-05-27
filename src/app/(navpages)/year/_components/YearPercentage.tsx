@@ -19,7 +19,9 @@ export default function YearPercentage(){
     
     return(
         <>
-            <Text text={`올해가 ${yearRatio.toFixed(6)}% 지났습니다`}/>
+            <Text text={"올해가"}/>
+            <Text text={`${yearRatio.toFixed(6)}%`}/>
+            <Text text={"지났습니다"}/>
             <PercentageBar ratio={Math.floor(yearRatio)}/>
         </>
     )

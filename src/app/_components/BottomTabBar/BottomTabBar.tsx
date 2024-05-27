@@ -1,18 +1,22 @@
 import styled from "styled-components"
 import TabarButton from "./TabBarButton"
 
+import { AiOutlineHome } from "react-icons/ai";
+import { BsHeartPulse } from "react-icons/bs";
+import { IoCalendarOutline } from "react-icons/io5";
+
+import { MdCalendarToday } from "react-icons/md";
+
+import { BsCalendarMonth } from "react-icons/bs";
+
 const Wrapper = styled.nav`
     display:none;
     ${({theme}) => theme.media.small`
+        display:flex;
         position:fixed;
         width:100%;
-        height:60px;
         bottom:0;
-        margin:0 auto;
-        display:flex;
-        align-items:center;
-        justify-content:space-around;
-        background-color:#212121;
+        box-shadow: 0px -4px 4px ${theme.color.shadow};
     `}
 
 `
@@ -20,11 +24,11 @@ const Wrapper = styled.nav`
 export default function BottomTabBar(){
     return(
         <Wrapper>
-            <TabarButton icon="home" text="Home" url="/"/>
-            <TabarButton icon="life" text="Life" url="/life"/>
-            <TabarButton icon="year" text="Year" url="/year"/>
-            <TabarButton icon="month" text="Month" url="/month"/>
-            <TabarButton icon="today" text="Today" url="/today"/>
+            <TabarButton icon={AiOutlineHome} text="Home" url="/"/>
+            <TabarButton icon={BsHeartPulse} text="Life" url="/life"/>
+            <TabarButton icon={IoCalendarOutline} text="Year" url="/year"/>
+            <TabarButton icon={BsCalendarMonth} text="Month" url="/month"/>
+            <TabarButton icon={MdCalendarToday} text="Today" url="/today"/>
         </Wrapper>
     )
 }

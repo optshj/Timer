@@ -18,7 +18,7 @@ export default function MonthFlipClock() {
     return(
         <>
             <Wrapper>
-                <Text text={"이번 달이 끝나기까지 남은 시간"}/>
+                <Text text={"이번 달이 끝나기까지"}/>
             </Wrapper>
             <FlipClockDate text={"일"} date={lastDayOfMonth - today.getDate()}/>
             <FlipClockTime/>

@@ -18,7 +18,9 @@ export default function TodayPercentage(){
     })
     return(
         <>
-            <Text text={`오늘이 ${todayRatio.toFixed(3)}% 지났습니다`}/>
+            <Text text={"오늘이"}/>
+            <Text text={`${todayRatio.toFixed(4)}%`}/>
+            <Text text={"지났습니다"}/>
             <PercentageBar ratio={Math.floor(todayRatio)}/>
         </>
     )

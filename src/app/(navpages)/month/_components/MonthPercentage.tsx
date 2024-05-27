@@ -20,7 +20,9 @@ export default function MonthPercentage(){
     })
     return(
         <>
-            <Text text={`이번 달이 ${monthRatio.toFixed(5)}% 지났습니다`}/>
+            <Text text={"이번 달이"}/>
+            <Text text={`${monthRatio.toFixed(5)}%`}/>
+            <Text text={"지났습니다"}/>
             <PercentageBar ratio={Math.floor(monthRatio)}/>
         </>
     )

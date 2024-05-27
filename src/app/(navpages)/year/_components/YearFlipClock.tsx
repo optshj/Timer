@@ -19,7 +19,7 @@ export default function YearFlipClock(){
     return(
         <>
             <Wrapper>
-                <Text text={"올해가 끝나기까지 남은 시간"}/>
+                <Text text={"올해가 끝나기까지"}/>
             </Wrapper>
             <FlipClockDate text={"월"} date={11-currentDate.getMonth()}/>
             <FlipClockDate text={"일"} date={lastDayOfMonth-currentDate.getDate()}/>

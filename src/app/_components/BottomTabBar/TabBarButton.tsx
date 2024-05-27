@@ -1,22 +1,39 @@
 import styled from "styled-components";
 import Link from "next/link";
+import { IconType } from "react-icons";
+import { usePathname } from "next/navigation";
 
 const Wrapper = styled.div`
-    font-size:24px;
-    color:#000;
+    flex:1;
 `
-
+const IconWrapper = styled.div<{$active:boolean}>`
+    height:60px;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    font-size:24px;
+    color:${(props) => props.$active ? props.theme.color.input_focus : "#bdbfc3"};
+`
+const Text = styled.div`
+    font-size:12px;
+    margin-top: 4px;
+`
 interface TabBarButtonProps {
-    icon:string;
+    icon:IconType;
     text:string;
     url:string;
 }
 export default function TabarButton(props:TabBarButtonProps){
+    const pathname = usePathname();
     return(
-        <Link href={`${props.url}`}>
-            <Wrapper>
-                {props.text}
-            </Wrapper>
-        </Link>
+        <Wrapper>
+            <Link href={`${props.url}`}>
+                <IconWrapper $active={pathname === props.url}>
+                    <props.icon/>
+                    <Text>{props.text}</Text>
+                </IconWrapper>
+            </Link>
+        </Wrapper>
     )
 }

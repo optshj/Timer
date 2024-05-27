@@ -34,7 +34,8 @@ export default function LifePercentage(){
     
     return(
         <>
-            <Text text={`인생이 ${lifeRatio.toFixed(8)}% 지났습니다`}/>
+            <Text text={`지나간 인생`}/>
+            <Text text={`${lifeRatio.toFixed(8)}%`}/>
             <PercentageBar ratio={Math.floor(lifeRatio)}/>
         </>
     )

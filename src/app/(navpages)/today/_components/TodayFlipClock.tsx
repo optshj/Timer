@@ -13,7 +13,7 @@ export default function TodayFlipClock(){
     return(
         <>
             <Wrapper>
-                <Text text={"오늘이 끝나기까지 남은 시간"}/>
+                <Text text={"오늘이 끝나기까지"}/>
             </Wrapper>
             <FlipClockTime/>
         </>
