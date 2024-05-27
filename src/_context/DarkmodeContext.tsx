@@ -1,7 +1,7 @@
 'use client';
 import {createContext,useContext} from "react";
 import { ThemeProvider } from "styled-components"
-import useDarkMode from "../_hooks/useDarkMode"
+import useDarkmode from "../_hooks/useDarkmode";
 import themes from "../_styles/theme";
 
 const defaultValue = {
@@ -12,7 +12,7 @@ const defaultValue = {
 const ThemeContext = createContext(defaultValue);
 
 export default function DarkmodeProvider({children}: {children: React.ReactNode}){
-    const darkmode = useDarkMode();
+    const darkmode = useDarkmode();
 
     return(
         <ThemeContext.Provider value={darkmode}>

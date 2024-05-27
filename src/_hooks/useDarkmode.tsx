@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 
-export default function useDarkMode(){
+export default function useDarkmode(){
     const [theme, setTheme] = useState<'light'|'dark'>('dark');
 
     useEffect(() => {
