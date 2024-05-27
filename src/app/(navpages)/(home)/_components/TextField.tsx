@@ -14,6 +14,9 @@ const Wrapper = styled.div`
     ${({theme}) => theme.media.large`
         width:calc(50vw - 48px);
     `};
+    ${({theme}) => theme.media.small`
+        width:calc(100vw - 48px);
+    `}
 `
 const Title = styled.div`
     white-space: pre-line;
@@ -21,18 +24,12 @@ const Title = styled.div`
     ${({theme}) => theme.media.large`
         font-size:20px;
     `}
-    ${({theme}) => theme.media.small`
-        font-size:16px;
-    `}
 `
 const SubTitle = styled.div`
     white-space: pre-line;
     font-size:20px;
     ${({theme}) => theme.media.large`
         font-size:16px;
-    `}
-    ${({theme}) => theme.media.small`
-        font-size:12px;
     `}
 `
 function getRandomNumber(){

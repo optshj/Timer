@@ -18,6 +18,10 @@ const TextWrapper = styled.div`
   display:flex;
   margin-top:24px;
   gap:24px;
+  ${({theme}) => theme.media.small`
+    flex-direction:column;
+    gap:12px;
+  `}
 `
 export default function Home() {
     return (
