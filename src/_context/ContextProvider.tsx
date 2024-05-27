@@ -1,4 +1,4 @@
-import DarkModeProvider from "./DarkmodeContext";
+import DarkModeProvider from "./DarkModeContext";
 import LeftLifeProivder from "./LeftLifeContext";
 import MediaProvider from "./MediaContext";
 import TimeProvider from "./TimeContext";

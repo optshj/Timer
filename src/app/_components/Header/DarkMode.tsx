@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { MdDarkMode,MdLightMode } from "react-icons/md";
 
-import { useTheme } from "@/src/_context/DarkmodeContext";
+import { useTheme } from "@/src/_context/DarkModeContext";
 
 interface themeProps{
     $theme:string;
