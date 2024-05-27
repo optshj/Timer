@@ -32,7 +32,6 @@ const RightContent = styled.div`
     display: flex;
     align-items: center;
     width:166px;
-    margin-left:auto;
 `
 function Header() {
     return(
