@@ -33,12 +33,7 @@ const SubTitle = styled.div`
     `}
 `
 function getRandomNumber(){
-    if (typeof window !== "undefined") {
-        return window.crypto.getRandomValues(new Uint32Array(1))[0] / 2**32;
-    }
-    else {
-        return Math.random();
-    }
+    return window.crypto.getRandomValues(new Uint32Array(1))[0] / 2**32;
 }
 interface JSONData {
     data:Array<{
