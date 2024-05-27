@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components"
 
 const Wrapper = styled.div`
@@ -33,7 +33,12 @@ const SubTitle = styled.div`
     `}
 `
 function getRandomNumber(){
-    return window.crypto.getRandomValues(new Uint32Array(1))[0] / 2**32;
+    if (typeof window !== "undefined") {
+        return window.crypto.getRandomValues(new Uint32Array(1))[0] / 2**32;
+    }
+    else {
+        return Math.random();
+    }
 }
 interface JSONData {
     data:Array<{
@@ -46,9 +51,10 @@ interface TextFieldProps{
 }
 export default React.memo(function TextField(props:TextFieldProps){
     const textArray = props.json.data;
-        
     const randomIndex = Math.floor(getRandomNumber() * textArray.length);
     const randomText = textArray[randomIndex];
+
+
     return(
         <Wrapper>
             <Title>{randomText.title}</Title>
