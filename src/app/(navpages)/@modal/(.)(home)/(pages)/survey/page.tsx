@@ -44,7 +44,7 @@ const InputArea = styled.input`
     caret-color: ${({theme}) => theme.color.input_focus}; 
     outline:none;
     &::placeholder{
-        font-size: 24px;
+        font-size: 20px;
         color: ${({theme}) => theme.color.header_font};
     }
     &:focus{

@@ -12,7 +12,7 @@ const Wrapper = styled.div`
 `
 const Title = styled.div`
     color: ${({theme}) => theme.color.text};
-    font-size:32px;
+    font-size:28px;
     font-weight: 500;
 `
 const SubTitle = styled.div`

@@ -32,6 +32,9 @@ const RightContent = styled.div`
     display: flex;
     align-items: center;
     width:166px;
+    ${({theme}) => theme.media.small`
+        margin-left:auto;
+    `}
 `
 function Header() {
     return(

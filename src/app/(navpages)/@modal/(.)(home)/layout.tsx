@@ -12,7 +12,7 @@ const Wrapper = styled.div`
     background-color:${({theme}) => theme.color.background};
     position: relative;
     ${({theme}) => theme.media.small`
-        width:calc(100vw - 48px);
+        width:calc(100vw - 24px);
     `}
 `
 
