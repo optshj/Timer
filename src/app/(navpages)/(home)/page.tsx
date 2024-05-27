@@ -2,10 +2,12 @@
 import styled from "styled-components";
 
 import CalcLifeButton from "./_components/CalcLifeButton";
-import TextField from "./_components/TextField";
+const TextField = dynamic(() => import("./_components/TextField"), { ssr: false });
 
 import quotesData from "@/src/_data/quotes.json";
 import healthTipsData from "@/src/_data/healthTips.json";
+import dynamic from "next/dynamic";
+
 
 const Wrapper = styled.div`
   display:flex;

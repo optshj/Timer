@@ -46,6 +46,7 @@ interface TextFieldProps{
 }
 export default React.memo(function TextField(props:TextFieldProps){
     const textArray = props.json.data;
+        
     const randomIndex = Math.floor(getRandomNumber() * textArray.length);
     const randomText = textArray[randomIndex];
     return(
