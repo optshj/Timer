@@ -11,7 +11,7 @@ const defaultValue = {
 
 const ThemeContext = createContext(defaultValue);
 
-export default function DarkModeProvider({children}: {children: React.ReactNode}){
+export default function DarkmodeProvider({children}: {children: React.ReactNode}){
     const darkmode = useDarkMode();
 
     return(

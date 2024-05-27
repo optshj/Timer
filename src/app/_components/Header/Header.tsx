@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Logo from './Logo';
 import HeaderButton from './HeaderButton';
 import ShareButton from './ShareButton';
-import DarkMode from './DarkMode';
+import Darkmode from './Darkmode';
 
 const Wrapper = styled.header`
     display: flex;
@@ -51,7 +51,7 @@ function Header() {
             
             <RightContent>
                 <ShareButton/>
-                <DarkMode/>
+                <Darkmode/>
             </RightContent>
         </Wrapper>
     )

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { MdDarkMode,MdLightMode } from "react-icons/md";
 
-import { useTheme } from "@/src/_context/DarkModeContext";
+import { useTheme } from "@/src/_context/DarkmodeContext";
 
 interface themeProps{
     $theme:string;
@@ -49,7 +49,7 @@ const LightIcon = styled(MdLightMode)`
     color:#f0c401;
 `
 
-export default function DarkMode(){
+export default function Darkmode(){
     const {theme,toggleTheme} = useTheme();
     return(
         <Wrapper onClick={toggleTheme} $theme={theme}>
