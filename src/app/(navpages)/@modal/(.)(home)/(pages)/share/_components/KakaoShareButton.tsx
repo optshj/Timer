@@ -9,8 +9,8 @@ export default function KaKaoShareButton() {
         Kakao.Share.sendDefault({
             objectType: 'feed',
             content: {
-                title: '테스트',
-                description: '테스트',
+                title: '내 남은수명은??',
+                description: '',
                 link: {
                     mobileWebUrl: 'https://developers.kakao.com',
                     webUrl: 'https://developers.kakao.com',
@@ -20,7 +20,7 @@ export default function KaKaoShareButton() {
     }
     return(
         <ShareButtonForm text={"카카오톡"}>
-            <Image src={KakaoImg} onClick={handleKakaoShare} alt="카카오톡 공유하기" width={60} height={60}/>
+            <Image src={KakaoImg} onClick={handleKakaoShare} alt="카카오톡 공유하기" width={60} height={60} priority={true}/>
         </ShareButtonForm>
     )
 }

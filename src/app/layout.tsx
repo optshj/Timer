@@ -4,6 +4,7 @@ import "../_styles/globals.css";
 import { Roboto } from "next/font/google";
 import RootStyleRegistry from "../_lib/registy";
 import ContextProvider from "../_context/ContextProvider";
+import Head from "next/head";
 
 import Header from "./_components/Header/Header";
 import BottomTabBar from "./_components/BottomTabBar/BottomTabBar";

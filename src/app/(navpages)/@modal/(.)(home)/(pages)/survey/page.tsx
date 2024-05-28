@@ -32,8 +32,11 @@ const InputWrapper = styled.div`
     display:flex;
     gap:4px;
 `
-const InputArea = styled.input`
-    width:100px;
+interface InputProps{
+    $short?:boolean;
+}
+const InputArea = styled.input<InputProps>`
+    width:${(props) => props.$short ? '80px' : '100px'};
     height:60px;
     font-size:24px;
     padding:0 12px;
@@ -51,6 +54,10 @@ const InputArea = styled.input`
         transition: border 0.3s ease-in-out;
         border:2px solid ${({theme}) => theme.color.input_focus};
     }
+    ${({theme}) => theme.media.small`
+        width:${(props:InputProps) => props.$short ? '60px' : '80px'};
+    `}
+
 `
 const ErrorMessage = styled.div`
     margin-top:30px;
@@ -70,7 +77,6 @@ const NextButton = styled.button`
     border-radius: 10px;
     text-align: center;
     background-color: ${({theme}) => theme.color.input_focus};
-    
     cursor:pointer;
     ${({theme}) => theme.media.small`
         width:calc(100vw - 88px);
@@ -126,8 +132,8 @@ export default function Page(){
 
             <InputWrapper>
                 <InputArea maxLength={4} value={birthDateArray[0]} onChange={handleChange(0)} placeholder='YYYY' ref={inputRef}/>
-                <InputArea maxLength={2} value={birthDateArray[1]} onChange={handleChange(1)} placeholder='MM' style={{'width':'80px'}}/>
-                <InputArea maxLength={2} value={birthDateArray[2]} onChange={handleChange(2)} placeholder='DD' style={{'width':'80px'}}/>
+                <InputArea maxLength={2} value={birthDateArray[1]} onChange={handleChange(1)} placeholder='MM' $short={true}/>
+                <InputArea maxLength={2} value={birthDateArray[2]} onChange={handleChange(2)} placeholder='DD' $short={true}/>
             </InputWrapper>
 
             <ErrorMessage>{errorMessage}</ErrorMessage>

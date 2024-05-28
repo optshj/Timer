@@ -1,12 +1,10 @@
-import styled   from "styled-components";
-import { HiLink } from "react-icons/hi2";
+import { useEffect, useState } from 'react';
+import styled  from "styled-components";
+
+import { GoLink } from "react-icons/go";
 
 import ShareButtonForm from "./ShareButtonForm";
-const UrlIcon = styled(HiLink)`
-    width:30px;
-    height:30px;
-    color:#fdfdfd;
-`
+
 const Url = styled.div`
     width:60px;
     height:60px;
@@ -17,7 +15,23 @@ const Url = styled.div`
     background-color:#6f6f6f;
     border-radius: 50%;
 `
+const Icon = styled(GoLink)`
+    width:30px;
+    height:30px;
+    color:#fdfdfd;
+`
+
 export default function UrlButton(){
+    const [baseUrl, setBaseUrl] = useState('');
+
+    useEffect(() => {
+        const getBaseUrl = () => {
+            const { protocol, host } = window.location;
+            return `${protocol}//${host}`;
+        };
+
+        setBaseUrl(getBaseUrl());
+    }, []);
     const handleCopyUrl = async (text:string) => {
         try {
             await navigator.clipboard.writeText(text);
@@ -29,8 +43,8 @@ export default function UrlButton(){
     
     return(
         <ShareButtonForm text={"링크복사"}>
-            <Url onClick={() => handleCopyUrl("http://localhost:3000")}>
-                <UrlIcon/>
+            <Url onClick={() => handleCopyUrl(baseUrl)}>
+                <Icon/>
             </Url>
         </ShareButtonForm>
     )
