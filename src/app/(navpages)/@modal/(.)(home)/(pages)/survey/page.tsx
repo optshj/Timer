@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 `
 const TitleWrapper = styled.div`
     text-align: center;
-    margin-top: 140px;
+    margin-top: 100px;
 `
 const Title = styled.div`
     color: ${({theme}) => theme.color.text};

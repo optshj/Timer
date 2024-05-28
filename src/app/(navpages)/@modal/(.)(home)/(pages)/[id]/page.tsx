@@ -18,6 +18,9 @@ const ProgressbarWrapper = styled.div`
     height:10px;
     border-radius: 20px;
     background-color: ${({ theme }) => theme.color.button_disable};
+    ${({theme}) => theme.media.small`
+        width: ${theme.size.modal_width_small};
+    `};
 `
 const Progressbar = styled.div<{$percentage:number}>`
     width:${(props) => props.$percentage}%;
@@ -61,6 +64,9 @@ const SelectionLabel = styled.label`
     border-radius: 8px;
     padding: 8px 0;
     cursor: pointer;
+    ${({theme}) => theme.media.small`
+        width:${theme.size.modal_width_small};
+    `};
 `
 const SelectionSpan = styled.span`
     font-size: 20px;

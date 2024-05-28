@@ -28,6 +28,7 @@ const lightTheme: DefaultTheme = {
     },
     size:{
         header_height:"75px",
+        modal_width_small:"300px",
     },
 };
 

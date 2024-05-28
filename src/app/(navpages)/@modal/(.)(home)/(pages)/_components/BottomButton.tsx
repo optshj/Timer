@@ -22,8 +22,11 @@ const ButtonForm = styled.button`
     justify-content: center;
     background-color: transparent;
     border:none;
-    transition: all 0.3s linear;    
+    transition: background-color 0.3s linear;    
     cursor:pointer;
+    ${({theme}) => theme.media.small`
+        width:140px;
+    `}
 `
 interface ButtonFormProps{
     $isSelect: boolean
