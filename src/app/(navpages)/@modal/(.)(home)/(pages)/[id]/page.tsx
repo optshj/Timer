@@ -48,7 +48,7 @@ const Selection = styled.input.attrs({ type: 'radio' })`
     display:none;
     &:checked + label {
         background-color:${({theme}) => theme.color.button_enable};
-        transition: all 0.3s linear;
+        transition: background-color 0.3s linear;
     }
     &:checked + label span {
         color:${({theme}) => theme.color.background};
