@@ -16,7 +16,7 @@ const Wrapper = styled.nav`
         position:fixed;
         width:100%;
         bottom:0;
-        box-shadow: 0px -4px 4px ${theme.color.shadow};
+        box-shadow: 0px -4px 4px var(--shadow);
     `}
 
 `

@@ -11,13 +11,13 @@ const Wrapper = styled.div`
     flex-direction: column;
 `
 const Title = styled.div`
-    color: ${({theme}) => theme.color.text};
+    color: var(--text);
     font-size:28px;
     font-weight: 500;
 `
 const SubTitle = styled.div`
     margin:20px 0;
-    color: ${({theme}) => theme.color.text};
+    color: var(--text);
     font-size: 16px;
     font-weight: 300;
 `

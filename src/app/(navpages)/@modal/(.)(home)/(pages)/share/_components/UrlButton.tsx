@@ -40,8 +40,8 @@ const Toast = styled.div`
     padding: 16px 32px;
     border-radius: 6px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    animation: ${fadeIn} 0.5s ease-in-out;
-    font-size:20px;
+    animation: ${fadeIn} 1s ease-in-out;
+    font-size:16px;
     font-weight:700;
     z-index: 1000;
 `;
@@ -62,7 +62,7 @@ export default function UrlButton(){
         setVisible(true);
         setTimeout(() => {
             setVisible(false);
-        }, 1000);
+        }, 2000);
     }
     const handleCopyUrl = async (text:string) => {
         try {

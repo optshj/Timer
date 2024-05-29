@@ -8,7 +8,7 @@ import Darkmode from './Darkmode';
 
 const Wrapper = styled.header`
     display: flex;
-    box-shadow: 0px 2px 4px ${({theme}) => theme.color.shadow};
+    box-shadow: 0px 2px 4px var(--shadow);
     ${({theme}) => theme.media.small`
         box-shadow:none;
     `}
