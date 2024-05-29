@@ -22,7 +22,6 @@ const ButtonForm = styled.button`
     justify-content: center;
     background-color: transparent;
     border:none;
-    transition: background-color 0.3s linear;    
     cursor:pointer;
     ${({theme}) => theme.media.small`
         width:140px;

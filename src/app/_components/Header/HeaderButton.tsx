@@ -17,7 +17,6 @@ const Wrapper = styled.div`
     cursor:pointer;
     &:hover{
         color:${({theme}) => theme.color.font_animation};
-        transition: color 0.5s linear;
     }
     ${({theme}) => theme.media.medium`
         width:80px;

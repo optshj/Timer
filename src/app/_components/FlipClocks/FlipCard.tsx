@@ -108,6 +108,9 @@ const Upper = styled(Div)`
         background-color: rgba(0,0,0,.4);
         content: "";
 	}
+	${({theme}) => theme.media.small`
+		border-radius: 10px 10px 0 0;
+	`}
 `
 const Lower = styled(Div)`
 	bottom:0;
@@ -116,6 +119,9 @@ const Lower = styled(Div)`
 	& ${Number} {
 		bottom:0;
 	}
+	${({theme}) => theme.media.small`
+		border-radius: 0 0 10px 10px;
+	`}
 `
 const FlipCard = styled.li`
 	position:absolute;
@@ -130,6 +136,7 @@ const FlipCard = styled.li`
 	${({theme}) => theme.media.small`
 		width:45px;
 		height:75px;
+		border-radius:10px;
 	`}
 	transition:all .5s ease-in-out;
 	&.back{
