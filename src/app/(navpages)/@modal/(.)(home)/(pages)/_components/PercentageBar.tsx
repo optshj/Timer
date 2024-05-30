@@ -19,7 +19,7 @@ const PercentageBackground = styled.div`
 const Text = styled.div`
     font-size: 20px;
     font-weight: 600;
-    color: var(--text);
+    color: ${({theme}) => theme.color.text};
     text-align: center;
 `
 
@@ -29,7 +29,7 @@ interface ProgressProps{
 const Percentage = styled.div<ProgressProps>`
     width: ${props => props.$ratio}%;
     height:30px;
-    background-color: var(--text);
+    background-color: ${({theme}) => theme.color.text};
     border-radius: 6px;
 `
 

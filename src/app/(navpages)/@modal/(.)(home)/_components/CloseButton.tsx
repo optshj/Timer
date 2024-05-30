@@ -15,7 +15,7 @@ const CloseIcon = styled(MdClose)`
     color:${({theme}) => theme.color.text};
     border-radius: 50%;
     &:hover{
-        background-color: var(--hover);
+        background-color:${({theme}) => theme.color.hover};
     }
 `
 

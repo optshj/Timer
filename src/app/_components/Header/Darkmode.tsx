@@ -15,8 +15,8 @@ const Wrapper = styled.div<themeProps>`
     height:40px;
     width:90px;
     margin:16px;
-    color:  var(--icon);
-    border:2px solid var(--bright-background);
+    color:${({theme}) => theme.color.icon};
+    border:2px solid ${({theme}) => theme.color.bright_background};
     border-radius:30px;
     background-color: ${(props) => props.$theme === 'light'? '#f0c401':'#2c2836'};
     cursor:pointer;

@@ -31,8 +31,8 @@ interface ButtonFormProps{
     $isSelect: boolean
 }
 const NextButton = styled(ButtonForm)<ButtonFormProps>`
-    background-color: ${(props) => props.$isSelect ? "var(--button-enable)" : "var(--button-disable)"};
-    color:var(--background);
+    background-color: ${(props) => props.$isSelect ? props.theme.color.button_enable : props.theme.color.button_disable};
+    color:${({theme}) => theme.color.background};
     cursor:${(props) => props.$isSelect ?  'pointer' : 'default'};
 `
 const PrevButton = styled(ButtonForm)`
@@ -40,8 +40,8 @@ const PrevButton = styled(ButtonForm)`
     color:${({theme}) => theme.color.button_enable};
 `
 const SubmitButton = styled(ButtonForm)<ButtonFormProps>`
-    background-color: ${(props) => props.$isSelect ? "var(--button-enable)" : "var(--button-disable)"};
-    color:var(--background);
+    background-color: ${(props) => props.$isSelect ? props.theme.color.button_enable : props.theme.color.button_disable};
+    color:${({theme}) => theme.color.background};
     cursor:${(props) => props.$isSelect ?  'pointer' : 'default'};
 `
 

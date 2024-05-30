@@ -1,9 +1,8 @@
-'use client'
-import { useRef } from "react";
 import styled from "styled-components";
 import Link from "next/link";
 
 import useRipple from "@/src/_hooks/useRipple";
+import { useRef } from "react";
 
 const Button = styled.button`
     position:relative;
@@ -13,11 +12,11 @@ const Button = styled.button`
     cursor:pointer;
     border: none;
     border-radius: 5px;
-    color: var(--button-text);
-    background-color: var(--button-background);
+    color:${({theme}) => theme.color.button_text};
+    background-color:${({theme}) => theme.color.button_background};
     white-space: nowrap;
     &:hover{
-        background-color: var(--hover);
+        background-color: ${({theme}) => theme.color.hover};
     }
 `
 

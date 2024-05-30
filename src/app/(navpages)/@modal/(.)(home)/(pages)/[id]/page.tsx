@@ -17,7 +17,7 @@ const ProgressbarWrapper = styled.div`
     width:350px;
     height:10px;
     border-radius: 20px;
-    background-color: var(--button-disable);
+    background-color: ${({ theme }) => theme.color.button_disable};
     ${({theme}) => theme.media.small`
         width: ${theme.size.modal_width_small};
     `};
@@ -27,7 +27,7 @@ const Progressbar = styled.div<{$percentage:number}>`
     height:100%;
     transition: width 0.5s linear;
     border-radius: ${(props) => props.$percentage === 100 ? '20px' : '20px 0 0 20px'};
-    background-color: var(--button-enable);
+    background-color: ${({theme}) => theme.color.button_enable};
 `
 const Question = styled.div`
     display:flex;
@@ -36,7 +36,7 @@ const Question = styled.div`
     margin:60px 12px;
     font-size: 22px;
     font-weight: 600;
-    color: var(--text);
+    color: ${({ theme }) => theme.color.text};
     text-align: center;
     white-space: pre-line;
 `
@@ -47,10 +47,10 @@ const SelectionWrapper = styled.div`
 const Selection = styled.input.attrs({ type: 'radio' })`
     display:none;
     &:checked + label {
-        background-color:var(--button-enable);
+        background-color:${({theme}) => theme.color.button_enable};
     }
     &:checked + label span {
-        color:var(--background);
+        color:${({theme}) => theme.color.background};
     }
 `
 const SelectionLabel = styled.label`
@@ -59,7 +59,7 @@ const SelectionLabel = styled.label`
     width: 350px;
     align-items: center;
     margin-top: 15px;
-    border: 2px solid var(--input-focus);
+    border: 2px solid ${({ theme }) => theme.color.input_focus};
     border-radius: 8px;
     padding: 8px 0;
     cursor: pointer;
@@ -70,7 +70,7 @@ const SelectionLabel = styled.label`
 const SelectionSpan = styled.span`
     font-size: 20px;
     font-weight: 600;
-    color: var(--text);
+    color:${({ theme }) => theme.color.text};
     margin-left:10px;
 `
 

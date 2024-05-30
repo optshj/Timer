@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-
 const GlobalStyles = createGlobalStyle`
     a {
         text-decoration: none;
@@ -7,7 +6,7 @@ const GlobalStyles = createGlobalStyle`
     body{
         margin:0;
         overflow:hidden;
-        background-color: var(--background);
+        background-color: ${({theme}) => theme.color.background};
     }
     *{
         transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;    

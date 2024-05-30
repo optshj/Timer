@@ -11,7 +11,7 @@ const Text = styled.div`
     margin-top:5px;
     text-align: center;
     font-size: 14px;
-    color: var(--text);
+    color:${({theme}) => theme.color.text};
 `
 export default function ShareButtonForm({children,text}:{children:React.ReactNode,text:string}){
     return(

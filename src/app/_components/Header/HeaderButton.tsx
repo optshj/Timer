@@ -12,11 +12,11 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     font-size:24px;
-    color: var(--header-color);
+    color: ${({theme}) => theme.color.header_font};
     overflow:hidden;
     cursor:pointer;
     &:hover{
-        color: var(--font-animation);
+        color:${({theme}) => theme.color.font_animation};
     }
     ${({theme}) => theme.media.medium`
         width:80px;

@@ -1,5 +1,6 @@
 import { createContext,useContext,useState } from 'react';
 
+
 const ScoreArrayContext = createContext<any>(null);
 
 export default function ScoreArrayProvider({children}: {children: React.ReactNode}) {

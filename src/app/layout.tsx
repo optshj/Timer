@@ -1,11 +1,13 @@
+'use client'
 import { Roboto } from "next/font/google";
 import RootStyleRegistry from "../_lib/registy";
-import ClientApp from "./ClientApp";
-import { Metadata } from "next";
+import ContextProvider from "../_context/ContextProvider";
+import GlobalStyles from "../_styles/globalStyles";
 
-export const metadata:Metadata = {
-  title:'LifeTimer'
-}
+import Header from "./_components/Header/Header";
+import BottomTabBar from "./_components/BottomTabBar/BottomTabBar";
+import KakaoDevelopers from "../_script/KakaoDevelopers";
+
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["300", "400", "700"],
@@ -15,11 +17,15 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
   return (
     <html lang="en">
       <RootStyleRegistry>
-        <body className={roboto.className}>
-          <ClientApp>
+        <ContextProvider>
+          <GlobalStyles/>
+          <body className={roboto.className}>
+            <Header/>
             {children}
-          </ClientApp>
-        </body> 
+            <BottomTabBar/>
+          </body> 
+          <KakaoDevelopers/>
+        </ContextProvider>
       </RootStyleRegistry>
     </html>
   );

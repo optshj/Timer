@@ -8,9 +8,9 @@ const Wrapper = styled.div`
     flex-direction:column;
     align-items: center;
     justify-content: center;
-    color:var(--text);
+    color:${({theme}) => theme.color.text};
     border-radius: 10px;
-    background-color: var(--bright-background);
+    background-color: ${({theme}) => theme.color.bright_background};
     ${({theme}) => theme.media.large`
         width:calc(50vw - 48px);
     `};

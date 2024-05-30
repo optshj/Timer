@@ -14,7 +14,7 @@ const Title = styled.div`
     margin-top:150px;
     font-size:32px;
     font-weight:600;
-    color: var(--text);
+    color:${({theme}) => theme.color.text};
 `
 const ShareForm = styled.div`
     margin-top: 50px;

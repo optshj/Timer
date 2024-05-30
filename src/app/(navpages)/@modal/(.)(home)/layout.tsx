@@ -9,7 +9,7 @@ const Wrapper = styled.div`
     width:400px;
     height:600px;
     border-radius: 10px;
-    background-color: var(--background);
+    background-color:${({theme}) => theme.color.background};
     position: relative;
     ${({theme}) => theme.media.small`
         width:calc(100vw - 24px);

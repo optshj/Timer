@@ -56,77 +56,10 @@ const darkTheme: DefaultTheme = {
         button_text:"#121212",
     },
 };
-const themeProperties = {
-    'header-color': {
-        light: lightTheme.color.header_font,
-        dark: darkTheme.color.header_font,
-    },
-    'input-focus': {
-        light: lightTheme.color.input_focus,
-        dark: darkTheme.color.input_focus,
-    },
-    'input-unfocus': {
-        light: lightTheme.color.input_unfocus,
-        dark: darkTheme.color.input_unfocus,
-    },
-    'button-enable': {
-        light: lightTheme.color.button_enable,
-        dark: darkTheme.color.button_enable,
-    },
-    'button_disable': {
-        light: lightTheme.color.button_disable,
-        dark: darkTheme.color.button_disable,
-    },
-    'error': {
-        light: lightTheme.color.error,
-        dark: darkTheme.color.error,
-    },
-    'text': {
-        light: lightTheme.color.text,
-        dark: darkTheme.color.text,
-    },
-    'icon': {
-        light: lightTheme.color.icon,
-        dark: darkTheme.color.icon,
-    },
-    'hover': {
-        light: lightTheme.color.hover,
-        dark: darkTheme.color.hover,
-    },
-    'active': {
-        light: lightTheme.color.active,
-        dark: darkTheme.color.active,
-    },
-    'font-animation': {
-        light: lightTheme.color.font_animation,
-        dark: darkTheme.color.font_animation,
-    },
-    'background': {
-        light: lightTheme.color.background,
-        dark: darkTheme.color.background,
-    },
-    'bright-background': {
-        light: lightTheme.color.bright_background,
-        dark: darkTheme.color.bright_background,
-    },
-    'shadow': {
-        light: lightTheme.color.shadow,
-        dark: darkTheme.color.shadow,
-    },
-    'button-background': {
-        light: lightTheme.color.button_background,
-        dark: darkTheme.color.button_background,
-    },
-    'button-text': {
-        light: lightTheme.color.button_text,
-        dark: darkTheme.color.button_text,
-    },
-};
 
 const themes: DefaultTheme = {
     lightTheme,
     darkTheme,
-    themeProperties
 };
 
 export type ThemeTypes = typeof themes;
