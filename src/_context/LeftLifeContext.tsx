@@ -1,4 +1,4 @@
-import React,{createContext,useContext,useState} from "react";
+import React,{createContext,useContext} from "react";
 
 import useBirthDate from "../_hooks/useBirthDate";
 import useDeathDate from "../_hooks/useDeathDate";

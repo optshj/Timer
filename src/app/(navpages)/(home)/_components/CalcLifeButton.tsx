@@ -1,8 +1,9 @@
+'use client'
+import { useRef } from "react";
 import styled from "styled-components";
 import Link from "next/link";
 
 import useRipple from "@/src/_hooks/useRipple";
-import { useRef } from "react";
 
 const Button = styled.button`
     position:relative;
