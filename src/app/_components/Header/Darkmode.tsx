@@ -66,7 +66,7 @@ export default function Darkmode(){
         <Wrapper onClick={toggleTheme}>
             <Font $theme={theme}>{theme.toUpperCase()}</Font>
             <IconWrapper $theme={theme}>
-                {colorMode === 'light' ? <LightIcon/> : <DarkIcon/>}
+                {theme === 'light' ? <LightIcon/> : <DarkIcon/>}
             </IconWrapper>
         </Wrapper>
     )

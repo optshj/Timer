@@ -11,7 +11,7 @@ export default function DarkmodeProvider({children}: {children: React.ReactNode}
 
     return(
         <ThemeContext.Provider value={darkmode}>
-            <ThemeProvider theme={{...themes.lightTheme}}>
+            <ThemeProvider theme={{...darkmode.theme === 'light' ? themes.lightTheme : themes.darkTheme}}>
                 {children}
             </ThemeProvider>
         </ThemeContext.Provider>

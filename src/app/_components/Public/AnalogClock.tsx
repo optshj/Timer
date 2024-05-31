@@ -23,7 +23,7 @@ const Hand = styled.div<{$angle: number}>`
 const SecondHand = styled(Hand)`
     width:2px;
     height:190px;
-    background-color: var(--input-focus);
+    background-color: var(--input_focus);
     ${({theme}) => theme.media.small`
         height:95px;
     `}
