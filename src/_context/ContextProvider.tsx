@@ -1,3 +1,4 @@
+'use client'
 import DarkmodeProvider from "./DarkmodeContext";
 import LeftLifeProivder from "./LeftLifeContext";
 import MediaProvider from "./MediaContext";
