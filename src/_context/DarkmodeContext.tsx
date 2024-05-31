@@ -4,12 +4,7 @@ import { ThemeProvider } from "styled-components"
 import useDarkmode from "../_hooks/useDarkmode";
 import themes from "../_styles/theme";
 
-const defaultValue = {
-    theme: 'dark',
-    toggleTheme: () => {},
-};
-
-const ThemeContext = createContext(defaultValue);
+const ThemeContext = createContext<any>(null);
 
 export default function DarkmodeProvider({children}: {children: React.ReactNode}){
     const darkmode = useDarkmode();

@@ -6,11 +6,10 @@ const GlobalStyles = createGlobalStyle`
     body{
         margin:0;
         overflow:hidden;
-        background-color: ${({theme}) => theme.color.background};
+        background-color:var(--background);
     }
     *{
         transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;    
-
     }
 `
 export default GlobalStyles;

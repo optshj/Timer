@@ -1,18 +1,18 @@
-'use client';
 import { useEffect, useState } from 'react';
 
 export default function useDarkmode(){
-    const [theme, setTheme] = useState<'light'|'dark'>('dark');
+    const [theme, setTheme] = useState<'light'|'dark'>('light');
 
     useEffect(() => {
         const localTheme = window.localStorage.getItem('theme');
+        const prefersDark = window.matchMedia("(prefers-color-scheme: Dark)").matches;
 
         if (localTheme) {
             setTheme(localTheme as 'light' | 'dark');
             document.body.dataset.theme = localTheme;
         } else {
-            setTheme('light');
-            document.body.dataset.theme = 'light';
+            setTheme(prefersDark ? 'dark' : 'light');
+            document.body.dataset.theme = prefersDark ? 'dark' : 'light';
         }
     },[]);
 

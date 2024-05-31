@@ -56,10 +56,20 @@ const darkTheme: DefaultTheme = {
         button_text:"#121212",
     },
 };
-
+const themeProperties = {
+    'text': {
+        light:lightTheme.color.text,
+        dark:darkTheme.color.text,
+    },
+    'background': {
+        light:lightTheme.color.background,
+        dark:darkTheme.color.background,
+    },
+}
 const themes: DefaultTheme = {
     lightTheme,
     darkTheme,
+    themeProperties
 };
 
 export type ThemeTypes = typeof themes;
