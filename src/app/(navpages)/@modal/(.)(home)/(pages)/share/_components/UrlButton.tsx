@@ -35,8 +35,8 @@ const Toast = styled.div`
     top:20px;
     left: 50%;
     transform: translateX(-50%);
-    background-color:${({theme}) => theme.color.bright_background};
-    color: ${({theme}) => theme.color.text};
+    background-color: var(--background);
+    color: var(--text);
     padding: 16px 32px;
     border-radius: 6px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);

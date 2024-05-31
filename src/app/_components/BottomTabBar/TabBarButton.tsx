@@ -19,7 +19,7 @@ const IconWrapper = styled.div<{$active:boolean}>`
     align-items: center;
     justify-content: center;
     font-size:24px;
-    color:${(props) => props.$active ? props.theme.color.input_focus : "#bdbfc3"};
+    color:${(props) => props.$active ? 'var(--input_focus)': "#bdbfc3"};
 `
 const Text = styled.div`
     font-size:12px;

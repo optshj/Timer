@@ -4,27 +4,26 @@ const Wrapper = styled.div`
     position: relative;
     width: 400px;
     height: 400px;
-    border: 10px solid ${({theme}) => theme.color.background};
+    border: 10px solid var(--background);
     border-radius: 50%;
-    background-color: ${({theme}) => theme.color.text};
+    background-color: var(--text);
     ${({theme}) => theme.media.small`
         width: 200px;
         height: 200px;
-    
     `}
-`;
+`
 const Hand = styled.div<{$angle: number}>`
     position: absolute;
     left:50%;
     bottom:50%;
     transform-origin: bottom;
-    background-color:${({theme}) => theme.color.background};
+    background-color:var(--background);
     transform: rotate(${({$angle}) => $angle}deg);
-`;
+`
 const SecondHand = styled(Hand)`
     width:2px;
     height:190px;
-    background-color: ${({theme}) => theme.color.input_focus};
+    background-color: var(--input-focus);
     ${({theme}) => theme.media.small`
         height:95px;
     `}
@@ -49,7 +48,7 @@ const Center = styled.div`
     height: 10px;
     top: 50%;
     left: 50%;
-    background-color:${({theme}) => theme.color.background};
+    background-color:var(--background);
     border-radius: 50%;
     transform: translate(-50%, -50%);
 `

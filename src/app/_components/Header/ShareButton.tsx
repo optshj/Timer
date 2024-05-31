@@ -7,7 +7,7 @@ const Button = styled(PiShareNetworkLight)`
     width:20px;
     height:20px;
     padding:10px;
-    color:${({theme}) => theme.color.text};
+    color: var(--text);
     cursor:pointer;
 `
 

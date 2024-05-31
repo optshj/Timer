@@ -10,7 +10,7 @@ const Wrapper = styled.div`
 `
 const Text = styled.span`
     font-weight: 700;
-    color: ${({theme}) => theme.color.text};
+    color: var(--text);
     box-sizing: border-box;
 `
 

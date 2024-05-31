@@ -18,14 +18,14 @@ const Title = styled.div`
     font-weight:600;
     text-align: center;
     white-space: nowrap;
-    color: ${({theme}) => theme.color.text};
+    color: var(--text);
 `
 const DeathDate = styled.div`
     position: absolute;
     top:200px;
     font-size:36px;
     font-weight: 500;
-    color: ${({theme}) => theme.color.text};
+    color: var(--text);
 `
 const Button = styled.button`
     position: absolute;
@@ -33,11 +33,11 @@ const Button = styled.button`
     width:360px;
     height:70px;
     font-size:22px;
-    color:${({theme}) => theme.color.background};
+    color: var(--background);
     border:none;
     border-radius: 10px;
     text-align: center;
-    background-color: ${({theme}) => theme.color.input_focus};
+    background-color: var(--input_focus);
     cursor:pointer;
     ${({theme}) => theme.media.small`
         width:calc(100vw - 88px);

@@ -16,13 +16,13 @@ const TitleWrapper = styled.div`
     margin-top: 100px;
 `
 const Title = styled.div`
-    color: ${({theme}) => theme.color.text};
+    color: var(--text);
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 30px;
 `
 const SubTitle = styled.div`
-    color: ${({theme}) => theme.color.header_font};
+    color: var(--header_font);
     font-size: 20px;
     font-weight:500;
     margin-bottom: 30px;
@@ -41,18 +41,18 @@ const InputArea = styled.input<InputProps>`
     font-size:24px;
     padding:0 12px;
     border-radius: 5px;
-    border:2px solid ${({theme}) => theme.color.header_font};
-    background-color: ${({theme}) => theme.color.background};
-    color:${({theme}) => theme.color.icon};
-    caret-color: ${({theme}) => theme.color.input_focus}; 
+    border:2px solid var(--header_font);
+    background-color: var(--background);
+    color: var(--icon);
+    caret-color: var(--input_focus);
     outline:none;
     &::placeholder{
         font-size: 20px;
-        color: ${({theme}) => theme.color.header_font};
+        color: var(--header_font);
     }
     &:focus{
         transition: border 0.3s ease-in-out;
-        border:2px solid ${({theme}) => theme.color.input_focus};
+        border:2px solid var(--input_focus);
     }
     ${({theme}) => theme.media.small`
         width:${(props:InputProps) => props.$short ? '60px' : '80px'};
@@ -63,7 +63,7 @@ const ErrorMessage = styled.div`
     margin-top:30px;
     text-align: center;
     white-space: pre-line;
-    color:${({theme}) => theme.color.error};
+    color: var(--error);
 `
 const NextButton = styled.button`
     position: absolute;
@@ -72,11 +72,11 @@ const NextButton = styled.button`
     width:360px;
     height:70px;
     font-size:22px;
-    color:${({theme}) => theme.color.background};
+    color : var(--background);
     border:none;
     border-radius: 10px;
     text-align: center;
-    background-color: ${({theme}) => theme.color.input_focus};
+    background-color: var(--input_focus);
     cursor:pointer;
     ${({theme}) => theme.media.small`
         width:calc(100vw - 88px);

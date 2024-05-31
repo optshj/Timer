@@ -12,11 +12,11 @@ const Button = styled.button`
     cursor:pointer;
     border: none;
     border-radius: 5px;
-    color:${({theme}) => theme.color.button_text};
-    background-color:${({theme}) => theme.color.button_background};
+    color: var(--button_text);
+    background-color: var(--button_background);
     white-space: nowrap;
     &:hover{
-        background-color: ${({theme}) => theme.color.hover};
+        background-color: var(--hover);
     }
 `
 

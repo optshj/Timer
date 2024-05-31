@@ -18,7 +18,7 @@ export default function ClientApp({children}: Readonly<{children: React.ReactNod
           <GlobalStyles/>
           <body className={roboto.className}>
             <Header/>
-              {children}
+            {children}
             <BottomTabBar/>
           </body> 
           <KakaoDevelopers/>

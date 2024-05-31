@@ -11,7 +11,7 @@ const Wrapper = styled.div`
     position:absolute;
     display: flex;
     gap:20px;
-    bottom:${({theme}) => theme.position.modal_button};
+    bottom: ${({theme}) => theme.position.modal_button};
 `
 const ButtonForm = styled.button`
     width:170px;
@@ -31,17 +31,17 @@ interface ButtonFormProps{
     $isSelect: boolean
 }
 const NextButton = styled(ButtonForm)<ButtonFormProps>`
-    background-color: ${(props) => props.$isSelect ? props.theme.color.button_enable : props.theme.color.button_disable};
-    color:${({theme}) => theme.color.background};
+    background-color: ${(props) => props.$isSelect ? 'var(--button_enable)' : 'var(--button_disable)'};
+    color: var(--background);
     cursor:${(props) => props.$isSelect ?  'pointer' : 'default'};
 `
 const PrevButton = styled(ButtonForm)`
-    border:2px solid ${({theme}) => theme.color.button_enable};
-    color:${({theme}) => theme.color.button_enable};
+    border:2px solid  var(--button_enable);
+    color: var(--button_enable);
 `
 const SubmitButton = styled(ButtonForm)<ButtonFormProps>`
-    background-color: ${(props) => props.$isSelect ? props.theme.color.button_enable : props.theme.color.button_disable};
-    color:${({theme}) => theme.color.background};
+    background-color: ${(props) => props.$isSelect ? 'var(--button_enable)' : 'var(--button_disable)'};
+    color: var(--background);
     cursor:${(props) => props.$isSelect ?  'pointer' : 'default'};
 `
 

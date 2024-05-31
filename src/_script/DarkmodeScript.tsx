@@ -1,8 +1,7 @@
-import Script from "next/script";
 import themes from "../_styles/theme";
 
-const COLOR_MODE_KEY = 'theme';
-const INITIAL_COLOR_MODE_CSS_PROP = '--initial-color-mode';
+const THEME_KEY = 'theme';
+const INITIAL_THEME_CSS_PROP = '--initial-color-mode';
 
 function setColorsByTheme() {
     const modeProperties = '[MODEPROPERTIES]';
@@ -34,8 +33,8 @@ function setColorsByTheme() {
 export default function DarkmodeScript() {
     const stringifyFn = String(setColorsByTheme)
         .replace('"[MODEPROPERTIES]"', JSON.stringify(themes.themeProperties))
-        .replace('[THEMEMODEKEY]', COLOR_MODE_KEY) 
-        .replace('[THEMEMODECSSPROP]', INITIAL_COLOR_MODE_CSS_PROP);
+        .replace('[THEMEMODEKEY]', THEME_KEY) 
+        .replace('[THEMEMODECSSPROP]', INITIAL_THEME_CSS_PROP);
     const fnToRunOnClient = `(${stringifyFn})()`;
-    return <Script dangerouslySetInnerHTML={{ __html: fnToRunOnClient }} />;
+    return <script dangerouslySetInnerHTML={{ __html: fnToRunOnClient }} />;
 };

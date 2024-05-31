@@ -4,7 +4,7 @@ import { useLeftLife } from "@/src/_context/LeftLifeContext"
 
 const Title = styled.div`
     font-size:48px;
-    color:${({theme}) => theme.color.text};
+    color: var(--text);
     margin-bottom:16px;
     cursor:default;
 `
@@ -15,7 +15,7 @@ const TextWrapper = styled.div`
 const Text = styled.div<{$highlight?:boolean}>`
     font-size:60px;
     font-weight:600;
-    color:${props => props.$highlight ? props.theme.color.input_focus : props.theme.color.text};
+    color:${props => props.$highlight ? 'var(--input_focus)' : 'var(--text)'};
     white-space: pre;
     ${({theme}) => theme.media.small`
         font-size:40px;

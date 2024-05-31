@@ -52,7 +52,7 @@ const FillBox = styled(Box)`
 `
 const Text = styled.div`
     font-size: 12px;
-    color: ${({ theme }) => theme.color.text};
+    color: var(--text);
     margin-top:6px;
 `
 
@@ -61,7 +61,7 @@ interface LastTextProps {
 }
 const LastText = styled.div<LastTextProps>`
     font-size: 12px;
-    color: ${({ theme }) => theme.color.text};
+    color: var(--text);
     margin-left: ${({ $cnt }) => $cnt*39}px;
     ${({theme}) => theme.media.small`
         margin-left: ${({ $cnt }:LastTextProps) => $cnt*24}px;

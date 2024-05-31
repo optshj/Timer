@@ -12,10 +12,10 @@ const Wrapper = styled.div`
 const CloseIcon = styled(MdClose)`
     width:28px;
     height:28px;
-    color:${({theme}) => theme.color.text};
+    color: var(--text);
     border-radius: 50%;
     &:hover{
-        background-color:${({theme}) => theme.color.hover};
+        background-color: var(--hover);
     }
 `
 
