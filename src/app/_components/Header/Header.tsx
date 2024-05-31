@@ -44,11 +44,11 @@ function Header() {
             </LeftContent>
 
             <CenterContent>
-                <HeaderButton text="Home" url=""/>
-                <HeaderButton text="Life" url="life"/>
-                <HeaderButton text="Year" url="year"/>
-                <HeaderButton text="Month" url="month"/>
-                <HeaderButton text="Today" url="today"/>
+                <HeaderButton text="Home" url="/"/>
+                <HeaderButton text="Life" url="/life"/>
+                <HeaderButton text="Year" url="/year"/>
+                <HeaderButton text="Month" url="/month"/>
+                <HeaderButton text="Today" url="/today"/>
             </CenterContent>
             
             <RightContent>

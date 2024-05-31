@@ -1,10 +1,11 @@
 import { useRef } from "react";
 import Link from "next/link";
 import styled from "styled-components";
+import { usePathname } from "next/navigation";
 
 import useRipple from "@/src/_hooks/useRipple";
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{$active:boolean}>`
     display: flex;
     position: relative;
     width:100px;
@@ -12,7 +13,7 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     font-size:24px;
-    color: var(--header_font);
+    color: ${(props) => props.$active ? 'var(--active_font)':'var(--header_font)'};
     overflow:hidden;
     cursor:pointer;
     &:hover{
@@ -31,10 +32,11 @@ interface HeaderButtonProps {
 export default function HeaderButton(props:HeaderButtonProps) {
     const buttonRef = useRef<HTMLDivElement>(null);
     const ripples = useRipple(buttonRef);
+    const pathname = usePathname();
 
     return (
-        <Link href={`/${props.url}`} >
-            <Wrapper ref={buttonRef}>
+        <Link href={`${props.url}`} >
+            <Wrapper ref={buttonRef} $active={pathname === props.url}>
                 {props.text}
                 {ripples}
             </Wrapper>

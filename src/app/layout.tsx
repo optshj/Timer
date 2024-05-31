@@ -7,7 +7,6 @@ export const metadata: Metadata = {
   title:'LifeTimer',
 }
 
-
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
   return (
     <html lang="en">

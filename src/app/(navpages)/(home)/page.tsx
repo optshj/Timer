@@ -14,7 +14,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height:100%;
+  height:calc(100vh - ${({theme}) => theme.size.header_height});
 `
 const TextWrapper = styled.div`
   display:flex;
