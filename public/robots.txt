@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /**
+
+# Host
+Host: https://lifetimer1.vercel.app/
+
+# Sitemaps
+Sitemap: https://lifetimer1.vercel.app/sitemap.xml

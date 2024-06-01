@@ -8,11 +8,9 @@ export default function useDeathDate() {
         if (localDeathDate) {
             const parsedDate = new Date(localDeathDate);
             setDeath(parsedDate);
-            document.body.dataset.deathDate = localDeathDate;
         } else {
             const currentDate = new Date();
             setDeath(currentDate);
-            document.body.dataset.deathDate = currentDate.toISOString();
         }
     }, []);
 
@@ -20,7 +18,6 @@ export default function useDeathDate() {
         const newDeathDate = new Date(deathDate.toISOString());
         setDeath(newDeathDate);
         window.localStorage.setItem('deathDate', newDeathDate.toISOString());
-        document.body.dataset.deathDate = newDeathDate.toISOString();
     };
     return { death, setDeathDate };
 }
