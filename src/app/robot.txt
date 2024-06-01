@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: *
+Disallow:
+Sitemap: https://lifetimer1.vercel.app/sitemap.xml
