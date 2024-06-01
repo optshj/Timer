@@ -4,5 +4,4 @@ const nextConfig = {
         styledComponents: true,
       },
     };
-
-module.export = nextConfig;
+export default nextConfig;
