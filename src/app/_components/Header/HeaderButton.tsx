@@ -16,6 +16,7 @@ const Wrapper = styled.div<{$active:boolean}>`
     color: ${(props) => props.$active ? 'var(--active_font)':'var(--header_font)'};
     overflow:hidden;
     cursor:pointer;
+    transition: color 0.5s linear;
     &:hover{
         color: var(--active_font);
     }

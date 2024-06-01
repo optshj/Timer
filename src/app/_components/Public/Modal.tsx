@@ -1,5 +1,3 @@
-import React, { useCallback } from 'react';
-import { useRouter } from 'next/navigation';
 import styled,{ keyframes } from 'styled-components';
 
 const fadeIn = keyframes`
@@ -27,16 +25,8 @@ const Inner = styled.div`
     transform:translate(-50%,-50%);
 `
 export default function Modal({children}:{children:React.ReactNode}){
-    const router = useRouter();
-    
-    const onClose = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
-        if (e.target === e.currentTarget) {
-            router.back();
-        }
-    },[router])
-
     return(
-        <Outer onClick={onClose}>
+        <Outer>
             <Inner>
                 {children}
             </Inner>

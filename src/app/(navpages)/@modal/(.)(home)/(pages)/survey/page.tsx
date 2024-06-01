@@ -80,6 +80,7 @@ const NextButton = styled.button`
     cursor:pointer;
     ${({theme}) => theme.media.small`
         width:calc(100vw - 88px);
+        bottom:140px;
     `}
 `
 
