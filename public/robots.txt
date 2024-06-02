@@ -1,7 +1,8 @@
-# *
 User-agent: *
-Allow: /
-Disallow: /**
+Disallow:/
+Disallow: /survey
+Disallow: /result
+Disallow: /share
 
 # Host
 Host: https://lifetimer1.vercel.app/
