@@ -8,7 +8,9 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
       <head>
         <title>LifeTimer</title>
         <meta name="description" content="나의 남은 수명을 계산해보고, 건강관련 팁을 받아가세요."/>
-        <meta name="robots" content="index,nofollow"/>
+        <meta name="robots" content="index,follow"/>
+        
+        <meta property="og:title" content="LifeTimer" />
         <meta property='og:site_name' content="LifeTimer" />
         <meta property="og:type" content="website" />
         <meta property="og:description" content="앞으로 얼마나 살 수 있을지 눈으로 확인해보세요"/>
