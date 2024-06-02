@@ -1,20 +1,10 @@
-import styled from "styled-components";
-
 import Text from "../../../_components/Public/Text";
 import FlipClockTime from "../../../_components/FlipClocks/FlipClockTime";
-
-const Wrapper = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-`
 
 export default function TodayFlipClock(){
     return(
         <>
-            <Wrapper>
-                <Text text={"오늘이 끝나기까지"}/>
-            </Wrapper>
+            <Text text={"오늘이 끝나기까지"}/>
             <FlipClockTime/>
         </>
     )

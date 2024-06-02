@@ -27,9 +27,7 @@ const Inner = styled.div`
 export default function Modal({children}:{children:React.ReactNode}){
     return(
         <Outer>
-            <Inner>
-                {children}
-            </Inner>
+            <Inner>{children}</Inner>
         </Outer>
     )
 }

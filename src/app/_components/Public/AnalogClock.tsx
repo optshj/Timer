@@ -4,7 +4,6 @@ const Wrapper = styled.div`
     position: relative;
     width: 400px;
     height: 400px;
-    border: 10px solid var(--background);
     border-radius: 50%;
     background-color: var(--text);
     ${({theme}) => theme.media.small`
@@ -59,7 +58,6 @@ interface AnalogClockProps{
     second: number;
 }
 export default function AnalogClock(props:AnalogClockProps){
-    
     const secondAngle = (props.second / 60) * 360;
     const minuteAngle = (props.minute / 60) * 360 + (props.second / 60) * 6;
     const hourAngle = (props.hour / 12) * 360 + (props.minute / 60) * 30;

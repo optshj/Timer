@@ -1,4 +1,3 @@
-import Script from "next/script";
 import themes from "../_styles/theme";
 
 const THEME_KEY = 'theme';

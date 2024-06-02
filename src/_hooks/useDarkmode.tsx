@@ -10,10 +10,8 @@ export default function useDarkmode(){
 
         if (localTheme) {
             setTheme(localTheme as 'light' | 'dark');
-            document.body.dataset.theme = localTheme;
         } else {
             setTheme(prefersDark ? 'dark' : 'light');
-            document.body.dataset.theme = prefersDark ? 'dark' : 'light';
         }
     },[]);
 
@@ -27,7 +25,6 @@ export default function useDarkmode(){
         });
         setTheme(newTheme);
         window.localStorage.setItem('theme', newTheme);
-        document.body.dataset.theme = newTheme;
     };
     return {theme, toggleTheme};
 };

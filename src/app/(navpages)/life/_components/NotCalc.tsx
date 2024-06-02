@@ -1,11 +1,11 @@
 import styled from "styled-components"
+
 import CalcLifeButton from "../../(home)/_components/CalcLifeButton"
 
 const Wrapper = styled.div`
     display: flex;
-    position: absolute;
-    width:100%;
-    height:100%;
+    width:100%; 
+    height:calc(100vh - ${({theme}) => theme.size.header_height});
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -21,6 +21,7 @@ const SubTitle = styled.div`
     font-size: 16px;
     font-weight: 300;
 `
+
 export default function NotCalc() {
     return(
         <Wrapper>

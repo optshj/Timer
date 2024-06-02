@@ -16,6 +16,7 @@ export default function TodayPercentage(){
         const ratio = (elapsedDaySeconds/fullDaySeconds)*100;
         setTodayRatio(ratio > 100 ? 100 : ratio);
     })
+    
     return(
         <>
             <Text text={"오늘이"}/>

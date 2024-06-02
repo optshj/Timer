@@ -18,20 +18,21 @@ const Wrapper = styled.div`
         width:calc(100vw - 48px);
     `}
 `
-const Title = styled.div`
+const Title = styled.p`
     white-space: pre-line;
     font-size:24px;
     ${({theme}) => theme.media.large`
         font-size:20px;
     `}
 `
-const SubTitle = styled.div`
+const SubTitle = styled.p`
     white-space: pre-line;
     font-size:20px;
     ${({theme}) => theme.media.large`
         font-size:16px;
     `}
 `
+
 function getRandomNumber(){
     return window.crypto.getRandomValues(new Uint32Array(1))[0] / 2**32;
 }
@@ -48,7 +49,6 @@ export default React.memo(function TextField(props:TextFieldProps){
     const textArray = props.json.data;
     const randomIndex = Math.floor(getRandomNumber() * textArray.length);
     const randomText = textArray[randomIndex];
-
 
     return(
         <Wrapper>

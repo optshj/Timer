@@ -11,6 +11,14 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
 `
+const Question = styled.p`
+    margin:60px 12px;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text);
+    text-align: center;
+    white-space: pre-line;
+`
 const ProgressbarWrapper = styled.div`
     position:absolute;
     top:180px;
@@ -25,20 +33,8 @@ const ProgressbarWrapper = styled.div`
 const Progressbar = styled.div<{$percentage:number}>`
     width:${(props) => props.$percentage}%;
     height:100%;
-    transition: width 0.5s linear;
     border-radius: ${(props) => props.$percentage === 100 ? '20px' : '20px 0 0 20px'};
     background-color: var(--button_enable);
-`
-const Question = styled.div`
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    margin:60px 12px;
-    font-size: 22px;
-    font-weight: 600;
-    color: var(--text);
-    text-align: center;
-    white-space: pre-line;
 `
 const SelectionWrapper = styled.div`
     position:absolute;
@@ -55,9 +51,7 @@ const Selection = styled.input.attrs({ type: 'radio' })`
 `
 const SelectionLabel = styled.label`
     display: flex;
-    top:150px;
     width: 350px;
-    align-items: center;
     margin-top: 15px;
     border: 2px solid var(--input_focus);
     border-radius: 8px;
@@ -80,25 +74,24 @@ export default function Page(props: { params: { id: string } }) {
 
     const id = parseInt(props.params.id);
     const survey = surveyData.surveys[id];
-
     const surveyArrayLength = (JSON.parse(JSON.stringify(surveyData.surveys)) as string[]).length;
 
     const handleSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSelectScore(parseInt(e.target.value));
         setIsSelect(true);
     }
-    const SelectionArray = survey && survey.selections ? Object.entries(survey.selections).map(([key, value]) => (
+    const SelectionArray = Object.entries(survey.selections).map(([key, value]) => (
         <React.Fragment key={key}>
             <Selection value={survey.scores[key as keyof typeof survey.scores]} onChange={handleSelect} name="selection" id={`selection_${key}`}/>
             <SelectionLabel htmlFor={`selection_${key}`}>
                 <SelectionSpan>{value}</SelectionSpan>
             </SelectionLabel>
         </React.Fragment>
-    )) : null;
+    ));
 
     return (
         <Wrapper>
-            {survey && survey.question && <Question>{survey.question}</Question>}
+            <Question>{survey.question}</Question>
             <ProgressbarWrapper>
                 <Progressbar $percentage={(id+1)/surveyArrayLength*100}/>
             </ProgressbarWrapper>

@@ -13,6 +13,7 @@ const Text = styled.div`
     font-size: 14px;
     color: var(--text);
 `
+
 export default function ShareButtonForm({children,text}:{children:React.ReactNode,text:string}){
     return(
         <Wrapper>

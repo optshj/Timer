@@ -69,7 +69,7 @@ const LastText = styled.div<LastTextProps>`
 `
 
 function remainder(amount:number,divide:number) {
-    return amount%divide === 0 ? divide: amount%divide;
+    return amount%divide === 0 ? divide : amount%divide;
 }
 
 interface LifeCalenderProps {
@@ -92,9 +92,9 @@ export default function TimeCalender({start, middle, end }:LifeCalenderProps) {
     return (
         <Wrapper>
             <Text>{start}</Text>
-            <BoxWrapper>
-                {renderBoxes()}
-            </BoxWrapper>
+
+            <BoxWrapper>{renderBoxes()}</BoxWrapper>
+            
             <LastText $cnt={remainder(end-start+1,8)}>{end}</LastText>
         </Wrapper>
     );

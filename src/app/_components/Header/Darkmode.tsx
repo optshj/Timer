@@ -1,4 +1,4 @@
-import { useState,useEffect} from "react";
+import { useState,useEffect } from "react";
 import styled from "styled-components";
 
 import { MdDarkMode,MdLightMode } from "react-icons/md";
@@ -17,8 +17,8 @@ const Wrapper = styled.div`
     width:90px;
     margin:16px;
     color: var(--icon);
-    border:2px solid var(--bright_background);
     border-radius:30px;
+    border:2px solid var(--bright_background);
     background-color: var(--icon_background);
     cursor:pointer;
 `

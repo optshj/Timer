@@ -57,7 +57,6 @@ const InputArea = styled.input<InputProps>`
     ${({theme}) => theme.media.small`
         width:${(props:InputProps) => props.$short ? '60px' : '80px'};
     `}
-
 `
 const ErrorMessage = styled.div`
     margin-top:30px;
@@ -87,9 +86,9 @@ const NextButton = styled.button`
 const validateBirthdate = (birthDate:string[]): boolean => {
     const [year, month, date] = birthDate;
     const birthDateObj = new Date(`${year}-${month}-${date}`);
-    if ((birthDateObj > new Date()) || (year.length !== 4 || month.length !== 2 || date.length !== 2)) {
+    
+    if ((birthDateObj > new Date()) || (year.length !== 4 || month.length !== 2 || date.length !== 2)) 
         return false;
-    }
     return !isNaN(birthDateObj.getTime());
 }
 

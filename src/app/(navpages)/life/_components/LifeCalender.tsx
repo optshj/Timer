@@ -5,8 +5,8 @@ import Text from "../../../_components/Public/Text";
 import TimeCalender from "../../../_components/Public/TimeCalender";
 
 export default function LifeCalender(){
-    const {birthDate, deathDate, leftLife} = useLeftLife();
-    const {today} = useTime();
+    const { birthDate, deathDate, leftLife } = useLeftLife();
+    const { today } = useTime();
 
     return(
         <>

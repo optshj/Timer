@@ -13,6 +13,7 @@ export default function Life() {
   const changeComponent = () => {
     setCurrentComponent((prev) => (prev%componentCount) + 1);
   }
+  
   return (
     <PageWrapper onClick={changeComponent}>
       {currentComponent === 1 && <YearFlipClock/>}

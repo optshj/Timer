@@ -1,8 +1,9 @@
-import {useState,useEffect,createContext,useContext} from "react"
+import { useState,useEffect,createContext,useContext } from "react"
 
 const TimeContext = createContext<any>(null);
 export default function TimeProvider({children}: Readonly<{children: React.ReactNode;}>) {
     const [today,setToday] = useState<Date>(new Date());
+    
     const midnight = new Date();
     midnight.setHours(24, 0, 0, 0);
     
@@ -12,7 +13,6 @@ export default function TimeProvider({children}: Readonly<{children: React.React
         const intervalId = setInterval(() => {
             setToday(new Date());
         }, 1000);
-
         return () => clearInterval(intervalId);
     },[]);
 

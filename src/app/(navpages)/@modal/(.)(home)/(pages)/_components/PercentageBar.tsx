@@ -9,6 +9,12 @@ const Wrapper = styled.div`
     position:absolute;
     bottom:200px;
 `
+const Text = styled.div`
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text);
+    text-align: center;
+    `
 const PercentageBackground = styled.div`
     width:300px;
     height:30px;
@@ -16,19 +22,9 @@ const PercentageBackground = styled.div`
     margin-top:20px;
     border-radius:6px;
 `
-const Text = styled.div`
-    font-size: 20px;
-    font-weight: 600;
-    color: var(--text);
-    text-align: center;
-`
-
-interface ProgressProps{
-    $ratio:number;
-}
-const Percentage = styled.div<ProgressProps>`
+const Percentage = styled.div<{$ratio:number}>`
     width: ${props => props.$ratio}%;
-    height:30px;
+    height:100%;
     background-color: var(--text);
     border-radius: 6px;
 `
@@ -38,14 +34,14 @@ interface calcSecondsProps{
     months: number;
     days: number;
 }
-function calcSeconds({years,months,days}: calcSecondsProps): number {
+function calcSeconds({years,months,days}: calcSecondsProps){
     const seconds = years * 365 * 24 * 60 * 60 + months * 30 * 24 * 60 * 60 + days * 24 * 60 * 60;
     return seconds;
 }
 
 export default React.memo(function PercentageBar(){
-    const {fullLife,leftLife} = useLeftLife();
-    const {midnight} = useTime();
+    const { fullLife,leftLife } = useLeftLife();
+    const { midnight } = useTime();
     const [lifeRatio,setLifeRatio] = useState<number>(0);
     
     useAnimationFrame(() => {

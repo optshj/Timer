@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import styled,{keyframes} from "styled-components";
+import styled,{ keyframes } from "styled-components";
 
 import { GoLink } from "react-icons/go";
 
@@ -55,9 +55,9 @@ export default function UrlButton(){
             const { protocol, host } = window.location;
             return `${protocol}//${host}`;
         };
-
         setBaseUrl(getBaseUrl());
     }, []);
+
     const showMessage = () => {
         setVisible(true);
         setTimeout(() => {

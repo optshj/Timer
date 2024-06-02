@@ -2,7 +2,7 @@
 import styled from "styled-components"
 
 import { useRouter } from "next/navigation";
-import {useLeftLife} from "@/src/_context/LeftLifeContext"
+import { useLeftLife } from "@/src/_context/LeftLifeContext"
 
 import PercentageBar from "../_components/PercentageBar";
 
@@ -45,16 +45,16 @@ const Button = styled.button`
 `
 
 export default function Page(){
-    const {deathDate} = useLeftLife();
-
+    const { deathDate } = useLeftLife();
     const router = useRouter();
-    const onExit = () => router.back();
+    const onBack = () => router.back();
+
     return(
         <Wrapper>
             <Title>사망 예정일</Title>
             <DeathDate>{`${deathDate.years}년 ${deathDate.months}월 ${deathDate.days}일`}</DeathDate>
             <PercentageBar/>
-            <Button onClick={onExit}>타이머 구경하러 가기</Button>
+            <Button onClick={onBack}>타이머 구경하러 가기</Button>
         </Wrapper>
     )
 }

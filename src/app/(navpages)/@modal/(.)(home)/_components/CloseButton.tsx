@@ -1,6 +1,6 @@
 import styled from "styled-components"
-
 import { useRouter } from "next/navigation";
+
 import { MdClose } from "react-icons/md";
 
 const Wrapper = styled.div`

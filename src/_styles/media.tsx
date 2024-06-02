@@ -16,4 +16,5 @@ const media: MediaQueries = Object.keys(sizes).reduce((acc, label) => {
     `;
     return acc;
 }, {} as MediaQueries);
+
 export default media

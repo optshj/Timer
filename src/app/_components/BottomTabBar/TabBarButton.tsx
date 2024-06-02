@@ -1,9 +1,8 @@
-'use client'
 import { useRef } from "react";
 import styled from "styled-components";
 import Link from "next/link";
-import { IconType } from "react-icons";
 import { usePathname } from "next/navigation";
+import { IconType } from "react-icons";
 
 import useRipple from "@/src/_hooks/useRipple";
 

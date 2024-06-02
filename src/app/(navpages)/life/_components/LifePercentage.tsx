@@ -12,7 +12,7 @@ interface calcSecondsProps{
     months: number;
     days: number;
 }
-function calcSeconds({years,months,days}: calcSecondsProps): number {
+function calcSeconds({years,months,days}: calcSecondsProps){
     const seconds = years * 365 * 24 * 60 * 60 + months * 30 * 24 * 60 * 60 + days * 24 * 60 * 60;
     return seconds;
 }

@@ -1,6 +1,6 @@
-'use client';
-import {createContext,useContext} from "react";
+import { createContext,useContext } from "react";
 import { ThemeProvider } from "styled-components"
+
 import useDarkmode from "../_hooks/useDarkmode";
 import themes from "../_styles/theme";
 

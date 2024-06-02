@@ -7,7 +7,7 @@ import Text from "../../../_components/Public/Text"
 import PercentageBar from "../../../_components/Public/PercentageBar";
 
 export default function MonthPercentage(){
-    const {lastDayOfMonth} = useTime();
+    const { lastDayOfMonth } = useTime();
     const [monthRatio,setMonthRatio] = useState<number>(0);
 
     useAnimationFrame(() => {
@@ -18,6 +18,7 @@ export default function MonthPercentage(){
         const ratio = elapsedMonthSeconds/fullMonthSeconds*100;
         setMonthRatio(ratio > 100 ? 100 : ratio);
     })
+
     return(
         <>
             <Text text={"이번 달이"}/>

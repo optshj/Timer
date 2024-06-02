@@ -19,6 +19,7 @@ export default function KaKaoShareButton() {
             },
         });
     }
+    
     return(
         <ShareButtonForm text={"카카오톡"}>
             <Image src={KakaoImg} onClick={handleKakaoShare} alt="카카오톡 공유하기" width={60} height={60} priority={true}/>

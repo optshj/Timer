@@ -4,7 +4,7 @@ import Text from "@/src/app/_components/Public/Text";
 import AnalogClock from "@/src/app/_components/Public/AnalogClock";
 
 export default function TodayAnalogClock(){
-    const {today} = useTime();
+    const { today } = useTime();
     const hours = today.getHours();
     const minutes = today.getMinutes();
     const seconds = today.getSeconds();

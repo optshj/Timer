@@ -11,13 +11,9 @@ const Wrapper = styled.div`
         width:300px;
     `}
 `
-
-interface ProgressProps{
-    $ratio:number;
-}
-const Percentage = styled.div<ProgressProps>`
+const Percentage = styled.div<{$ratio:number}>`
     width: ${props => props.$ratio}%;
-    height:50px;
+    height:100%;
     background-color: var(--text);
     border-radius: 6px;
 `

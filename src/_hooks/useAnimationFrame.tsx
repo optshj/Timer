@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-function useAnimationFrame(callback: () => void) {
+export default function useAnimationFrame(callback: () => void) {
     const frameRate = 1000 / 30; // 30프레임
 
     useEffect(() => {
@@ -18,10 +18,8 @@ function useAnimationFrame(callback: () => void) {
 
         animationFrameId = requestAnimationFrame(updateAnimation);
     }
-
     animationFrameId = requestAnimationFrame(updateAnimation);
 
     return () => cancelAnimationFrame(animationFrameId);
-    }, [callback]);
+    },[callback]);
 }
-export default useAnimationFrame;

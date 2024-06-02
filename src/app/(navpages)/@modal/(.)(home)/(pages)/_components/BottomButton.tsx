@@ -19,18 +19,13 @@ const ButtonForm = styled.button`
     font-size:22px;
     border-radius: 10px;
     text-align: center;
-    justify-content: center;
     background-color: transparent;
     border:none;
-    cursor:pointer;
     ${({theme}) => theme.media.small`
         width:140px;
     `}
 `
-interface ButtonFormProps{
-    $isSelect: boolean
-}
-const NextButton = styled(ButtonForm)<ButtonFormProps>`
+const NextButton = styled(ButtonForm)<{$isSelect:boolean}>`
     background-color: ${(props) => props.$isSelect ? 'var(--button_enable)' : 'var(--button_disable)'};
     color: var(--background);
     cursor:${(props) => props.$isSelect ?  'pointer' : 'default'};
@@ -38,8 +33,9 @@ const NextButton = styled(ButtonForm)<ButtonFormProps>`
 const PrevButton = styled(ButtonForm)`
     border:2px solid  var(--button_enable);
     color: var(--button_enable);
+    cursor:pointer;
 `
-const SubmitButton = styled(ButtonForm)<ButtonFormProps>`
+const SubmitButton = styled(ButtonForm)<{$isSelect:boolean}>`
     background-color: ${(props) => props.$isSelect ? 'var(--button_enable)' : 'var(--button_disable)'};
     color: var(--background);
     cursor:${(props) => props.$isSelect ?  'pointer' : 'default'};
@@ -74,9 +70,10 @@ export default function BottomButton(props:BottomButtonProps){
     }
     return(
         <Wrapper>
-                <Link href={id-1 === -1 ? `survey`:`${id-1}`} onClick={handlePrev} scroll={false} replace={true} >
+                <Link href={id-1 === -1 ? "survey" : `${id-1}`} onClick={handlePrev} scroll={false} replace={true} >
                     <PrevButton>이전</PrevButton>
                 </Link>
+
             {id === surveyArrayLength - 1?
                 <Link href="/result" onClick={handleSubmit} scroll={false} replace={true} >
                     <SubmitButton $isSelect={props.isSelect}>제출</SubmitButton>

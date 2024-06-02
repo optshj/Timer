@@ -1,12 +1,11 @@
 import styled from "styled-components"
+
 import TabarButton from "./TabBarButton"
 
 import { AiOutlineHome } from "react-icons/ai";
 import { BsHeartPulse } from "react-icons/bs";
 import { IoCalendarOutline } from "react-icons/io5";
-
 import { MdCalendarToday } from "react-icons/md";
-
 import { BsCalendarMonth } from "react-icons/bs";
 
 const Wrapper = styled.nav`
@@ -18,7 +17,6 @@ const Wrapper = styled.nav`
         bottom:0;
         box-shadow: 0px -4px 4px var(--shadow);
     `}
-
 `
 
 export default function BottomTabBar(){

@@ -8,8 +8,8 @@ const Wrapper = styled.div`
     align-items: center;
     cursor:pointer;
 `
-const Text = styled.span`
-    font-weight: 700;
+const Text = styled.h1`
+    font-size:16px;
     color: var(--text);
     box-sizing: border-box;
 `

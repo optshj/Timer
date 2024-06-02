@@ -8,11 +8,9 @@ export default function useBirthDate() {
         if (localDeathDate) {
             const parsedDate = new Date(localDeathDate);
             setBirth(parsedDate);
-            document.body.dataset.deathDate = localDeathDate;
         } else {
             const currentDate = new Date();
             setBirth(currentDate);
-            document.body.dataset.deathDate = currentDate.toISOString();
         }
     }, []);
 
@@ -20,7 +18,6 @@ export default function useBirthDate() {
         const newBirthDate = new Date(birthDate.toISOString());
         setBirth(newBirthDate);
         window.localStorage.setItem('birthDate', newBirthDate.toISOString());
-        document.body.dataset.deathDate = newBirthDate.toISOString();
     };
     return { birth, setBirthDate };
 }

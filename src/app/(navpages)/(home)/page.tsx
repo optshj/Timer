@@ -25,15 +25,16 @@ const TextWrapper = styled.div`
     gap:12px;
   `}
 `
-export default function Home() {
-    return (
-      <Wrapper>
-        <CalcLifeButton/>
 
-        <TextWrapper>
-          <TextField json={quotesData}/>
-          <TextField json={healthTipsData}/>
-        </TextWrapper>
-      </Wrapper>
-    );
-  }
+export default function Homes() {
+  return (
+    <Wrapper>
+      <CalcLifeButton/>
+
+      <TextWrapper>
+        <TextField json={quotesData}/>
+        <TextField json={healthTipsData}/>
+      </TextWrapper>
+    </Wrapper>
+  );
+}

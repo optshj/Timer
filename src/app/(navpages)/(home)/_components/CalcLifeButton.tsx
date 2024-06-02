@@ -5,13 +5,13 @@ import Link from "next/link";
 import useRipple from "@/src/_hooks/useRipple";
 
 const Button = styled.button`
-    position:relative;
+    position: relative;
     overflow: hidden;
-    font-size:24px;
-    padding:10px;
+    font-size: 24px;
+    padding: 10px;
     cursor:pointer;
-    border: none;
-    border-radius: 5px;
+    border:none;
+    border-radius:5px;
     color: var(--button_text);
     background-color: var(--button_background);
     white-space: nowrap;
@@ -23,6 +23,7 @@ const Button = styled.button`
 export default function CalcLifeButton(){
     const ref = useRef<HTMLButtonElement>(null);
     const ripple = useRipple(ref);
+    
     return(
         <Link href={"/survey"} scroll={false}>
             <Button ref={ref}>
