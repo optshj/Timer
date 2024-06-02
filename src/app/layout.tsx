@@ -1,12 +1,11 @@
 import RootStyleRegistry from "../_lib/registy";
 import DarkmodeScript from "../_script/DarkmodeScript";
 import ClientApp from "./ClientApp";
-import Head from "next/head";
 
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
   return (
     <html lang="en">
-      <Head>
+      <head>
         <title>LifeTimer</title>
         <meta name="description" content="나의 남은 수명을 계산해보고, 건강관련 팁을 받아가세요."/>
         <meta name="robots" content="index,follow"/>
@@ -17,7 +16,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
         <meta property="og:locale" content="ko_KR" />
         <link rel="canonical" href="https://lifetimer1.vercel.app/"/>
         <link rel="alternate" hrefLang="ko_KR" href="https://lifetimer1.vercel.app/" />
-      </Head>
+      </head>
       <RootStyleRegistry>
         <ClientApp>
           {children}
