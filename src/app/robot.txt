@@ -1,4 +1,5 @@
-User-Agent: *
-Allow: *
-Disallow:
-Sitemap: https://lifetimer1.vercel.app/sitemap.xml
+User-agent: *
+Disallow:/
+Disallow: /survey
+Disallow: /result
+Disallow: /share
