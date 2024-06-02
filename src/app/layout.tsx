@@ -16,6 +16,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
         <meta property="og:locale" content="ko-KR" />
         <link rel="canonical" href="https://lifetimer1.vercel.app/"/>
         <link rel="alternate" hrefLang="ko-KR" href="https://lifetimer1.vercel.app/" />
+        <meta name="google-site-verification" content="huSHYvBftuJFa028T6tGdShVcrWecu4qHuQWqhyKrmU" />
       </head>
       <RootStyleRegistry>
         <ClientApp>
