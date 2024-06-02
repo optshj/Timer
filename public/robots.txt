@@ -1,5 +1,4 @@
 User-agent: *
-Disallow:/
 Disallow: /survey
 Disallow: /result
 Disallow: /share
