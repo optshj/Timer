@@ -17,7 +17,7 @@ const roboto = Roboto({
 
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
   return (
-    <html lang="en">
+    <html lang="ko">
       <head>
         <title>LifeTimer</title>
         <meta name="description" content="나의 남은 수명을 계산해보고, 건강관련 팁을 받아가세요."/>
